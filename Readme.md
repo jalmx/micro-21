@@ -11,9 +11,16 @@ This project is builded with Jupyter notebook in virtual env
 ## To start
 
 ```bash
-python3 -m venv .
+python3 -m venv . #Initial a project with venv
+source ./bin/activate  #activate virtual env
+pip install notebook   # install notebook 
+jupyter notebook ./book # start a notebook 
 ```
 
+[More information to install Python3 virtual env](https://docs.python.org/3/library/venv.html)
+[More information to install Jupyter Notebook](https://jupyter.org/install)
+
+## Content
 
 - Capítulo 1 Algoritmos y Diagramas de flujo
   - 1.1 Conceptos basicos y simbologia
