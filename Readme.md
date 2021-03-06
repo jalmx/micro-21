@@ -18,6 +18,7 @@ jupyter notebook ./book # start a notebook
 ```
 
 [More information to install Python3 virtual env](https://docs.python.org/3/library/venv.html)
+
 [More information to install Jupyter Notebook](https://jupyter.org/install)
 
 ## Content
