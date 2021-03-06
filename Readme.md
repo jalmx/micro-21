@@ -25,4 +25,10 @@ jupyter notebook ./book # start a notebook
 
 - Capítulo 1 Algoritmos y Diagramas de flujo
   - 1.1 Conceptos basicos y simbologia
-  - 2.2  Estructura
+  - 1.2 Estructura
+  - 1.3 Introduccion a creacion de Diagrmas de flujo
+
+
+## Softwares
+
+[drawio](https://app.diagrams.net/)
