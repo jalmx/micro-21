@@ -17,6 +17,19 @@ pip install notebook   # install notebook
 jupyter notebook ./book # start a notebook 
 ```
 
+## To generate PDF
+
+```bash
+pip install nbconvert # if you dont have it
+sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-generic-recommended # convert to pdf
+pip install nb_pdf_template  # template classic
+```
+
+
+
+
+More information about [nbconvert](https://nbconvert.readthedocs.io/en/latest/install.html)
+
 [More information to install Python3 virtual env](https://docs.python.org/3/library/venv.html)
 
 [More information to install Jupyter Notebook](https://jupyter.org/install)
