@@ -25,9 +25,6 @@ sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-generic-rec
 pip install nb_pdf_template  # template classic
 ```
 
-
-
-
 More information about [nbconvert](https://nbconvert.readthedocs.io/en/latest/install.html)
 
 [More information to install Python3 virtual env](https://docs.python.org/3/library/venv.html)
