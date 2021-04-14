@@ -1,9 +1,12 @@
 bin
 include
 lib*
+
 share
 pyvenv.cfg
 .ipynb_checkpoints
 test.py
 **/__pycache__/**
 .directory
+input.ipynb
+output.ipynb
