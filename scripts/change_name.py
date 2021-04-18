@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 
 ipynb = '.ipynb_checkpoints'
-path = 'book/'  # ruta que va analizar y obtener todos los archivos
+path = '../book/'  # ruta que va analizar y obtener todos los archivos
 
 # Con la funcion rglob busca todos los archivos con la extension .ipynb
 for element in Path(path).rglob('**/*.ipynb'):
