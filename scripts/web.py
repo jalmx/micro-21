@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import unicodedata
 from pathlib import Path
@@ -5,10 +6,11 @@ from traitlets.config import Config
 import nbformat as nbf
 from nbconvert.exporters import HTMLExporter
 from bs4 import BeautifulSoup
+import shutil
 
 
 def convert_nb_html(path_name_file: str, name_file: str):
-    """ Conviert files notebooks in html"""
+    """ Convert files notebooks in html"""
     c = Config()
 
     c.TagRemovePreprocessor.remove_cell_tags = ("remove_cell",)
@@ -43,10 +45,16 @@ def build_index(html: str):
 def copy_imgs():  # TODO: por hacer
     """copy all imgs from src to folder web/img"""
     img_paths = []
-    for img_path in Path("../book").rglob('**/*.png'):
-        img_paths.append(str(os.path.abspath(img_path)))
+    img_regex_list = ['png', 'jpeg', 'jpg', 'svg']
 
-    print(img_paths)
+    for regex in img_regex_list:
+        for img_path in Path("../book").rglob(f'**/*.{regex}'):
+            img_paths.append(str(os.path.abspath(img_path)))
+
+    for src in img_paths:
+        path = os.path.abspath('../web/img')
+        dist = f'{path}/{src.split("/")[-1]}'
+        shutil.copyfile(src, dist)
 
 
 def build_cap(title: str, name_items: [], url_base: str, html: BeautifulSoup) -> BeautifulSoup:
@@ -113,7 +121,6 @@ def get_list_html() -> []:
 
 
 def generate_list_cap(list_files: []) -> dict:
-
     list_complet = {}
 
     for file_html in list_files:
@@ -149,15 +156,15 @@ def build_body_html(html: BeautifulSoup) -> BeautifulSoup:
 
     # crear la logica para crear el cap html html
     url_base = 'https://www.alejandro-leyva.com/micro-21/web'
-    for i in range(len(all_caps)-1):
-        build_cap(f'Capitulo {i}', all_caps.get(i), url_base, html)
+    for i in range(len(all_caps) - 1):
+        build_cap(f'Capítulo {i}', all_caps.get(i), url_base, html)
     # regresar todo el html
 
     return html
 
 
 def get_html_template() -> BeautifulSoup:
-    #path_web = '../web'
+    # path_web = '../web'
     path_template_html = './template.html'
 
     template_html = open(path_template_html)
@@ -165,15 +172,16 @@ def get_html_template() -> BeautifulSoup:
     template_html.close()
     return BeautifulSoup(html_raw, 'html.parser')
 
-if __name__ == "__main__":
-    print("Buscando archivos...")
-    files = search_files_nb() #OK
-    print("Convirtiendolos a html...")
-    generate_files_html(files['path_file'], files['name_file']) #OK
-    print("Generando index.html")
-    html = get_html_template()  # OK
-    html = build_body_html(html)
-    build_index(html)
-    print("Termine... xD")
 
-    # print(copy_imgs())
+if __name__ == "__main__":
+    # print("Buscando archivos...")
+    # files = search_files_nb() #OK
+    # print("Convirtiendolos a html...")
+    # generate_files_html(files['path_file'], files['name_file']) #OK
+    # print("Generando index.html")
+    # html = get_html_template()  # OK
+    # html = build_body_html(html)
+    # build_index(html)
+    # print("Termine... xD")
+
+    print(copy_imgs())
