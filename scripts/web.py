@@ -52,7 +52,7 @@ def build_cap(title: str, name_items: [], url_base: str, html: BeautifulSoup) ->
     for item in name_items:
         list_item = build_tag('li', '')
         subtitle = build_tag('h2', item)
-        link = build_tag('a', f'{subtitle.h2}', href=f"{url_base}/{item}")
+        link = build_tag('a', f'{subtitle.h2}', href=f"{url_base}/{item}", target="_black")
         list_item.li.append(link.a)
         list_ul.ul.append(list_item.li)
 
