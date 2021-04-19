@@ -27,7 +27,6 @@ def generate_files_html(path_file: [], name_file: [], ignore=[]):
     """Logic to iterate all notebooks to html"""
     # TODO: agregar que ignore algunos archivos
     for count in range(len(path_file)):
-        print(f'Generando html: {name_file}')
         convert_nb_html(path_file[count], name_file[count])
 
 
@@ -161,27 +160,14 @@ def get_html_template() -> BeautifulSoup:
     html_raw = template_html.read()
     template_html.close()
     return BeautifulSoup(html_raw, 'html.parser')
-    # build_index(str(html))
-    # print(html)
-    # return html
-
 
 if __name__ == "__main__":
-    # files = search_files_nb() #OK
-    # generate_files_html(files['path_file'], files['name_file']) #OK
-
+    print("Buscando archivos...")
+    files = search_files_nb() #OK
+    print("Convirtiendolos a html...")
+    generate_files_html(files['path_file'], files['name_file']) #OK
+    print("Generando index.html")
     html = get_html_template()  # OK
     html = build_body_html(html)
     build_index(html)
-
-    # print(len(generate_list_cap(get_list_html())))
-
-
-# def test_create_body():
-#     html = BeautifulSoup(
-#         '<html><head></head><body></body></html>', 'html.parser')
-#     items = ["capitulo1.1", "capitulo1.2",
-#              "capitulo1.3", "capitulo1.4", "capitulo1.5"]
-#     build_cap("Capitulo 1", items, "github.com", html)
-#     print(html)
-#     build_index(html)
+    print("Termine... xD")
