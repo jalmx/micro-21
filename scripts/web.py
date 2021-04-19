@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 import os
+import shutil
 import unicodedata
 from pathlib import Path
-from traitlets.config import Config
+
 import nbformat as nbf
-from nbconvert.exporters import HTMLExporter
 from bs4 import BeautifulSoup
-import shutil
+from nbconvert.exporters import HTMLExporter
+from traitlets.config import Config
 
 
 def convert_nb_html(path_name_file: str, name_file: str):
@@ -42,7 +43,7 @@ def build_index(html: str):
         index.write(html)
 
 
-def copy_imgs():  # TODO: por hacer
+def copy_imgs():
     """copy all imgs from src to folder web/img"""
     img_paths = []
     img_regex_list = ['png', 'jpeg', 'jpg', 'svg']
@@ -64,7 +65,8 @@ def build_cap(title: str, name_items: [], url_base: str, html: BeautifulSoup) ->
     for item in name_items:
         list_item = build_tag('li', '')
         subtitle = build_tag('h2', item)
-        link = build_tag('a', f'{subtitle.h2}', href=f"{url_base}/{item}", target="_black")
+        link = build_tag('a', f'{subtitle.h2}',
+                         href=f"{url_base}/{item}", target="_black")
         list_item.li.append(link.a)
         list_ul.ul.append(list_item.li)
 
@@ -102,20 +104,27 @@ def search_files_nb():
     return list_path
 
 
-def change_path_img_in_html():  # TODO: por hacer
-    pass
+# TODO: Terminate function
+def change_path_img_in_html():
+
+    for file_html in get_list_html().get("full_path"):
+        with open(file_html) as html:
+            html = BeautifulSoup(html, 'html.parser')
+            print(html.body.find_all('img'))
+        break # ? remove
 
 
-def get_list_html() -> []:
+def get_list_html() -> dict:
     """Read all files in folder, then generate a list with it
 
     Returns:
-        []: [List of files html in folder]
+        dict: [List of files html in folder]
     """
     path = '../web'
-    list_paths = []
+    list_paths = {"name": [], "full_path": []}
     for file in Path(path).rglob('*.html'):
-        list_paths.append(str(file).split("/")[-1])
+        list_paths["name"].append(str(file).split("/")[-1])
+        list_paths["full_path"].append(os.path.abspath(file))
 
     return list_paths
 
@@ -150,7 +159,7 @@ def build_body_html(html: BeautifulSoup) -> BeautifulSoup:
         BeautifulSoup: all new content html
     """
     # trar el listado de htmls
-    list_html = get_list_html()
+    list_html = get_list_html().get("name")
     # separar y generar un array por capitulo
     all_caps = generate_list_cap(list_html)
 
@@ -179,9 +188,12 @@ if __name__ == "__main__":
     # print("Convirtiendolos a html...")
     # generate_files_html(files['path_file'], files['name_file']) #OK
     # print("Generando index.html")
+    # print("Copiando imgs")
+    # copy_imgs()
     # html = get_html_template()  # OK
     # html = build_body_html(html)
     # build_index(html)
+    #print("Arreglando los tag de las imgs")
     # print("Termine... xD")
 
-    print(copy_imgs())
+    change_path_img_in_html()
