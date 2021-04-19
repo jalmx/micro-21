@@ -1,5 +1,2 @@
 - [ ] Add to Readme the list of contend book
-- [ ] Terminate script web
-    - [ ] convert ipynb to html
-    - [ ] create html index.html with the list of files
-    - [ ] change url from images after to create index.html
+- [ ] change url from images after to create index.html

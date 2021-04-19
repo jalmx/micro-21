@@ -42,7 +42,11 @@ def build_index(html: str):
 
 def copy_imgs():  # TODO: por hacer
     """copy all imgs from src to folder web/img"""
-    pass
+    img_paths = []
+    for img_path in Path("../book").rglob('**/*.png'):
+        img_paths.append(str(os.path.abspath(img_path)))
+
+    print(img_paths)
 
 
 def build_cap(title: str, name_items: [], url_base: str, html: BeautifulSoup) -> BeautifulSoup:
@@ -171,3 +175,5 @@ if __name__ == "__main__":
     html = build_body_html(html)
     build_index(html)
     print("Termine... xD")
+
+    # print(copy_imgs())
