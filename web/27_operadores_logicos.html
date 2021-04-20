@@ -14267,12 +14267,13 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="2.7-Operadores-l&#243;gicos">2.7 Operadores l&#243;gicos<a class="anchor-link" href="#2.7-Operadores-l&#243;gicos">&#182;</a></h1><p>Contamos con los operadores lógicos básicos, <code>AND</code>, <code>OR</code> y <code>NOT</code>. Los operadores lógicos toman el objeto como booleanos para realizar la comparación.</p>
 <p>Estos operadores nos ayudan a realizar operaciones más complejas en las decisiones y ciclos.</p>
-<p>Todo obejto con algun contenido será tomado como <code>True</code>, a menos que:</p>
+<p>Todo objeto con algun contenido será tomado como <code>True</code>, a menos que:</p>
 <ul>
 <li>El objetos esté vacío, como <code>[]</code>, <code>()</code>, <code>{}</code></li>
 <li>El objeto es <code>False</code></li>
 <li>El objeto es <code>0</code></li>
-<li>El obejto es <code>None</code></li>
+<li>El objeto es <code>None</code></li>
+<li>El objeto es cadena vacia <code>""</code> o <code>''</code></li>
 </ul>
 <p>En todos estos casos, se toman como <code>False</code>.</p>
 
@@ -14353,7 +14354,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
@@ -14399,15 +14400,15 @@ Al menos un numero no es mayor a 0
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Aquí se comparan numeros, todos daran True, menos los que tenga el valor de 0</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># True</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">12</span> <span class="c1"># True</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># False</span>
   
-<span class="k">if</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">c</span><span class="p">:</span> 
+<span class="k">if</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">e</span><span class="p">:</span> 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Todos los numeros se toman como True&quot;</span><span class="p">)</span> 
 <span class="k">else</span><span class="p">:</span> 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Al menos un valor es False&quot;</span><span class="p">)</span> 
@@ -14515,7 +14516,7 @@ Al menos un numero no es mayor a 0
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
@@ -14665,7 +14666,7 @@ B y C NO no son mayores que 0
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>

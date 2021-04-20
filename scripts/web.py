@@ -138,6 +138,7 @@ def generate_list_cap(list_files: []) -> dict:
         if init.isnumeric():
             number = int(init)
             number = int(str(number)[0])
+            
         if list_complet.get(number) is None:
             list_complet[number] = [file_html]
         else:
@@ -183,17 +184,17 @@ def get_html_template() -> BeautifulSoup:
 
 
 if __name__ == "__main__":
-    # print("Buscando archivos...")
-    # files = search_files_nb() #OK
-    # print("Convirtiendolos a html...")
-    # generate_files_html(files['path_file'], files['name_file']) #OK
-    # print("Generando index.html")
-    # print("Copiando imgs")
-    # copy_imgs()
-    # html = get_html_template()  # OK
-    # html = build_body_html(html)
-    # build_index(html)
-    #print("Arreglando los tag de las imgs")
-    # print("Termine... xD")
+    print("Buscando archivos...")
+    files = search_files_nb() #OK
+    print("Convirtiendolos a html...")
+    generate_files_html(files['path_file'], files['name_file']) #OK
+    print("Generando index.html")
+    print("Copiando imgs")
+    copy_imgs()
+    html = get_html_template()  # OK
+    html = build_body_html(html)
+    build_index(html)
+    print("Arreglando los tag de las imgs")
+    print("Termine... xD")
 
-    change_path_img_in_html()
+    # change_path_img_in_html()

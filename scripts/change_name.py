@@ -14,7 +14,9 @@ for element in Path(path).rglob('**/*.ipynb'):
     if not str(element).find(ipynb) > 0:
         path_full_old = os.path.abspath(element)
         name_old = str(element).split('/')[-1]
-        name_new = name_old.replace(' ', '_')
-        path_full_new = path_full_old.replace(name_old, name_new)
-        os.rename(path_full_old, path_full_new)
-        print(f"cambiando el nombre del archivo '{name_old}' por '{name_new}'")
+        
+        if not name_old.find(" ") > 0:
+            name_new = name_old.replace(' ', '_')
+            path_full_new = path_full_old.replace(name_old, name_new)
+            os.rename(path_full_old, path_full_new)
+            print(f"cambiando el nombre del archivo '{name_old}' por '{name_new}'")

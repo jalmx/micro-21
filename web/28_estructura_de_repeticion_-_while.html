@@ -14265,7 +14265,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="2.8-Estructura-de-repetici&#243;n-while">2.8 Estructura de repetici&#243;n <code>while</code><a class="anchor-link" href="#2.8-Estructura-de-repetici&#243;n-while">&#182;</a></h1><p>Dentro de la programación tenemos estructuras de control para repetir acciones. Hay varias estructuras que podemos utilizar, los ciclos son <code>while</code>, <code>do-while</code> y <code>for</code>; este ultimo se verá en otro cápitulo.</p>
+<h1 id="2.8-Estructura-de-repetici&#243;n-while">2.8 Estructura de repetici&#243;n <code>while</code><a class="anchor-link" href="#2.8-Estructura-de-repetici&#243;n-while">&#182;</a></h1><p>Dentro de la programación tenemos estructuras de control para repetir acciones. Hay varias estructuras que podemos utilizar, los ciclos son <code>while</code>,  <code>for</code>; este ultimo se verá en otro cápitulo.</p>
 
 </div>
 </div>
@@ -14290,22 +14290,55 @@ a.anchor-link {
 </ol>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">valor</span> <span class="o">=</span> <span class="mi">0</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># declaro mi variable auxiliar &quot;contador&quot;</span>
 
-<span class="k">while</span> <span class="n">valor</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
-    <span class="n">valor</span> <span class="o">+=</span><span class="mi">1</span>
+<span class="k">while</span> <span class="n">contador</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">contador</span><span class="p">)</span>     <span class="c1"># imprimir el valor del contador</span>
+    <span class="n">contador</span> <span class="o">=</span> <span class="n">contador</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># incremento al contador</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El ciclo termino&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+El ciclo termino
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14316,10 +14349,10 @@ a.anchor-link {
 </ol>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tabla</span> <span class="o">=</span> <span class="mi">7</span>
@@ -14335,6 +14368,36 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>7
+14
+21
+28
+35
+42
+49
+56
+63
+70
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14343,10 +14406,10 @@ a.anchor-link {
 </ol>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">1</span>
@@ -14360,6 +14423,7 @@ a.anchor-link {
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; es par&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; es impar&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------------------------------&quot;</span><span class="p">)</span>
 
     <span class="n">contador</span> <span class="o">+=</span><span class="mi">1</span>
 </pre></div>
@@ -14367,6 +14431,57 @@ a.anchor-link {
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Par o Impar
+Dar valor 1: 51
+El valor 51 es impar
+-------------------------------------------
+Dar valor 2: 23156
+El valor 23156 es par
+-------------------------------------------
+Dar valor 3: 58616
+El valor 58616 es par
+-------------------------------------------
+Dar valor 4: 8498
+El valor 8498 es par
+-------------------------------------------
+Dar valor 5: 84198
+El valor 84198 es par
+-------------------------------------------
+Dar valor 6: 89549
+El valor 89549 es impar
+-------------------------------------------
+Dar valor 7: 9864198
+El valor 9864198 es par
+-------------------------------------------
+Dar valor 8: 8964
+El valor 8964 es par
+-------------------------------------------
+Dar valor 9: 984
+El valor 984 es par
+-------------------------------------------
+Dar valor 10: 89498
+El valor 89498 es par
+-------------------------------------------
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -14377,20 +14492,19 @@ a.anchor-link {
 </ol>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculadora de promedio final&quot;</span><span class="p">)</span>
 
-<span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">calificaciones</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># guarda la suma de los parciales</span>
+<span class="n">calificaciones</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># variable que lleva el coteo</span>
 
 <span class="k">while</span> <span class="n">calificaciones</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dar calificacion &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">calificaciones</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span><span class="p">)</span>
-    <span class="n">calificacion</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">()</span> <span class="p">)</span>
+    <span class="n">calificacion</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar calificacion &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">calificaciones</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span><span class="p">)</span> <span class="p">)</span>
     <span class="n">suma</span> <span class="o">+=</span> <span class="n">calificacion</span>
     <span class="n">calificaciones</span> <span class="o">+=</span> <span class="mi">1</span>
     
@@ -14407,6 +14521,31 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Calculadora de promedio final
+Dar calificacion 1: 5
+Dar calificacion 2: 8
+Dar calificacion 3: 10
+Has aprobado, tu promedio es 7.666666666666667
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14418,7 +14557,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">opcion</span> <span class="o">=</span> <span class="mi">0</span>
@@ -14439,12 +14578,10 @@ a.anchor-link {
         <span class="n">valor1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar el primer valor&quot;</span><span class="p">))</span>
         <span class="n">valor2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar el segundo valor&quot;</span><span class="p">))</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La resta es: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor1</span> <span class="o">-</span> <span class="n">valor2</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">opcion</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">opcion</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">opcion</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La opcion no existe&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Programa a finalizado&quot;</span><span class="p">)</span>
-
-    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Programa a finalizado&quot;</span><span class="p">)</span>   
 </pre></div>
 
      </div>
@@ -14465,6 +14602,38 @@ a.anchor-link {
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>-------------------------------------
+Calculadora Suma y Resta
+1. Suma
+2. Resta
+3. Salir
+1
+Dar el primer valor2
+Dar el segundo valor6
+La suma es: 8.0
+-------------------------------------
+Calculadora Suma y Resta
+1. Suma
+2. Resta
+3. Salir
+2
+Dar el primer valor85
+Dar el segundo valor36
+La resta es: 49.0
+-------------------------------------
+Calculadora Suma y Resta
+1. Suma
+2. Resta
+3. Salir
+5
+La opcion no existe
+-------------------------------------
+Calculadora Suma y Resta
+1. Suma
+2. Resta
+3. Salir
+-58
+La opcion no existe
+-------------------------------------
 Calculadora Suma y Resta
 1. Suma
 2. Resta
@@ -14494,7 +14663,7 @@ Programa a finalizado
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="2.8.2-Continue-y-Break">2.8.2 Continue y Break<a class="anchor-link" href="#2.8.2-Continue-y-Break">&#182;</a></h2><p>Existen 2 palabras reservadas que nos ayudan a un control mas complejo dentro de los ciclos, que son <code>break</code> y <code>continue</code>.</p>
 <ul>
-<li>La palabra reservada <code>break</code> me sirve para romper el ciclo cuando yo no necesite, muy util en ciclos infinitos que necesitemos <code>romper</code>.</li>
+<li>La palabra reservada <code>break</code> me sirve para romper un ciclo cuando yo no necesite, muy util en ciclos infinitos que necesitemos <code>romper</code>.</li>
 <li>La palabra reservada <code>continue</code> me sirve para ignorar el codigo restante e iniciar la siguiente vuelta del ciclo.</li>
 </ul>
 
@@ -14502,18 +14671,20 @@ Programa a finalizado
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Vamos a hacer un ciclo infinito el cual vamos a romper cuando una condicion se cumpla</span>
 
 <span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;El valor del contador es: </span><span class="si">{</span><span class="n">contador</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span> <span class="c1"># ciclo infinito</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;El valor del contador es: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">contador</span><span class="p">))</span>
     <span class="n">contador</span><span class="o">+=</span><span class="mi">1</span>
-    <span class="k">if</span> <span class="n">contador</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span> <span class="c1"># en el momento que esta condicion se cumple entra y encuentra break</span>
-        <span class="k">break</span>   <span class="c1"># cuando se ejecute esta linea el ciclo termina</span>
+   
+    <span class="k">if</span> <span class="n">contador</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span> <span class="c1"># en el momento que esta condicion se cumple entra y encuentra break</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Se rompe el ciclo en el valor &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">contador</span><span class="p">))</span>
+        <span class="k">break</span>   <span class="c1"># cuando se ejecute esta linea el ciclo termina        </span>
 </pre></div>
 
      </div>
@@ -14537,6 +14708,8 @@ Programa a finalizado
 El valor del contador es: 1
 El valor del contador es: 2
 El valor del contador es: 3
+El valor del contador es: 4
+Se rompe el ciclo en el valor 5
 </pre>
 </div>
 </div>
@@ -14545,10 +14718,10 @@ El valor del contador es: 3
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># vamos a hacer que el ciclo ignore todo el codigo que tiene por debajo cuando encuentre la palabra continue</span>
@@ -14556,15 +14729,125 @@ El valor del contador es: 3
 <span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">while</span> <span class="n">contador</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">contador</span><span class="o">+=</span><span class="mi">1</span>
+    
     <span class="k">if</span> <span class="n">contador</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
         <span class="k">continue</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El valor del contador es: </span><span class="si">{</span><span class="n">contador</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">contador</span><span class="o">+=</span><span class="mi">1</span>
+    
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>El valor del contador es: 1
+El valor del contador es: 2
+El valor del contador es: 4
+El valor del contador es: 5
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------------------------&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculadora Suma y Resta&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Suma&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Resta&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Salir&quot;</span><span class="p">)</span>
+    <span class="n">opcion</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+    <span class="k">if</span> <span class="n">opcion</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">valor1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar el primer valor&quot;</span><span class="p">))</span>
+        <span class="n">valor2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar el segundo valor&quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La suma es: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor1</span> <span class="o">+</span> <span class="n">valor2</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">opcion</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">valor1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar el primer valor&quot;</span><span class="p">))</span>
+        <span class="n">valor2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar el segundo valor&quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La resta es: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor1</span> <span class="o">-</span> <span class="n">valor2</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">opcion</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Programa a finalizado&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La opcion no existe&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>-------------------------------------
+Calculadora Suma y Resta
+1. Suma
+2. Resta
+3. Salir
+2
+Dar el primer valor36
+Dar el segundo valor36
+La resta es: 0.0
+-------------------------------------
+Calculadora Suma y Resta
+1. Suma
+2. Resta
+3. Salir
+5
+La opcion no existe
+-------------------------------------
+Calculadora Suma y Resta
+1. Suma
+2. Resta
+3. Salir
+-6
+La opcion no existe
+-------------------------------------
+Calculadora Suma y Resta
+1. Suma
+2. Resta
+3. Salir
+3
+Programa a finalizado
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
