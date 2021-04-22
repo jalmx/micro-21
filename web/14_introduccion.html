@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-
-
-
-
-<style type="text/css">
-    pre { line-height: 125%; }
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Notebook
+  </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js">
+  </script>
+  <style type="text/css">
+   pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -57,11 +57,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-
-
-
-<style type="text/css">
-/*-----------------------------------------------------------------------------
+  <style type="text/css">
+   /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
@@ -13796,11 +13793,9 @@ body.lm-mod-override-cursor .jp-OutputArea-output.jp-mod-isolated:before {
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
-
-</style>
-
-    <style type="text/css">
-/*-----------------------------------------------------------------------------
+  </style>
+  <style type="text/css">
+   /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
@@ -14188,10 +14183,9 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-icon-contrast-color2: var(--md-pink-600);
   --jp-icon-contrast-color3: var(--md-blue-600);
 }
-</style>
-
-<style type="text/css">
-a.anchor-link {
+  </style>
+  <style type="text/css">
+   a.anchor-link {
    display: none;
 }
 .highlight  {
@@ -14212,15 +14206,13 @@ a.anchor-link {
     margin: 0;
   }
 }
-</style>
-
-
-
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    init_mathjax = function() {
+  </style>
+  <!-- Load mathjax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe">
+  </script>
+  <!-- MathJax configuration -->
+  <script type="text/x-mathjax-config">
+   init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
             MathJax.Hub.Config({
@@ -14253,150 +14245,357 @@ a.anchor-link {
         }
     }
     init_mathjax();
-    </script>
-    <!-- End of mathjax configuration --></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../logo/banner.png" alt="banner"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="1.4-Introduccion-a-creacion-de-Diagrmas-de-flujo">1.4 Introduccion a creacion de Diagrmas de flujo<a class="anchor-link" href="#1.4-Introduccion-a-creacion-de-Diagrmas-de-flujo">&#182;</a></h1><p>Aqui comenzaremos a construir diagramas de flujo basicos. Construidos parte por parte.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>1. Se debe realizar un diagrama de flujo que sume 2 numeros enteros, estos numeros deben estar almacenados en memoria; es decir, en variables. El resultado enviarlo a la pantalla.</strong></p>
-<p>Con base a las instrucciones, entendemos que los valores pueden ser cuales quiera, deben estar almacenados en el programa.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Primero debemos comenzar con el simbolo de <em>INICIO</em></p>
-<p><img src="ejemplo1/e1_p0.png" alt="part1"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Tomando las instrucciones nos dice que debemos tomar definir un valor, el que nosotros querramos, en memoria para sumarlo con otro, por lo tanto, aplicamos un proceso declarando la primera variable <code>variable1</code> y le asignamos un valor; en esta caso le asignamos el valor de <code>10</code>. El simbolo de <code>Proceso</code> (Rectangulo) se usa para realizar una operacion matematica, asignacion de valor a una variable o declaracion de una variable.</p>
-<p><em>Se utiliza el signo de igual (=) para asignacion de un valor a una variable.</em></p>
-<p><img src="ejemplo1/e1_p1.png" alt="part1"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ahora debemos declarar otro variable, en este caso la llamaremos <code>valor2</code>, recordemos que el nombre de la variable es el que escojamos. <em>En una seccion previa se indican las reglas para declaracion de variables</em>.
-A nuestra variable <code>variable2</code> le asignamos el valor de <code>5</code>. Como estamos realizando una asignacion de un valor a una varialbe, utilizamos el simbolo de <code>Proceso</code> (Rectangulo).</p>
-<p><img src="ejemplo1/e1_p2.png" alt="part1"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Acto seguido es realizar la operacion aritmetica de suma. Para ello esto lo realizamos en un <code>Proceso</code> y lo guardamos en una variable llamada <code>suma</code>.</p>
-<p><img src="./ejemplo1/e1_p3.png" alt="suma"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ya que tenemos el resultado guardado en la variable <code>suma</code>, lo mandaremos a la pantalla (Display).</p>
-<p><img src="./ejemplo1/e1_p4.png" alt="resultado"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Hemos terminado de realizar lo solicitado, por lo tanto, debemos terminar nuestro diagrama de flujo, con el simbolo de <code>FIN</code></p>
-<p><img src="./ejemplo1/e1_p5.png" alt="resultado"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>2. Realizar la suma de dos números enteros, solicitandolos al usuario y al final imprimir por pantalla el resultado.</strong></p>
-<p>Con base a las instrucciones debemos solicitar al usuario los números, pero primero le tenemos que indicar que debe hacer, y debemos guardar este valor en una variable cada uno para poder realizar la operación correspondiente.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Como todo diagrama de flujo comenzamos con el símbolo de <em>INICIO</em></p>
-<p><img src="./ejemplo2/e1_p1.png" alt="inicio"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Tenemos que indicarle al usuario qué debe realizar, para realizar esto debemos utilizar el simbolo para enviar mensajes a la pantalla con el mensaje. <em>Los textos que queremos que se muestre debe ir entre doble comilla <code>" "</code></em>. El mensaje que mostraremos es <code>"Dar el primer número entero"</code></p>
-<p><img src="./ejemplo2/e1_p2.png" alt="inicio"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ahora debemos recibir el dato que el usuario quiere ingresar, este número lo debemos guardar en algun lado, por lo tanto, declaramos una variable dentro del símbolo que es para ingresar datos. La variable la llamamos <code>variable1</code></p>
-<p><img src="./ejemplo2/e1_p3.png" alt="inicio"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ya que tenemos el primer valor, debemos solicitar al segundo valor, para ello debemos mandar el segundo mensaje indicandole al usuario qué debe realizar, el mensaje será <code>"Dar el segundo número entero"</code> dentro del símbolo de <code>Display</code></p>
-<p><img src="./ejemplo2/e1_p4.png" alt="inicio"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Debemos recibir el siguiente valor y almacenarlo en otra variable, la llamaremos <code>valor2</code>, para poder ingresar el valor a esta variable tenemos que ocupar el símbolo de entrada de datos.</p>
-<p><img src="./ejemplo2/e1_p5.png" alt="inicio"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Contamos con los valores que ingreso el usuario en las variables <code>valor1</code> y <code>valor2</code>, ahora debemos realizar la operación y la guardaremos en la variable <code>suma</code>.</p>
-<p><img src="./ejemplo2/e1_p6.png" alt="inicio"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>El resultado de la operación esta almacenada en la variable <code>suma</code>, la debemos envíar a la pantalla, tenemos que usar el símbolo de <code>Display</code>, la variable</p>
-<p><img src="./ejemplo2/e1_p7.png" alt="inicio"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Hemos terminado lo que nos fue solicitado, por lo tanto, solo nos queda finalizar el diagrama de flujo con <em>FIN</em></p>
-<p><img src="./ejemplo2/e1_p8.png" alt="inicio"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Realizado por Docente: <a href="https://www.alejandro-leyva.com/">Alejandro Leyva</a></p>
-<p><a href="https://mecatronica85.com/">Mecatrónica 85</a></p>
-<p><a href="https://www.facebook.com/mecatronica85">fb/mecatronica85</a></p>
-
-</div>
-</div>
-</body>
-
-
-
-
-
-
-
+  </script>
+  <!-- End of mathjax configuration -->
+ </head>
+ <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <img alt="banner" src="./img/banner.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h1 id="1.4-Introduccion-a-creacion-de-Diagrmas-de-flujo">
+     1.4 Introduccion a creacion de Diagrmas de flujo
+     <a class="anchor-link" href="#1.4-Introduccion-a-creacion-de-Diagrmas-de-flujo">
+      ¶
+     </a>
+    </h1>
+    <p>
+     Aqui comenzaremos a construir diagramas de flujo basicos. Construidos parte por parte.
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      1. Se debe realizar un diagrama de flujo que sume 2 numeros enteros, estos numeros deben estar almacenados en memoria; es decir, en variables. El resultado enviarlo a la pantalla.
+     </strong>
+    </p>
+    <p>
+     Con base a las instrucciones, entendemos que los valores pueden ser cuales quiera, deben estar almacenados en el programa.
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Primero debemos comenzar con el simbolo de
+     <em>
+      INICIO
+     </em>
+    </p>
+    <p>
+     <img alt="part1" src="./img/e1_p0.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Tomando las instrucciones nos dice que debemos tomar definir un valor, el que nosotros querramos, en memoria para sumarlo con otro, por lo tanto, aplicamos un proceso declarando la primera variable
+     <code>
+      variable1
+     </code>
+     y le asignamos un valor; en esta caso le asignamos el valor de
+     <code>
+      10
+     </code>
+     . El simbolo de
+     <code>
+      Proceso
+     </code>
+     (Rectangulo) se usa para realizar una operacion matematica, asignacion de valor a una variable o declaracion de una variable.
+    </p>
+    <p>
+     <em>
+      Se utiliza el signo de igual (=) para asignacion de un valor a una variable.
+     </em>
+    </p>
+    <p>
+     <img alt="part1" src="./img/e1_p1.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Ahora debemos declarar otro variable, en este caso la llamaremos
+     <code>
+      valor2
+     </code>
+     , recordemos que el nombre de la variable es el que escojamos.
+     <em>
+      En una seccion previa se indican las reglas para declaracion de variables
+     </em>
+     .
+A nuestra variable
+     <code>
+      variable2
+     </code>
+     le asignamos el valor de
+     <code>
+      5
+     </code>
+     . Como estamos realizando una asignacion de un valor a una varialbe, utilizamos el simbolo de
+     <code>
+      Proceso
+     </code>
+     (Rectangulo).
+    </p>
+    <p>
+     <img alt="part1" src="./img/e1_p2.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Acto seguido es realizar la operacion aritmetica de suma. Para ello esto lo realizamos en un
+     <code>
+      Proceso
+     </code>
+     y lo guardamos en una variable llamada
+     <code>
+      suma
+     </code>
+     .
+    </p>
+    <p>
+     <img alt="suma" src="./img/e1_p3.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Ya que tenemos el resultado guardado en la variable
+     <code>
+      suma
+     </code>
+     , lo mandaremos a la pantalla (Display).
+    </p>
+    <p>
+     <img alt="resultado" src="./img/e1_p4.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Hemos terminado de realizar lo solicitado, por lo tanto, debemos terminar nuestro diagrama de flujo, con el simbolo de
+     <code>
+      FIN
+     </code>
+    </p>
+    <p>
+     <img alt="resultado" src="./img/e1_p5.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      2. Realizar la suma de dos números enteros, solicitandolos al usuario y al final imprimir por pantalla el resultado.
+     </strong>
+    </p>
+    <p>
+     Con base a las instrucciones debemos solicitar al usuario los números, pero primero le tenemos que indicar que debe hacer, y debemos guardar este valor en una variable cada uno para poder realizar la operación correspondiente.
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Como todo diagrama de flujo comenzamos con el símbolo de
+     <em>
+      INICIO
+     </em>
+    </p>
+    <p>
+     <img alt="inicio" src="./img/e1_p1.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Tenemos que indicarle al usuario qué debe realizar, para realizar esto debemos utilizar el simbolo para enviar mensajes a la pantalla con el mensaje.
+     <em>
+      Los textos que queremos que se muestre debe ir entre doble comilla
+      <code>
+       " "
+      </code>
+     </em>
+     . El mensaje que mostraremos es
+     <code>
+      "Dar el primer número entero"
+     </code>
+    </p>
+    <p>
+     <img alt="inicio" src="./img/e1_p2.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Ahora debemos recibir el dato que el usuario quiere ingresar, este número lo debemos guardar en algun lado, por lo tanto, declaramos una variable dentro del símbolo que es para ingresar datos. La variable la llamamos
+     <code>
+      variable1
+     </code>
+    </p>
+    <p>
+     <img alt="inicio" src="./img/e1_p3.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Ya que tenemos el primer valor, debemos solicitar al segundo valor, para ello debemos mandar el segundo mensaje indicandole al usuario qué debe realizar, el mensaje será
+     <code>
+      "Dar el segundo número entero"
+     </code>
+     dentro del símbolo de
+     <code>
+      Display
+     </code>
+    </p>
+    <p>
+     <img alt="inicio" src="./img/e1_p4.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Debemos recibir el siguiente valor y almacenarlo en otra variable, la llamaremos
+     <code>
+      valor2
+     </code>
+     , para poder ingresar el valor a esta variable tenemos que ocupar el símbolo de entrada de datos.
+    </p>
+    <p>
+     <img alt="inicio" src="./img/e1_p5.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Contamos con los valores que ingreso el usuario en las variables
+     <code>
+      valor1
+     </code>
+     y
+     <code>
+      valor2
+     </code>
+     , ahora debemos realizar la operación y la guardaremos en la variable
+     <code>
+      suma
+     </code>
+     .
+    </p>
+    <p>
+     <img alt="inicio" src="./img/e1_p6.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     El resultado de la operación esta almacenada en la variable
+     <code>
+      suma
+     </code>
+     , la debemos envíar a la pantalla, tenemos que usar el símbolo de
+     <code>
+      Display
+     </code>
+     , la variable
+    </p>
+    <p>
+     <img alt="inicio" src="./img/e1_p7.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Hemos terminado lo que nos fue solicitado, por lo tanto, solo nos queda finalizar el diagrama de flujo con
+     <em>
+      FIN
+     </em>
+    </p>
+    <p>
+     <img alt="inicio" src="./img/e1_p8.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Realizado por Docente:
+     <a href="https://www.alejandro-leyva.com/">
+      Alejandro Leyva
+     </a>
+    </p>
+    <p>
+     <a href="https://mecatronica85.com/">
+      Mecatrónica 85
+     </a>
+    </p>
+    <p>
+     <a href="https://www.facebook.com/mecatronica85">
+      fb/mecatronica85
+     </a>
+    </p>
+   </div>
+  </div>
+ </body>
 </html>

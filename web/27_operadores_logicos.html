@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-
-
-
-
-<style type="text/css">
-    pre { line-height: 125%; }
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Notebook
+  </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js">
+  </script>
+  <style type="text/css">
+   pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -57,11 +57,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-
-
-
-<style type="text/css">
-/*-----------------------------------------------------------------------------
+  <style type="text/css">
+   /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
@@ -13796,11 +13793,9 @@ body.lm-mod-override-cursor .jp-OutputArea-output.jp-mod-isolated:before {
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
-
-</style>
-
-    <style type="text/css">
-/*-----------------------------------------------------------------------------
+  </style>
+  <style type="text/css">
+   /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
@@ -14188,10 +14183,9 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-icon-contrast-color2: var(--md-pink-600);
   --jp-icon-contrast-color3: var(--md-blue-600);
 }
-</style>
-
-<style type="text/css">
-a.anchor-link {
+  </style>
+  <style type="text/css">
+   a.anchor-link {
    display: none;
 }
 .highlight  {
@@ -14212,15 +14206,13 @@ a.anchor-link {
     margin: 0;
   }
 }
-</style>
-
-
-
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    init_mathjax = function() {
+  </style>
+  <!-- Load mathjax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe">
+  </script>
+  <!-- MathJax configuration -->
+  <script type="text/x-mathjax-config">
+   init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
             MathJax.Hub.Config({
@@ -14253,426 +14245,847 @@ a.anchor-link {
         }
     }
     init_mathjax();
-    </script>
-    <!-- End of mathjax configuration --></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../logo/banner.png" alt="banner"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="2.7-Operadores-l&#243;gicos">2.7 Operadores l&#243;gicos<a class="anchor-link" href="#2.7-Operadores-l&#243;gicos">&#182;</a></h1><p>Contamos con los operadores lógicos básicos, <code>AND</code>, <code>OR</code> y <code>NOT</code>. Los operadores lógicos toman el objeto como booleanos para realizar la comparación.</p>
-<p>Estos operadores nos ayudan a realizar operaciones más complejas en las decisiones y ciclos.</p>
-<p>Todo objeto con algun contenido será tomado como <code>True</code>, a menos que:</p>
-<ul>
-<li>El objetos esté vacío, como <code>[]</code>, <code>()</code>, <code>{}</code></li>
-<li>El objeto es <code>False</code></li>
-<li>El objeto es <code>0</code></li>
-<li>El objeto es <code>None</code></li>
-<li>El objeto es cadena vacia <code>""</code> o <code>''</code></li>
-</ul>
-<p>En todos estos casos, se toman como <code>False</code>.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.7.1-Operador-AND">2.7.1 Operador <code>AND</code><a class="anchor-link" href="#2.7.1-Operador-AND">&#182;</a></h2><p>Con este operador se analizan dos comparaciones y <code>si ambas son verdaderas</code>, nos entrega un resultado <code>True</code>. La palabra reservada usada en python es <code>and</code>.</p>
-<p>Tabla de verdad para el operador <code>and</code></p>
-<table>
-<thead><tr>
-<th style="text-align:center">A</th>
-<th style="text-align:center">B</th>
-<th style="text-align:center">Resultado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">False</td>
-<td style="text-align:center">False</td>
-<td style="text-align:center">False</td>
-</tr>
-<tr>
-<td style="text-align:center">False</td>
-<td style="text-align:center">True</td>
-<td style="text-align:center">False</td>
-</tr>
-<tr>
-<td style="text-align:center">True</td>
-<td style="text-align:center">False</td>
-<td style="text-align:center">False</td>
-</tr>
-<tr>
-<td style="text-align:center">True</td>
-<td style="text-align:center">True</td>
-<td style="text-align:center">True</td>
-</tr>
-</tbody>
-</table>
-<p>La forma de aplicación:</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Ejemplo</th>
-<th style="text-align:center">Analizando resultado</th>
-<th style="text-align:center">Resultado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">6 &lt; 10 <code>and</code> 3 &gt; 0</td>
-<td style="text-align:center">True <code>and</code> True</td>
-<td style="text-align:center">True</td>
-</tr>
-<tr>
-<td style="text-align:left">40 &lt; 10 <code>and</code> 13 &gt; 5</td>
-<td style="text-align:center">False <code>and</code> True</td>
-<td style="text-align:center">False</td>
-</tr>
-<tr>
-<td style="text-align:left">9 &lt; 12 <code>and</code> 4 &gt; 8</td>
-<td style="text-align:center">True <code>and</code> False</td>
-<td style="text-align:center">False</td>
-</tr>
-<tr>
-<td style="text-align:left">6 &gt; 10 <code>and</code> 3 &lt; 0</td>
-<td style="text-align:center">False <code>and</code> False</td>
-<td style="text-align:center">False</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="2.7.1.1-Ejemplo-con-operador-l&#243;gico-and">2.7.1.1 Ejemplo con operador l&#243;gico <code>and</code><a class="anchor-link" href="#2.7.1.1-Ejemplo-con-operador-l&#243;gico-and">&#182;</a></h3>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+  </script>
+  <!-- End of mathjax configuration -->
+ </head>
+ <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <img alt="banner" src="./img/banner.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h1 id="2.7-Operadores-lógicos">
+     2.7 Operadores lógicos
+     <a class="anchor-link" href="#2.7-Operadores-lógicos">
+      ¶
+     </a>
+    </h1>
+    <p>
+     Contamos con los operadores lógicos básicos,
+     <code>
+      AND
+     </code>
+     ,
+     <code>
+      OR
+     </code>
+     y
+     <code>
+      NOT
+     </code>
+     . Los operadores lógicos toman el objeto como booleanos para realizar la comparación.
+    </p>
+    <p>
+     Estos operadores nos ayudan a realizar operaciones más complejas en las decisiones y ciclos.
+    </p>
+    <p>
+     Todo objeto con algun contenido será tomado como
+     <code>
+      True
+     </code>
+     , a menos que:
+    </p>
+    <ul>
+     <li>
+      El objetos esté vacío, como
+      <code>
+       []
+      </code>
+      ,
+      <code>
+       ()
+      </code>
+      ,
+      <code>
+       {}
+      </code>
+     </li>
+     <li>
+      El objeto es
+      <code>
+       False
+      </code>
+     </li>
+     <li>
+      El objeto es
+      <code>
+       0
+      </code>
+     </li>
+     <li>
+      El objeto es
+      <code>
+       None
+      </code>
+     </li>
+     <li>
+      El objeto es cadena vacia
+      <code>
+       ""
+      </code>
+      o
+      <code>
+       ''
+      </code>
+     </li>
+    </ul>
+    <p>
+     En todos estos casos, se toman como
+     <code>
+      False
+     </code>
+     .
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.7.1-Operador-AND">
+     2.7.1 Operador
+     <code>
+      AND
+     </code>
+     <a class="anchor-link" href="#2.7.1-Operador-AND">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Con este operador se analizan dos comparaciones y
+     <code>
+      si ambas son verdaderas
+     </code>
+     , nos entrega un resultado
+     <code>
+      True
+     </code>
+     . La palabra reservada usada en python es
+     <code>
+      and
+     </code>
+     .
+    </p>
+    <p>
+     Tabla de verdad para el operador
+     <code>
+      and
+     </code>
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:center">
+        A
+       </th>
+       <th style="text-align:center">
+        B
+       </th>
+       <th style="text-align:center">
+        Resultado
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:center">
+        False
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        False
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        True
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        True
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <p>
+     La forma de aplicación:
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:left">
+        Ejemplo
+       </th>
+       <th style="text-align:center">
+        Analizando resultado
+       </th>
+       <th style="text-align:center">
+        Resultado
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:left">
+        6 &lt; 10
+        <code>
+         and
+        </code>
+        3 &gt; 0
+       </td>
+       <td style="text-align:center">
+        True
+        <code>
+         and
+        </code>
+        True
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        40 &lt; 10
+        <code>
+         and
+        </code>
+        13 &gt; 5
+       </td>
+       <td style="text-align:center">
+        False
+        <code>
+         and
+        </code>
+        True
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        9 &lt; 12
+        <code>
+         and
+        </code>
+        4 &gt; 8
+       </td>
+       <td style="text-align:center">
+        True
+        <code>
+         and
+        </code>
+        False
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        6 &gt; 10
+        <code>
+         and
+        </code>
+        3 &lt; 0
+       </td>
+       <td style="text-align:center">
+        False
+        <code>
+         and
+        </code>
+        False
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="2.7.1.1-Ejemplo-con-operador-lógico-and">
+     2.7.1.1 Ejemplo con operador lógico
+     <code>
+      and
+     </code>
+     <a class="anchor-link" href="#2.7.1.1-Ejemplo-con-operador-lógico-and">
+      ¶
+     </a>
+    </h3>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [1]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
 
 <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A y B son mayores que 0&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"A y B son mayores que 0"</span><span class="p">)</span> 
 
 <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Todos los numeros son diferentes de 0&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Todos los numeros son diferentes de 0"</span><span class="p">)</span> 
 <span class="k">else</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Al menos un numero no es mayor a 0&quot;</span><span class="p">)</span> 
-</pre></div>
-
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Al menos un numero no es mayor a 0"</span><span class="p">)</span> 
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>A y B son mayores que 0
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>A y B son mayores que 0
 Al menos un numero no es mayor a 0
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Aquí se comparan numeros, todos daran True, menos los que tenga el valor de 0</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [7]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Aquí se comparan numeros, todos daran True, menos los que tenga el valor de 0</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># True</span>
 <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">12</span> <span class="c1"># True</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># False</span>
   
 <span class="k">if</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">e</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Todos los numeros se toman como True&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Todos los numeros se toman como True"</span><span class="p">)</span> 
 <span class="k">else</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Al menos un valor es False&quot;</span><span class="p">)</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Al menos un valor es False
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Al menos un valor es False"</span><span class="p">)</span> 
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.7.2-Operador-OR">2.7.2 Operador <code>OR</code><a class="anchor-link" href="#2.7.2-Operador-OR">&#182;</a></h2><p>Con este operador se analizan dos comparaciones y si alguna es verdadera, nos entrega un resultado <code>True</code>. La palabra reservada usada en python es <code>or</code>.</p>
-<p>Tabla de verdad para el operador <code>or</code></p>
-<table>
-<thead><tr>
-<th style="text-align:center">A</th>
-<th style="text-align:center">B</th>
-<th style="text-align:center">Resultado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">False</td>
-<td style="text-align:center">False</td>
-<td style="text-align:center">False</td>
-</tr>
-<tr>
-<td style="text-align:center">False</td>
-<td style="text-align:center">True</td>
-<td style="text-align:center">True</td>
-</tr>
-<tr>
-<td style="text-align:center">True</td>
-<td style="text-align:center">False</td>
-<td style="text-align:center">True</td>
-</tr>
-<tr>
-<td style="text-align:center">True</td>
-<td style="text-align:center">True</td>
-<td style="text-align:center">True</td>
-</tr>
-</tbody>
-</table>
-<p>La forma de aplicación:</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Ejemplo</th>
-<th style="text-align:center">Analizando resultado</th>
-<th style="text-align:center">Resultado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">6 &lt; 10 <code>or</code> 3 &gt; 0</td>
-<td style="text-align:center">True <code>or</code> True</td>
-<td style="text-align:center">True</td>
-</tr>
-<tr>
-<td style="text-align:left">40 &lt; 10 <code>or</code> 13 &gt; 5</td>
-<td style="text-align:center">False <code>or</code> True</td>
-<td style="text-align:center">True</td>
-</tr>
-<tr>
-<td style="text-align:left">9 &lt; 12 <code>or</code> 4 &gt; 8</td>
-<td style="text-align:center">True <code>or</code> False</td>
-<td style="text-align:center">True</td>
-</tr>
-<tr>
-<td style="text-align:left">6 &gt; 10 <code>or</code> 3 &lt; 0</td>
-<td style="text-align:center">False <code>or</code> False</td>
-<td style="text-align:center">False</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="2.7.2.1-Ejemplo-con-operador-l&#243;gico-or">2.7.2.1 Ejemplo con operador l&#243;gico <code>or</code><a class="anchor-link" href="#2.7.2.1-Ejemplo-con-operador-l&#243;gico-or">&#182;</a></h3>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Al menos un valor es False
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.7.2-Operador-OR">
+     2.7.2 Operador
+     <code>
+      OR
+     </code>
+     <a class="anchor-link" href="#2.7.2-Operador-OR">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Con este operador se analizan dos comparaciones y si alguna es verdadera, nos entrega un resultado
+     <code>
+      True
+     </code>
+     . La palabra reservada usada en python es
+     <code>
+      or
+     </code>
+     .
+    </p>
+    <p>
+     Tabla de verdad para el operador
+     <code>
+      or
+     </code>
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:center">
+        A
+       </th>
+       <th style="text-align:center">
+        B
+       </th>
+       <th style="text-align:center">
+        Resultado
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:center">
+        False
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        False
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        True
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        True
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <p>
+     La forma de aplicación:
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:left">
+        Ejemplo
+       </th>
+       <th style="text-align:center">
+        Analizando resultado
+       </th>
+       <th style="text-align:center">
+        Resultado
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:left">
+        6 &lt; 10
+        <code>
+         or
+        </code>
+        3 &gt; 0
+       </td>
+       <td style="text-align:center">
+        True
+        <code>
+         or
+        </code>
+        True
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        40 &lt; 10
+        <code>
+         or
+        </code>
+        13 &gt; 5
+       </td>
+       <td style="text-align:center">
+        False
+        <code>
+         or
+        </code>
+        True
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        9 &lt; 12
+        <code>
+         or
+        </code>
+        4 &gt; 8
+       </td>
+       <td style="text-align:center">
+        True
+        <code>
+         or
+        </code>
+        False
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        6 &gt; 10
+        <code>
+         or
+        </code>
+        3 &lt; 0
+       </td>
+       <td style="text-align:center">
+        False
+        <code>
+         or
+        </code>
+        False
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="2.7.2.1-Ejemplo-con-operador-lógico-or">
+     2.7.2.1 Ejemplo con operador lógico
+     <code>
+      or
+     </code>
+     <a class="anchor-link" href="#2.7.2.1-Ejemplo-con-operador-lógico-or">
+      ¶
+     </a>
+    </h3>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [8]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
   
 <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A o B es mayor que 0&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"A o B es mayor que 0"</span><span class="p">)</span> 
 <span class="k">else</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A y B no son mayores a 0&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"A y B no son mayores a 0"</span><span class="p">)</span> 
 
 <span class="k">if</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B o C es mayor que 0&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"B o C es mayor que 0"</span><span class="p">)</span> 
 <span class="k">else</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B y C NO no son mayores que 0&quot;</span><span class="p">)</span> 
-</pre></div>
-
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"B y C NO no son mayores que 0"</span><span class="p">)</span> 
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>A o B es mayor que 0
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>A o B es mayor que 0
 B y C NO no son mayores que 0
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [10]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
   
 <span class="k">if</span> <span class="n">a</span> <span class="ow">or</span> <span class="n">b</span> <span class="ow">or</span> <span class="n">c</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Al menos un valor se considera True&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Al menos un valor se considera True"</span><span class="p">)</span> 
 <span class="k">else</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Todos los valores dan como resultado False&quot;</span><span class="p">)</span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Al menos un valor se considera True
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Todos los valores dan como resultado False"</span><span class="p">)</span> 
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.7.3-Operador-not">2.7.3 Operador <code>not</code><a class="anchor-link" href="#2.7.3-Operador-not">&#182;</a></h2><p>Este operador invierte el resultado booleana que recibe. La palabra reservada es <code>not</code></p>
-<p>Tabla de verdad para el operador <code>not</code></p>
-<table>
-<thead><tr>
-<th style="text-align:center">A</th>
-<th style="text-align:center">Resultado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">False</td>
-<td style="text-align:center">True</td>
-</tr>
-<tr>
-<td style="text-align:center">True</td>
-<td style="text-align:center">False</td>
-</tr>
-</tbody>
-</table>
-<p>La forma de aplicación:</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Ejemplo</th>
-<th style="text-align:center">Analizando resultado</th>
-<th style="text-align:center">Resultado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>not</code>(6 &lt; 10)</td>
-<td style="text-align:center"><code>not</code>(True)</td>
-<td style="text-align:center">False</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>not</code>(20 &lt; 12)</td>
-<td style="text-align:center"><code>not</code>(False)</td>
-<td style="text-align:center">True</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>not</code>(2 &lt; 10)</td>
-<td style="text-align:center"><code>not</code>(True)</td>
-<td style="text-align:center">False</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>not</code>(False)</td>
-<td style="text-align:center"><code>not</code>(False)</td>
-<td style="text-align:center">True</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="2.7.3.1-Ejemplo-con-operador-l&#243;gico-not">2.7.3.1 Ejemplo con operador l&#243;gico <code>not</code><a class="anchor-link" href="#2.7.3.1-Ejemplo-con-operador-l&#243;gico-not">&#182;</a></h3>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Al menos un valor se considera True
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.7.3-Operador-not">
+     2.7.3 Operador
+     <code>
+      not
+     </code>
+     <a class="anchor-link" href="#2.7.3-Operador-not">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Este operador invierte el resultado booleana que recibe. La palabra reservada es
+     <code>
+      not
+     </code>
+    </p>
+    <p>
+     Tabla de verdad para el operador
+     <code>
+      not
+     </code>
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:center">
+        A
+       </th>
+       <th style="text-align:center">
+        Resultado
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:center">
+        False
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        True
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <p>
+     La forma de aplicación:
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:left">
+        Ejemplo
+       </th>
+       <th style="text-align:center">
+        Analizando resultado
+       </th>
+       <th style="text-align:center">
+        Resultado
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:left">
+        <code>
+         not
+        </code>
+        (6 &lt; 10)
+       </td>
+       <td style="text-align:center">
+        <code>
+         not
+        </code>
+        (True)
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        <code>
+         not
+        </code>
+        (20 &lt; 12)
+       </td>
+       <td style="text-align:center">
+        <code>
+         not
+        </code>
+        (False)
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        <code>
+         not
+        </code>
+        (2 &lt; 10)
+       </td>
+       <td style="text-align:center">
+        <code>
+         not
+        </code>
+        (True)
+       </td>
+       <td style="text-align:center">
+        False
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        <code>
+         not
+        </code>
+        (False)
+       </td>
+       <td style="text-align:center">
+        <code>
+         not
+        </code>
+        (False)
+       </td>
+       <td style="text-align:center">
+        True
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="2.7.3.1-Ejemplo-con-operador-lógico-not">
+     2.7.3.1 Ejemplo con operador lógico
+     <code>
+      not
+     </code>
+     <a class="anchor-link" href="#2.7.3.1-Ejemplo-con-operador-lógico-not">
+      ¶
+     </a>
+    </h3>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [10]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
   
 <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="p">:</span> <span class="c1">#Invierto el valor booleano que da 10</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor booleane es True&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"El valor booleane es True"</span><span class="p">)</span> 
     
 <span class="n">residuo_3</span> <span class="o">=</span> <span class="n">a</span><span class="o">%</span><span class="k">3</span>
 <span class="n">residuo_5</span> <span class="o">=</span> <span class="n">a</span><span class="o">%</span><span class="k">5</span>
@@ -14681,55 +15094,52 @@ B y C NO no son mayores que 0
 <span class="nb">print</span><span class="p">(</span><span class="n">residuo_5</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span> <span class="n">residuo_3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">residuo_5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10 no es divisible entre 3 o 5&quot;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"10 no es divisible entre 3 o 5"</span><span class="p">)</span> 
 <span class="k">else</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10 es divisible entre 3 or 5&quot;</span><span class="p">)</span> 
-</pre></div>
-
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"10 es divisible entre 3 or 5"</span><span class="p">)</span> 
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>1
 0
 10 es divisible entre 3 or 5
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<p>Realizado por Docente: <a href="https://www.alejandro-leyva.com/">Alejandro Leyva</a></p>
-<p><a href="https://mecatronica85.com/">Mecatrónica 85</a></p>
-<p><a href="https://www.facebook.com/mecatronica85">fb/mecatronica85</a></p>
-
-</div>
-</div>
-</body>
-
-
-
-
-
-
-
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
+    <p>
+     Realizado por Docente:
+     <a href="https://www.alejandro-leyva.com/">
+      Alejandro Leyva
+     </a>
+    </p>
+    <p>
+     <a href="https://mecatronica85.com/">
+      Mecatrónica 85
+     </a>
+    </p>
+    <p>
+     <a href="https://www.facebook.com/mecatronica85">
+      fb/mecatronica85
+     </a>
+    </p>
+   </div>
+  </div>
+ </body>
 </html>

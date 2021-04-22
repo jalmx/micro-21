@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script>
-(function() {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Notebook
+  </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js">
+  </script>
+  <script>
+   (function() {
   function addWidgetsRenderer() {
     var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
     var scriptElement = document.createElement('script');
@@ -26,13 +31,9 @@
 
   document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
 }());
-</script>
-
-
-
-
-<style type="text/css">
-    pre { line-height: 125%; }
+  </script>
+  <style type="text/css">
+   pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -80,11 +81,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-
-
-
-<style type="text/css">
-/*-----------------------------------------------------------------------------
+  <style type="text/css">
+   /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
@@ -13819,11 +13817,9 @@ body.lm-mod-override-cursor .jp-OutputArea-output.jp-mod-isolated:before {
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
-
-</style>
-
-    <style type="text/css">
-/*-----------------------------------------------------------------------------
+  </style>
+  <style type="text/css">
+   /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
@@ -14211,10 +14207,9 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-icon-contrast-color2: var(--md-pink-600);
   --jp-icon-contrast-color3: var(--md-blue-600);
 }
-</style>
-
-<style type="text/css">
-a.anchor-link {
+  </style>
+  <style type="text/css">
+   a.anchor-link {
    display: none;
 }
 .highlight  {
@@ -14235,15 +14230,13 @@ a.anchor-link {
     margin: 0;
   }
 }
-</style>
-
-
-
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    init_mathjax = function() {
+  </style>
+  <!-- Load mathjax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe">
+  </script>
+  <!-- MathJax configuration -->
+  <script type="text/x-mathjax-config">
+   init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
             MathJax.Hub.Config({
@@ -14276,143 +14269,296 @@ a.anchor-link {
         }
     }
     init_mathjax();
-    </script>
-    <!-- End of mathjax configuration --></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../logo/banner.png" alt="banner"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="2.3-Concatenaci&#243;n-de-Strings">2.3 Concatenaci&#243;n de Strings<a class="anchor-link" href="#2.3-Concatenaci&#243;n-de-Strings">&#182;</a></h1><p>La concatenación es el poder agrupar, juntar, unir, fusionar, pegar cadenas de caracteres, es decir, "sumar" varios string para formar uno solo.</p>
-<p>La concatenación es realiza con el símbolo del signo más <code>+</code>.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.3.1-Concatenando-con-+">2.3.1 Concatenando con <code>+</code><a class="anchor-link" href="#2.3.1-Concatenando-con-+">&#182;</a></h2><p>Tenemos variables tipo <code>str</code> en donde guardamos texto.</p>
-<p><strong>Ejemplo</strong></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;La mejor especialidad es: &quot;</span>
-<span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Mecatronica&quot;</span>
+  </script>
+  <!-- End of mathjax configuration -->
+ </head>
+ <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <img alt="banner" src="./img/banner.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h1 id="2.3-Concatenación-de-Strings">
+     2.3 Concatenación de Strings
+     <a class="anchor-link" href="#2.3-Concatenación-de-Strings">
+      ¶
+     </a>
+    </h1>
+    <p>
+     La concatenación es el poder agrupar, juntar, unir, fusionar, pegar cadenas de caracteres, es decir, "sumar" varios string para formar uno solo.
+    </p>
+    <p>
+     La concatenación es realiza con el símbolo del signo más
+     <code>
+      +
+     </code>
+     .
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.3.1-Concatenando-con-+">
+     2.3.1 Concatenando con
+     <code>
+      +
+     </code>
+     <a class="anchor-link" href="#2.3.1-Concatenando-con-+">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Tenemos variables tipo
+     <code>
+      str
+     </code>
+     en donde guardamos texto.
+    </p>
+    <p>
+     <strong>
+      Ejemplo
+     </strong>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [ ]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">"La mejor especialidad es: "</span>
+<span class="n">nombre</span> <span class="o">=</span> <span class="s2">"Mecatronica"</span>
 
 <span class="n">frase_completa</span> <span class="o">=</span> <span class="n">frase</span> <span class="o">+</span> <span class="n">nombre</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">frase</span> <span class="o">+</span> <span class="n">nombre</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">frase_completa</span><span class="p">)</span>
-</pre></div>
-
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.3.2-Funci&#243;n-str()">2.3.2 Funci&#243;n <code>str()</code><a class="anchor-link" href="#2.3.2-Funci&#243;n-str()">&#182;</a></h2><p>En la concatenación básica solo se pueden concatenar tipos <code>str</code>, por lo tanto, si necesitamos hacer un paso previo para que el tipo de dato que no sea <code>str</code> se convierta a este tipo. Para ello contamos con función <code>str()</code> la cual realiza ese trabajo.</p>
-<p>La sintaxis es:</p>
-<div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-</pre></div>
-<p><strong>Parámetros:</strong></p>
-<ul>
-<li><code>object   Cualquier tipo de objeto</code></li>
-<li><code>encoding El encoding del objeto. Por default es UTF-8</code></li>
-<li><code>errors   Especifica que si hay un error en el encoding, que debe hacer</code></li>
-<li><code>return: Regresa el dato en tipo str : (str)</code></li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Entonces, si tenemos un tipo <code>int</code>, <code>float</code> o <code>boolean</code> primero debemos convertirlos a tipo <code>str</code>.</p>
-<p><strong>Ejemplo:</strong></p>
-<div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;Mi edad es: &quot;</span>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.3.2-Función-str()">
+     2.3.2 Función
+     <code>
+      str()
+     </code>
+     <a class="anchor-link" href="#2.3.2-Función-str()">
+      ¶
+     </a>
+    </h2>
+    <p>
+     En la concatenación básica solo se pueden concatenar tipos
+     <code>
+      str
+     </code>
+     , por lo tanto, si necesitamos hacer un paso previo para que el tipo de dato que no sea
+     <code>
+      str
+     </code>
+     se convierta a este tipo. Para ello contamos con función
+     <code>
+      str()
+     </code>
+     la cual realiza ese trabajo.
+    </p>
+    <p>
+     La sintaxis es:
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="nb">str</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
+</pre>
+    </div>
+    <p>
+     <strong>
+      Parámetros:
+     </strong>
+    </p>
+    <ul>
+     <li>
+      <code>
+       object   Cualquier tipo de objeto
+      </code>
+     </li>
+     <li>
+      <code>
+       encoding El encoding del objeto. Por default es UTF-8
+      </code>
+     </li>
+     <li>
+      <code>
+       errors   Especifica que si hay un error en el encoding, que debe hacer
+      </code>
+     </li>
+     <li>
+      <code>
+       return: Regresa el dato en tipo str : (str)
+      </code>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Entonces, si tenemos un tipo
+     <code>
+      int
+     </code>
+     ,
+     <code>
+      float
+     </code>
+     o
+     <code>
+      boolean
+     </code>
+     primero debemos convertirlos a tipo
+     <code>
+      str
+     </code>
+     .
+    </p>
+    <p>
+     <strong>
+      Ejemplo:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">"Mi edad es: "</span>
 <span class="n">edad</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">edad_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">frase</span> <span class="o">+</span> <span class="n">edad</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.3.3-Concatenando-otros-tipos-de-datos.">2.3.3 Concatenando otros tipos de datos.<a class="anchor-link" href="#2.3.3-Concatenando-otros-tipos-de-datos.">&#182;</a></h2><p>Si queremos hacer una concatenación directa entre un tipo <code>str</code> y otro tipo de dato, nos saldrá un error de tipo, indicando que no se puede concatenar <code>str</code> con alguno otro tipo. 
-Como se muestra a continuación:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mi edad es: &quot;</span> <span class="o">+</span> <span class="mi">25</span><span class="p">)</span>
-</pre></div>
-
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.3.3-Concatenando-otros-tipos-de-datos.">
+     2.3.3 Concatenando otros tipos de datos.
+     <a class="anchor-link" href="#2.3.3-Concatenando-otros-tipos-de-datos.">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Si queremos hacer una concatenación directa entre un tipo
+     <code>
+      str
+     </code>
+     y otro tipo de dato, nos saldrá un error de tipo, indicando que no se puede concatenar
+     <code>
+      str
+     </code>
+     con alguno otro tipo. 
+Como se muestra a continuación:
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [ ]:
      </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Por lo tanto, debemos hacer esa conversión previa a la concatenación. 
-Existen dos formas, tomamos el valor, realizamos la conversión y se guarda en otra variable o la forma directa.</p>
-<p><strong>Ejemplo:</strong></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Por partes</span>
-<span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;Mi edad es: &quot;</span>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Mi edad es: "</span> <span class="o">+</span> <span class="mi">25</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Por lo tanto, debemos hacer esa conversión previa a la concatenación. 
+Existen dos formas, tomamos el valor, realizamos la conversión y se guarda en otra variable o la forma directa.
+    </p>
+    <p>
+     <strong>
+      Ejemplo:
+     </strong>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [ ]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1">#Por partes</span>
+<span class="n">frase</span> <span class="o">=</span> <span class="s2">"Mi edad es: "</span>
 <span class="n">edad</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">edad_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">frase</span> <span class="o">+</span> <span class="n">edad_str</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mi edad es: &quot;</span> <span class="o">+</span> <span class="n">edad_str</span><span class="p">)</span>
-</pre></div>
-
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Mi edad es: "</span> <span class="o">+</span> <span class="n">edad_str</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Vamos a realizar una combinación básica entre los tipos de datos básicos</em></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Declaro las variables</span>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <em>
+      Vamos a realizar una combinación básica entre los tipos de datos básicos
+     </em>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [ ]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Declaro las variables</span>
 <span class="n">edad</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">altura</span> <span class="o">=</span> <span class="mf">1.68</span>
-<span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Alejandro&quot;</span>
+<span class="n">nombre</span> <span class="o">=</span> <span class="s2">"Alejandro"</span>
 <span class="n">casado</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="c1">#Las convierto a tipo str</span>
@@ -14421,615 +14567,865 @@ Existen dos formas, tomamos el valor, realizamos la conversión y se guarda en o
 <span class="n">altura_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">altura</span><span class="p">)</span>
 <span class="n">casado_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">casado</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mi nombre es &quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s2">&quot;, mi edad es de &quot;</span> <span class="o">+</span> <span class="n">edad_str</span> <span class="o">+</span> <span class="s2">&quot; anios,&quot;</span> <span class="o">+</span> <span class="s2">&quot;tengo una altura de &quot;</span> <span class="o">+</span> 
-      <span class="n">altura_str</span> <span class="o">+</span> <span class="s2">&quot; mi estado de casado es: &quot;</span> <span class="o">+</span> <span class="n">casado_str</span> <span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Mi nombre es "</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s2">", mi edad es de "</span> <span class="o">+</span> <span class="n">edad_str</span> <span class="o">+</span> <span class="s2">" anios,"</span> <span class="o">+</span> <span class="s2">"tengo una altura de "</span> <span class="o">+</span> 
+      <span class="n">altura_str</span> <span class="o">+</span> <span class="s2">" mi estado de casado es: "</span> <span class="o">+</span> <span class="n">casado_str</span> <span class="p">)</span> 
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mi nombre es &quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s2">&quot;, mi edad es de &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; anios,&quot;</span> <span class="o">+</span> <span class="s2">&quot;tengo una altura de &quot;</span> <span class="o">+</span> 
-      <span class="nb">str</span><span class="p">(</span><span class="n">altura</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; mi estado de casado es: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">casado</span><span class="p">))</span>
-</pre></div>
-
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Mi nombre es "</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s2">", mi edad es de "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" anios,"</span> <span class="o">+</span> <span class="s2">"tengo una altura de "</span> <span class="o">+</span> 
+      <span class="nb">str</span><span class="p">(</span><span class="n">altura</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" mi estado de casado es: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">casado</span><span class="p">))</span>
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.3.4-Secuencias-de-espace">2.3.4 Secuencias de espace<a class="anchor-link" href="#2.3.4-Secuencias-de-espace">&#182;</a></h2><p>Las secuencias de espace son caracteres especiales para darle formato a las cadenas de texto (Strings).</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Nombre</th>
-<th style="text-align:center">Simbolo</th>
-<th style="text-align:center">Secuencia de escape</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Backslash</td>
-<td style="text-align:center">| <code>\\</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Comilla simple</td>
-<td style="text-align:center">\'</td>
-<td style="text-align:center"><code>\'</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Comilla doble</td>
-<td style="text-align:center">\"</td>
-<td style="text-align:center"><code>\"</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Bell</td>
-<td style="text-align:center">(sonido)</td>
-<td style="text-align:center"><code>\a</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Retroceso</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"><code>\b</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Nueva línea</td>
-<td style="text-align:center">(enter)</td>
-<td style="text-align:center"><code>\n</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Carriage return</td>
-<td style="text-align:center">\r</td>
-<td style="text-align:center"><code>\r</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Tab horizontal</td>
-<td style="text-align:center">tab</td>
-<td style="text-align:center"><code>\t</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Tab vertical</td>
-<td style="text-align:center">tab vertical</td>
-<td style="text-align:center"><code>\v</code></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Salto-de-l&#237;nea-\n">Salto de l&#237;nea <code>\n</code><a class="anchor-link" href="#Salto-de-l&#237;nea-\n">&#182;</a></h4><p>Cuando queremos que el texto tenga un salto de línea (enter), tenemos la secuencia <code>\n</code>.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mensaje</span> <span class="o">=</span> <span class="s2">&quot;Hola</span><span class="se">\n</span><span class="s2">Texto en siguiente linea</span><span class="se">\n</span><span class="s2">la siguiente linea&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">+</span><span class="n">mensaje</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.3.4-Secuencias-de-espace">
+     2.3.4 Secuencias de espace
+     <a class="anchor-link" href="#2.3.4-Secuencias-de-espace">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Las secuencias de espace son caracteres especiales para darle formato a las cadenas de texto (Strings).
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:left">
+        Nombre
+       </th>
+       <th style="text-align:center">
+        Simbolo
+       </th>
+       <th style="text-align:center">
+        Secuencia de escape
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:left">
+        Backslash
+       </td>
+       <td style="text-align:center">
+        |
+        <code>
+         \\
+        </code>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Comilla simple
+       </td>
+       <td style="text-align:center">
+        \'
+       </td>
+       <td style="text-align:center">
+        <code>
+         \'
+        </code>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Comilla doble
+       </td>
+       <td style="text-align:center">
+        \"
+       </td>
+       <td style="text-align:center">
+        <code>
+         \"
+        </code>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Bell
+       </td>
+       <td style="text-align:center">
+        (sonido)
+       </td>
+       <td style="text-align:center">
+        <code>
+         \a
+        </code>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Retroceso
+       </td>
+       <td style="text-align:center">
+       </td>
+       <td style="text-align:center">
+        <code>
+         \b
+        </code>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Nueva línea
+       </td>
+       <td style="text-align:center">
+        (enter)
+       </td>
+       <td style="text-align:center">
+        <code>
+         \n
+        </code>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Carriage return
+       </td>
+       <td style="text-align:center">
+        \r
+       </td>
+       <td style="text-align:center">
+        <code>
+         \r
+        </code>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Tab horizontal
+       </td>
+       <td style="text-align:center">
+        tab
+       </td>
+       <td style="text-align:center">
+        <code>
+         \t
+        </code>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Tab vertical
+       </td>
+       <td style="text-align:center">
+        tab vertical
+       </td>
+       <td style="text-align:center">
+        <code>
+         \v
+        </code>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h4 id="Salto-de-línea-\n">
+     Salto de línea
+     <code>
+      \n
+     </code>
+     <a class="anchor-link" href="#Salto-de-línea-\n">
+      ¶
+     </a>
+    </h4>
+    <p>
+     Cuando queremos que el texto tenga un salto de línea (enter), tenemos la secuencia
+     <code>
+      \n
+     </code>
+     .
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [5]:
      </div>
-</div>
-</div>
-</div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">mensaje</span> <span class="o">=</span> <span class="s2">"Hola</span><span class="se">\n</span><span class="s2">Texto en siguiente linea</span><span class="se">\n</span><span class="s2">la siguiente linea"</span>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">+</span><span class="n">mensaje</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>
 Hola
 Texto en siguiente linea
 la siguiente linea
 
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Tabulaci&#243;n">Tabulaci&#243;n<a class="anchor-link" href="#Tabulaci&#243;n">&#182;</a></h4><p>En ocasiones queremos tabular (sangría) nuestro texto para darle un acomodo se aplica <code>\t</code></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mensaje</span> <span class="o">=</span> <span class="s2">&quot;Columa 1</span><span class="se">\t</span><span class="s2">Columna2</span><span class="se">\t</span><span class="s2">Columna 3</span><span class="se">\n</span><span class="s2">Columa 1</span><span class="se">\t</span><span class="s2">Columna2</span><span class="se">\t</span><span class="s2">Columna 3&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mensaje</span><span class="p">)</span>
-</pre></div>
-
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Columa 1	Columna2	Columna 3
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h4 id="Tabulación">
+     Tabulación
+     <a class="anchor-link" href="#Tabulación">
+      ¶
+     </a>
+    </h4>
+    <p>
+     En ocasiones queremos tabular (sangría) nuestro texto para darle un acomodo se aplica
+     <code>
+      \t
+     </code>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [6]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">mensaje</span> <span class="o">=</span> <span class="s2">"Columa 1</span><span class="se">\t</span><span class="s2">Columna2</span><span class="se">\t</span><span class="s2">Columna 3</span><span class="se">\n</span><span class="s2">Columa 1</span><span class="se">\t</span><span class="s2">Columna2</span><span class="se">\t</span><span class="s2">Columna 3"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mensaje</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Columa 1	Columna2	Columna 3
 Columa 1	Columna2	Columna 3
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Comillas">Comillas<a class="anchor-link" href="#Comillas">&#182;</a></h4><p>En python nos da una ventaja con respecto al uso de comillas simples y dobles por default.
-Recordando que se pueden escribir Strings <code>str</code> con <code>"</code> y <code>'</code>. Pero vamos a ver la diferencia si queremos utilizar las comillas ya sean simple o doble dentro del mensaje que queremos transmitir; al igual la equivalencia de las secuencias de escape <code>\'</code> y <code>\"</code>.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Si que queremos usar las comillas simples en un string sin utilizar la secuencia de escape, debemos usar </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h4 id="Comillas">
+     Comillas
+     <a class="anchor-link" href="#Comillas">
+      ¶
+     </a>
+    </h4>
+    <p>
+     En python nos da una ventaja con respecto al uso de comillas simples y dobles por default.
+Recordando que se pueden escribir Strings
+     <code>
+      str
+     </code>
+     con
+     <code>
+      "
+     </code>
+     y
+     <code>
+      '
+     </code>
+     . Pero vamos a ver la diferencia si queremos utilizar las comillas ya sean simple o doble dentro del mensaje que queremos transmitir; al igual la equivalencia de las secuencias de escape
+     <code>
+      \'
+     </code>
+     y
+     <code>
+      \"
+     </code>
+     .
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [10]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Si que queremos usar las comillas simples en un string sin utilizar la secuencia de escape, debemos usar </span>
 <span class="c1"># la comilla doble para generar dicho string</span>
 
-<span class="n">mensajeDobleComilla</span> <span class="o">=</span> <span class="s2">&quot;hola &#39;este texto esta en comilla simple&#39; , texto fuera de la comilla&quot;</span>
-<span class="n">mensajeComillaSimple</span> <span class="o">=</span> <span class="s1">&#39;hola </span><span class="se">\&#39;</span><span class="s1">este texto esta en comilla simple</span><span class="se">\&#39;</span><span class="s1"> , texto fuera de la comilla &#39;</span>
+<span class="n">mensajeDobleComilla</span> <span class="o">=</span> <span class="s2">"hola 'este texto esta en comilla simple' , texto fuera de la comilla"</span>
+<span class="n">mensajeComillaSimple</span> <span class="o">=</span> <span class="s1">'hola </span><span class="se">\'</span><span class="s1">este texto esta en comilla simple</span><span class="se">\'</span><span class="s1"> , texto fuera de la comilla '</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">mensajeDobleComilla</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mensajeComillaSimple</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>hola &#39;este texto esta en comilla simple&#39; , texto fuera de la comilla
-hola &#39;este texto esta en comilla simple&#39; , texto fuera de la comilla 
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Si que queremos usar doble comilla en un string sin utilizar la secuencia de escape, debemos usar </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>hola 'este texto esta en comilla simple' , texto fuera de la comilla
+hola 'este texto esta en comilla simple' , texto fuera de la comilla 
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [8]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Si que queremos usar doble comilla en un string sin utilizar la secuencia de escape, debemos usar </span>
 <span class="c1"># la comilla simple para generar dicho string</span>
 
-<span class="n">mensajeComillaSimple</span> <span class="o">=</span> <span class="s1">&#39;hola &quot;este texto esta en doble comilla&quot; texto fuera de la comilla &#39;</span>
-<span class="n">mensajeDobleComilla</span> <span class="o">=</span> <span class="s2">&quot;hola </span><span class="se">\&quot;</span><span class="s2">este texto esta en comilla simple</span><span class="se">\&quot;</span><span class="s2"> , texto fuera de la comilla&quot;</span>
+<span class="n">mensajeComillaSimple</span> <span class="o">=</span> <span class="s1">'hola "este texto esta en doble comilla" texto fuera de la comilla '</span>
+<span class="n">mensajeDobleComilla</span> <span class="o">=</span> <span class="s2">"hola </span><span class="se">\"</span><span class="s2">este texto esta en comilla simple</span><span class="se">\"</span><span class="s2"> , texto fuera de la comilla"</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">mensajeDobleComilla</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mensajeComillaSimple</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>hola &#34;este texto esta en comilla simple&#34; , texto fuera de la comilla
-hola &#34;este texto esta en doble comilla&#34; texto fuera de la comilla 
 </pre>
-</div>
-</div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>hola "este texto esta en comilla simple" , texto fuera de la comilla
+hola "este texto esta en doble comilla" texto fuera de la comilla 
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h4 id="Slash">
+     Slash
+     <a class="anchor-link" href="#Slash">
+      ¶
+     </a>
+    </h4>
+    <p>
+     En ocasiones necesitamos utilizar la diagonal (slash) en un texto, para esto existe la secuencia de escape slasj doble
+     <code>
+      \\
+     </code>
+     .
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [13]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Utilizando slash en un texto, por ejemplo para rutas dentro de un string</span>
 
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Slash">Slash<a class="anchor-link" href="#Slash">&#182;</a></h4><p>En ocasiones necesitamos utilizar la diagonal (slash) en un texto, para esto existe la secuencia de escape slasj doble <code>\\</code>.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Utilizando slash en un texto, por ejemplo para rutas dentro de un string</span>
-
-<span class="n">mensaje</span> <span class="o">=</span> <span class="s1">&#39;ruta</span><span class="se">\\</span><span class="s1">carperta1</span><span class="se">\\</span><span class="s1">carperta2</span><span class="se">\\</span><span class="s1">archivo&#39;</span>
+<span class="n">mensaje</span> <span class="o">=</span> <span class="s1">'ruta</span><span class="se">\\</span><span class="s1">carperta1</span><span class="se">\\</span><span class="s1">carperta2</span><span class="se">\\</span><span class="s1">archivo'</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">mensaje</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>ruta\carperta1\carperta2\archivo
 </pre>
-</div>
-</div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>ruta\carperta1\carperta2\archivo
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.3.5-Formateo-de-Strings---funcion-format()">
+     2.3.5 Formateo de Strings - funcion
+     <code>
+      format()
+     </code>
+     <a class="anchor-link" href="#2.3.5-Formateo-de-Strings---funcion-format()">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Los
+     <code>
+      str
+     </code>
+     tienen una propiedad llamada
+     <code>
+      format()
+     </code>
+     con la cual podemos concatenar variables, se tienen en varias formas para realizar la concatenacion con este metodo. Retorna el
+     <code>
+      str
+     </code>
+     con el formato indicado. Las variables se colocaran automaticamente en la llaves.
+    </p>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="s1">'string </span><span class="si">{}</span><span class="s1"> ... </span><span class="si">{}</span><span class="s1"> ... '</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">variable1</span><span class="p">,</span> <span class="n">variable2</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
 
-</div>
+<span class="s1">'string </span><span class="si">{0}</span><span class="s1"> ... </span><span class="si">{1}</span><span class="s1"> ... '</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">variable1</span><span class="p">,</span> <span class="n">variable2</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
 
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.3.5-Formateo-de-Strings---funcion-format()">2.3.5 Formateo de Strings - funcion <code>format()</code><a class="anchor-link" href="#2.3.5-Formateo-de-Strings---funcion-format()">&#182;</a></h2><p>Los <code>str</code> tienen una propiedad llamada <code>format()</code> con la cual podemos concatenar variables, se tienen en varias formas para realizar la concatenacion con este metodo. Retorna el <code>str</code> con el formato indicado. Las variables se colocaran automaticamente en la llaves.</p>
-<p><strong>Sintaxis:</strong></p>
-<div class="highlight"><pre><span></span><span class="s1">&#39;string </span><span class="si">{}</span><span class="s1"> ... </span><span class="si">{}</span><span class="s1"> ... &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">variable1</span><span class="p">,</span> <span class="n">variable2</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
-
-<span class="s1">&#39;string </span><span class="si">{0}</span><span class="s1"> ... </span><span class="si">{1}</span><span class="s1"> ... &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">variable1</span><span class="p">,</span> <span class="n">variable2</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
-
-<span class="s1">&#39;string </span><span class="si">{variable1}</span><span class="s1"> ... </span><span class="si">{variable2}</span><span class="s1"> ... &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">variable1</span> <span class="o">=</span><span class="s2">&quot;hola&quot;</span><span class="p">,</span> <span class="n">variable2</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># La forma que es por default sin indicar nada, en el orden que los pasamos, seran asignados</span>
-<span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Alejandro&quot;</span>
+<span class="s1">'string </span><span class="si">{variable1}</span><span class="s1"> ... </span><span class="si">{variable2}</span><span class="s1"> ... '</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">variable1</span> <span class="o">=</span><span class="s2">"hola"</span><span class="p">,</span> <span class="n">variable2</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [18]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># La forma que es por default sin indicar nada, en el orden que los pasamos, seran asignados</span>
+<span class="n">nombre</span> <span class="o">=</span> <span class="s2">"Alejandro"</span>
 <span class="n">edad</span> <span class="o">=</span> <span class="mi">30</span>
 
-<span class="n">texto_default</span> <span class="o">=</span> <span class="s2">&quot;Mi nombre es </span><span class="si">{}</span><span class="s2"> y tengo </span><span class="si">{}</span><span class="s2"> anios de edad&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">edad</span><span class="p">)</span>
+<span class="n">texto_default</span> <span class="o">=</span> <span class="s2">"Mi nombre es </span><span class="si">{}</span><span class="s2"> y tengo </span><span class="si">{}</span><span class="s2"> anios de edad"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">edad</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">texto_default</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Mi nombre es Alejandro y tengo 30 anios de edad
 </pre>
-</div>
-</div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Mi nombre es Alejandro y tengo 30 anios de edad
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [21]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Formato indicando la varible en las llaves, esto sirve para cambiar el orden</span>
 
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Formato indicando la varible en las llaves, esto sirve para cambiar el orden</span>
-
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;Rojo&quot;</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">"Rojo"</span>
 <span class="n">numero</span> <span class="o">=</span> <span class="mi">3</span>
 
-<span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;El numero &#39;</span><span class="si">{1}</span><span class="s2">&#39; corresponde al color &#39;</span><span class="si">{0}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">numero</span><span class="p">)</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="s2">"El numero '</span><span class="si">{1}</span><span class="s2">' corresponde al color '</span><span class="si">{0}</span><span class="s2">'"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">numero</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>El numero &#39;3&#39; corresponde al color &#39;Rojo&#39;
 </pre>
-</div>
-</div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>El numero '3' corresponde al color 'Rojo'
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [ ]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Indicando el nombre de la variable </span>
 
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Indicando el nombre de la variable </span>
-
-<span class="n">texto_variables</span> <span class="o">=</span> <span class="s2">&quot;Mi nombre es </span><span class="si">{nombre}</span><span class="s2"> tengo </span><span class="si">{edad}</span><span class="s2"> anios&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;Alejandro&quot;</span><span class="p">,</span> <span class="n">edad</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">texto_variables</span> <span class="o">=</span> <span class="s2">"Mi nombre es </span><span class="si">{nombre}</span><span class="s2"> tengo </span><span class="si">{edad}</span><span class="s2"> anios"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s2">"Alejandro"</span><span class="p">,</span> <span class="n">edad</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">texto_variables</span><span class="p">)</span>
-</pre></div>
-
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="2.3.5.1-Formato-para-numeros-y-la-precision">2.3.5.1 Formato para numeros y la precision<a class="anchor-link" href="#2.3.5.1-Formato-para-numeros-y-la-precision">&#182;</a></h4><p>En muchas ocasiones queremos imprimir un valor numerico pero con cierta cantidad decimales, con la funcion <code>format()</code> nos da un formato para especificar como queremos la salida.</p>
-<p>Debemos marcar una sintaxis especial que sigue el siguiente formato, principalmente es para valores flotantes:</p>
-<p><strong>Sintaxis:</strong></p>
-
-<pre><code>[index]:[width].[precision][type]</code></pre>
-<p><strong>Tipos:</strong></p>
-<ul>
-<li><code>d</code> para enteros</li>
-<li><code>f</code> para flotantes</li>
-<li><code>b</code> para numeros binarios</li>
-<li><code>o</code> para numeros octal</li>
-<li><code>x</code> para numeros hexadecimal</li>
-<li><code>s</code> para strings</li>
-<li><code>e</code> para flotante en formato exponente </li>
-</ul>
-<p><strong>Aplicado:</strong></p>
-<div class="highlight"><pre><span></span><span class="s2">&quot;El precio es </span><span class="si">{0:1.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">25.365894</span><span class="p">)</span> <span class="c1">#es la primera posicion [0]</span>
-</pre></div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#es la primera posicion [0], parte entera como minimo un valor, con 2 decimales y tomarlo como tipo flotante</span>
-<span class="n">valor1</span> <span class="o">=</span> <span class="s2">&quot;El precio es </span><span class="si">{0:1.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">.</span><span class="mi">365894</span><span class="p">)</span>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h4 id="2.3.5.1-Formato-para-numeros-y-la-precision">
+     2.3.5.1 Formato para numeros y la precision
+     <a class="anchor-link" href="#2.3.5.1-Formato-para-numeros-y-la-precision">
+      ¶
+     </a>
+    </h4>
+    <p>
+     En muchas ocasiones queremos imprimir un valor numerico pero con cierta cantidad decimales, con la funcion
+     <code>
+      format()
+     </code>
+     nos da un formato para especificar como queremos la salida.
+    </p>
+    <p>
+     Debemos marcar una sintaxis especial que sigue el siguiente formato, principalmente es para valores flotantes:
+    </p>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <pre><code>[index]:[width].[precision][type]</code></pre>
+    <p>
+     <strong>
+      Tipos:
+     </strong>
+    </p>
+    <ul>
+     <li>
+      <code>
+       d
+      </code>
+      para enteros
+     </li>
+     <li>
+      <code>
+       f
+      </code>
+      para flotantes
+     </li>
+     <li>
+      <code>
+       b
+      </code>
+      para numeros binarios
+     </li>
+     <li>
+      <code>
+       o
+      </code>
+      para numeros octal
+     </li>
+     <li>
+      <code>
+       x
+      </code>
+      para numeros hexadecimal
+     </li>
+     <li>
+      <code>
+       s
+      </code>
+      para strings
+     </li>
+     <li>
+      <code>
+       e
+      </code>
+      para flotante en formato exponente
+     </li>
+    </ul>
+    <p>
+     <strong>
+      Aplicado:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="s2">"El precio es </span><span class="si">{0:1.2f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">25.365894</span><span class="p">)</span> <span class="c1">#es la primera posicion [0]</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [27]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1">#es la primera posicion [0], parte entera como minimo un valor, con 2 decimales y tomarlo como tipo flotante</span>
+<span class="n">valor1</span> <span class="o">=</span> <span class="s2">"El precio es </span><span class="si">{0:1.2f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">.</span><span class="mi">365894</span><span class="p">)</span>
 
 <span class="c1"># los valores enteros no es necesario indicar la parte decimal, solo se indica la posicion</span>
-<span class="n">valor2</span> <span class="o">=</span> <span class="s2">&quot;La calificacion final es </span><span class="si">{0:1.2f}</span><span class="s2"> de </span><span class="si">{1:1d}</span><span class="s2"> parciales&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">8.369</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">valor2</span> <span class="o">=</span> <span class="s2">"La calificacion final es </span><span class="si">{0:1.2f}</span><span class="s2"> de </span><span class="si">{1:1d}</span><span class="s2"> parciales"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">8.369</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">valor1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">valor2</span><span class="p">)</span>
-</pre></div>
-
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>El precio es 0.37
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>El precio es 0.37
 La calificacion final es 8.37 de 3 parciales
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">valor1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Dar valor 1: &#39;</span><span class="p">))</span>
-<span class="n">valor2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Dar valor 2: &#39;</span><span class="p">))</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [31]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">valor1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'Dar valor 1: '</span><span class="p">))</span>
+<span class="n">valor2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'Dar valor 2: '</span><span class="p">))</span>
 
 <span class="n">suma</span> <span class="o">=</span> <span class="n">valor1</span> <span class="o">+</span> <span class="n">valor2</span>
 
-<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;El resultado es </span><span class="si">{0:1.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">suma</span><span class="p">))</span>
-</pre></div>
-
+<span class="nb">print</span><span class="p">(</span> <span class="s1">'El resultado es </span><span class="si">{0:1.3f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">suma</span><span class="p">))</span>
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Dar valor 1: 2.15665165156156
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Dar valor 1: 2.15665165156156
 Dar valor 2: 6.685216568
 El resultado es 8.84
 </pre>
-</div>
-</div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.3.6-f'String'">
+     2.3.6
+     <code>
+      f'String'
+     </code>
+     <a class="anchor-link" href="#2.3.6-f'String'">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Actualmente se tiene una nueva forma para crear strings de forma mas sencilla y dar formato.
+    </p>
+    <p>
+     <strong>
+      Esta es la forma mas actual que se usa.
+     </strong>
+    </p>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="n">cantidad</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">"verde"</span>
 
-</div>
+<span class="sa">f</span><span class="s1">'El numero de autos es </span><span class="si">{</span><span class="n">cantidad</span><span class="si">}</span><span class="s1"> y todos son color </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">'</span>
+<span class="sa">f</span><span class="s2">"El numero de autos es </span><span class="si">{</span><span class="n">cantidad</span><span class="si">}</span><span class="s2"> y todos son color </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">"</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [ ]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">cantidad</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">"verde"</span>
 
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.3.6-f'String'">2.3.6 <code>f'String'</code><a class="anchor-link" href="#2.3.6-f'String'">&#182;</a></h2><p>Actualmente se tiene una nueva forma para crear strings de forma mas sencilla y dar formato.</p>
-<p><strong>Esta es la forma mas actual que se usa.</strong></p>
-<p><strong>Sintaxis:</strong></p>
-<div class="highlight"><pre><span></span><span class="n">cantidad</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;verde&quot;</span>
-
-<span class="sa">f</span><span class="s1">&#39;El numero de autos es </span><span class="si">{</span><span class="n">cantidad</span><span class="si">}</span><span class="s1"> y todos son color </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&#39;</span>
-<span class="sa">f</span><span class="s2">&quot;El numero de autos es </span><span class="si">{</span><span class="n">cantidad</span><span class="si">}</span><span class="s2"> y todos son color </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">&quot;</span>
-</pre></div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cantidad</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;verde&quot;</span>
-
-<span class="n">mensaje1</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;El numero de autos es </span><span class="si">{</span><span class="n">cantidad</span><span class="si">}</span><span class="s1"> y todos son color </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">&#39;</span>
-<span class="n">mensaje2</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;El numero de autos es </span><span class="si">{</span><span class="n">cantidad</span><span class="si">}</span><span class="s2"> y todos son color </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">mensaje1</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'El numero de autos es </span><span class="si">{</span><span class="n">cantidad</span><span class="si">}</span><span class="s1"> y todos son color </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">'</span>
+<span class="n">mensaje2</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"El numero de autos es </span><span class="si">{</span><span class="n">cantidad</span><span class="si">}</span><span class="s2"> y todos son color </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">"</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">mensaje1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mensaje2</span><span class="p">)</span>
-</pre></div>
-
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h4 id="2.3.6.1-Formato-a-numeros-con-f'string'">
+     2.3.6.1 Formato a numeros con
+     <code>
+      f'string'
+     </code>
+     <a class="anchor-link" href="#2.3.6.1-Formato-a-numeros-con-f'string'">
+      ¶
+     </a>
+    </h4>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <pre><code>{variable:{entero}.{decimal-1}}</code></pre>
+    <p>
+     <strong>
+      Aplicacion:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mf">3.141592</span>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="2.3.6.1-Formato-a-numeros-con-f'string'">2.3.6.1 Formato a numeros con <code>f'string'</code><a class="anchor-link" href="#2.3.6.1-Formato-a-numeros-con-f'string'">&#182;</a></h4><p><strong>Sintaxis:</strong></p>
-
-<pre><code>{variable:{entero}.{decimal-1}}</code></pre>
-<p><strong>Aplicacion:</strong></p>
-<div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mf">3.141592</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El valor de pi es: </span><span class="si">{</span><span class="n">num</span><span class="si">:{</span><span class="mi">1</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="mi">3</span><span class="si">}}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Es similar a la funcion format(), con respecto a la sintaxis, no es necesario indicar la posicion de la variable</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"El valor de pi es: </span><span class="si">{</span><span class="n">num</span><span class="si">:{</span><span class="mi">1</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="mi">3</span><span class="si">}}</span><span class="s2">"</span><span class="p">)</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [ ]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Es similar a la funcion format(), con respecto a la sintaxis, no es necesario indicar la posicion de la variable</span>
 <span class="c1"># los decimales es el valor menos 1</span>
 
 <span class="n">num</span> <span class="o">=</span> <span class="mf">3.14159</span>
-<span class="n">texto_formateado</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;El valor de pi es: </span><span class="si">{</span><span class="n">num</span><span class="si">:{</span><span class="mi">1</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="mi">3</span><span class="si">}}</span><span class="s2">&quot;</span> <span class="c1"># queremos 2 decimales</span>
+<span class="n">texto_formateado</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"El valor de pi es: </span><span class="si">{</span><span class="n">num</span><span class="si">:{</span><span class="mi">1</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="mi">3</span><span class="si">}}</span><span class="s2">"</span> <span class="c1"># queremos 2 decimales</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">texto_formateado</span><span class="p">)</span>
-</pre></div>
-
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<p>Realizado por Docente: <a href="https://www.alejandro-leyva.com/">Alejandro Leyva</a></p>
-<p><a href="https://mecatronica85.com/">Mecatrónica 85</a></p>
-<p><a href="https://www.facebook.com/mecatronica85">fb/mecatronica85</a></p>
-
-</div>
-</div>
-</body>
-
-
-
-
-
-
-<script type="application/vnd.jupyter.widget-state+json">
-{"state": {}, "version_major": 2, "version_minor": 0}
-</script>
-
-
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
+    <p>
+     Realizado por Docente:
+     <a href="https://www.alejandro-leyva.com/">
+      Alejandro Leyva
+     </a>
+    </p>
+    <p>
+     <a href="https://mecatronica85.com/">
+      Mecatrónica 85
+     </a>
+    </p>
+    <p>
+     <a href="https://www.facebook.com/mecatronica85">
+      fb/mecatronica85
+     </a>
+    </p>
+   </div>
+  </div>
+ </body>
+ <script type="application/vnd.jupyter.widget-state+json">
+  {"state": {}, "version_major": 2, "version_minor": 0}
+ </script>
 </html>

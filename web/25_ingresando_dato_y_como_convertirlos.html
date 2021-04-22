@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-
-
-
-
-<style type="text/css">
-    pre { line-height: 125%; }
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Notebook
+  </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js">
+  </script>
+  <style type="text/css">
+   pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -57,11 +57,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-
-
-
-<style type="text/css">
-/*-----------------------------------------------------------------------------
+  <style type="text/css">
+   /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
@@ -13796,11 +13793,9 @@ body.lm-mod-override-cursor .jp-OutputArea-output.jp-mod-isolated:before {
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
-
-</style>
-
-    <style type="text/css">
-/*-----------------------------------------------------------------------------
+  </style>
+  <style type="text/css">
+   /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
@@ -14188,10 +14183,9 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-icon-contrast-color2: var(--md-pink-600);
   --jp-icon-contrast-color3: var(--md-blue-600);
 }
-</style>
-
-<style type="text/css">
-a.anchor-link {
+  </style>
+  <style type="text/css">
+   a.anchor-link {
    display: none;
 }
 .highlight  {
@@ -14212,15 +14206,13 @@ a.anchor-link {
     margin: 0;
   }
 }
-</style>
-
-
-
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    init_mathjax = function() {
+  </style>
+  <!-- Load mathjax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe">
+  </script>
+  <!-- MathJax configuration -->
+  <script type="text/x-mathjax-config">
+   init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
             MathJax.Hub.Config({
@@ -14253,296 +14245,535 @@ a.anchor-link {
         }
     }
     init_mathjax();
-    </script>
-    <!-- End of mathjax configuration --></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../logo/banner.png" alt="banner"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="2.5-Ingresando-dato-y-c&#243;mo-convertirlos">2.5 Ingresando dato y c&#243;mo convertirlos<a class="anchor-link" href="#2.5-Ingresando-dato-y-c&#243;mo-convertirlos">&#182;</a></h1><h2 id="2.5.1-Funcion-input()">2.5.1 Funcion <code>input()</code><a class="anchor-link" href="#2.5.1-Funcion-input()">&#182;</a></h2><p>La función input sirve para leer datos desde teclado en la terminal.</p>
-<p><strong>Sintaxis:</strong></p>
-<div class="highlight"><pre><span></span><span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
-</pre></div>
-<p><strong>Parametros:</strong></p>
-<ul>
-<li><code>prompt (opcional): Es un string que se puede colocar para que aparezca antes del ingreso de datos</code></li>
-<li><code>return: Regresa el texto que ingresen desde terminal : (str)</code></li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Ejemplo:</strong></p>
-<p>Cuando queremos recibir datos del usuario debemos guardarla en una variable para posteriormente utilizarla. Recordemos que nos regresara esa información en tipo <code>str</code>.</p>
-<div class="highlight"><pre><span></span><span class="n">datos</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ingreso de datos&#39;</span><span class="p">)</span>
+  </script>
+  <!-- End of mathjax configuration -->
+ </head>
+ <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <img alt="banner" src="./img/banner.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h1 id="2.5-Ingresando-dato-y-cómo-convertirlos">
+     2.5 Ingresando dato y cómo convertirlos
+     <a class="anchor-link" href="#2.5-Ingresando-dato-y-cómo-convertirlos">
+      ¶
+     </a>
+    </h1>
+    <h2 id="2.5.1-Funcion-input()">
+     2.5.1 Funcion
+     <code>
+      input()
+     </code>
+     <a class="anchor-link" href="#2.5.1-Funcion-input()">
+      ¶
+     </a>
+    </h2>
+    <p>
+     La función input sirve para leer datos desde teclado en la terminal.
+    </p>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+</pre>
+    </div>
+    <p>
+     <strong>
+      Parametros:
+     </strong>
+    </p>
+    <ul>
+     <li>
+      <code>
+       prompt (opcional): Es un string que se puede colocar para que aparezca antes del ingreso de datos
+      </code>
+     </li>
+     <li>
+      <code>
+       return: Regresa el texto que ingresen desde terminal : (str)
+      </code>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo:
+     </strong>
+    </p>
+    <p>
+     Cuando queremos recibir datos del usuario debemos guardarla en una variable para posteriormente utilizarla. Recordemos que nos regresara esa información en tipo
+     <code>
+      str
+     </code>
+     .
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="n">datos</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [2]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Ingreso de datos'</span><span class="p">)</span>
 <span class="n">datos</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;impresion de datos&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'impresion de datos'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span>
-</pre></div>
-
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Ingreso de datos
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Ingreso de datos
 25
 impresion de datos
 25
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ahora si queremos que el usuario vea un mensaje y a continuación coloque los datos, debemos pasarle el valor para el argumento <code>prompt</code> entre los paréntesis.</p>
-<div class="highlight"><pre><span></span><span class="n">edad</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar la edad&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">edad</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar edad: &quot;</span><span class="p">)</span><span class="c1"># devuelve un str</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tu edad es: &quot;</span> <span class="o">+</span> <span class="n">edad</span><span class="p">)</span>
-</pre></div>
-
+      </div>
      </div>
-</div>
-</div>
-</div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Ahora si queremos que el usuario vea un mensaje y a continuación coloque los datos, debemos pasarle el valor para el argumento
+     <code>
+      prompt
+     </code>
+     entre los paréntesis.
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="n">edad</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Dar la edad"</span><span class="p">)</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [7]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">edad</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Dar edad: "</span><span class="p">)</span><span class="c1"># devuelve un str</span>
 
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Dar edad: 25
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Tu edad es: "</span> <span class="o">+</span> <span class="n">edad</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Dar edad: 25
 Tu edad es: 25
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="5.5.2-Funcion-int()">5.5.2 Funcion <code>int()</code><a class="anchor-link" href="#5.5.2-Funcion-int()">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>En muchas ocasiones puedes tener un <code>número entero</code> almacenado en una variable pero no exactamnete es tipo <code>número</code>. Entonces, en ese caso necesitamos que sea de tipo <code>int</code> para poder realizar operaciones con él. Para esos casos contamos con la función <code>int()</code></p>
-<p><strong>Sintaxis:</strong></p>
-<div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span>
-</pre></div>
-<p><strong>Parametros:</strong></p>
-<ul>
-<li><code>value: Un número o un string que puede ser convertido a número entero</code></li>
-<li><code>base (opcional) : El formato con el que representa el número. Default value: 10</code><ul>
-<li><code>base: 10 -&gt; decimal (Valor por default)</code>  </li>
-<li><code>base: 2 -&gt; binario</code></li>
-<li><code>base: 16 -&gt; hexadecimal</code></li>
-</ul>
-</li>
-<li><code>return: el valor en tipo int (decimal por default)</code></li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">decimal</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;100&quot;</span><span class="p">)</span>       <span class="c1"># el valor es decimal, por default lo toma así</span>
-<span class="n">binario</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;1010&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># el valor que pasamos esta en binario</span>
-<span class="n">hexadecimal</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;FF&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span> <span class="c1">#el valor que pasamos esta en hexadecimal</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="5.5.2-Funcion-int()">
+     5.5.2 Funcion
+     <code>
+      int()
+     </code>
+     <a class="anchor-link" href="#5.5.2-Funcion-int()">
+      ¶
+     </a>
+    </h2>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     En muchas ocasiones puedes tener un
+     <code>
+      número entero
+     </code>
+     almacenado en una variable pero no exactamnete es tipo
+     <code>
+      número
+     </code>
+     . Entonces, en ese caso necesitamos que sea de tipo
+     <code>
+      int
+     </code>
+     para poder realizar operaciones con él. Para esos casos contamos con la función
+     <code>
+      int()
+     </code>
+    </p>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span>
+</pre>
+    </div>
+    <p>
+     <strong>
+      Parametros:
+     </strong>
+    </p>
+    <ul>
+     <li>
+      <code>
+       value: Un número o un string que puede ser convertido a número entero
+      </code>
+     </li>
+     <li>
+      <code>
+       base (opcional) : El formato con el que representa el número. Default value: 10
+      </code>
+      <ul>
+       <li>
+        <code>
+         base: 10 -&gt; decimal (Valor por default)
+        </code>
+       </li>
+       <li>
+        <code>
+         base: 2 -&gt; binario
+        </code>
+       </li>
+       <li>
+        <code>
+         base: 16 -&gt; hexadecimal
+        </code>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <code>
+       return: el valor en tipo int (decimal por default)
+      </code>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [8]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">decimal</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">"100"</span><span class="p">)</span>       <span class="c1"># el valor es decimal, por default lo toma así</span>
+<span class="n">binario</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">"1010"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># el valor que pasamos esta en binario</span>
+<span class="n">hexadecimal</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">"FF"</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span> <span class="c1">#el valor que pasamos esta en hexadecimal</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">decimal</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">binario</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hexadecimal</span><span class="p">)</span>
-</pre></div>
-
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>100
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>100
 10
 255
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="5.5.3-Funcion-float()">5.5.3 Funcion <code>float()</code><a class="anchor-link" href="#5.5.3-Funcion-float()">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>En muchas ocasiones puedes tener un <code>número de punto flotante</code> almacenado en una variable pero no exactamnete es tipo <code>número</code>. Entonces, en ese caso necesitamos que sea de tipo <code>float</code> para poder realizar operaciones con él. Para esos casos contamos con la función <code>float()</code></p>
-<p><strong>Sintaxis:</strong></p>
-<div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-</pre></div>
-<p><strong>Parametros:</strong></p>
-<ul>
-<li><code>value: Un número o string que puede ser convertido en tipo número float</code></li>
-<li><code>return: Regresa un tipo float</code></li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">altura</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;1.680000&quot;</span><span class="p">)</span>
-<span class="n">valor</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;4.30000&quot;</span><span class="p">)</span>
-<span class="n">un_medio</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;.5&quot;</span><span class="p">)</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="5.5.3-Funcion-float()">
+     5.5.3 Funcion
+     <code>
+      float()
+     </code>
+     <a class="anchor-link" href="#5.5.3-Funcion-float()">
+      ¶
+     </a>
+    </h2>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     En muchas ocasiones puedes tener un
+     <code>
+      número de punto flotante
+     </code>
+     almacenado en una variable pero no exactamnete es tipo
+     <code>
+      número
+     </code>
+     . Entonces, en ese caso necesitamos que sea de tipo
+     <code>
+      float
+     </code>
+     para poder realizar operaciones con él. Para esos casos contamos con la función
+     <code>
+      float()
+     </code>
+    </p>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre>
+    </div>
+    <p>
+     <strong>
+      Parametros:
+     </strong>
+    </p>
+    <ul>
+     <li>
+      <code>
+       value: Un número o string que puede ser convertido en tipo número float
+      </code>
+     </li>
+     <li>
+      <code>
+       return: Regresa un tipo float
+      </code>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [14]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">altura</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">"1.680000"</span><span class="p">)</span>
+<span class="n">valor</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">"4.30000"</span><span class="p">)</span>
+<span class="n">un_medio</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">".5"</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">altura</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">un_medio</span><span class="p">)</span>
-</pre></div>
-
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1.68
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>1.68
 4.3
 0.5
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="5.5.4-Funcion-bool()">5.5.4 Funcion <code>bool()</code><a class="anchor-link" href="#5.5.4-Funcion-bool()">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>En muchas ocasiones puedes tener <code>una expresion booleana</code> almacenado en una variable pero no exactamnete es tipo <code>booleano</code>. Entonces, en ese caso necesitamos que sea de tipo <code>boolean</code> para poder realizar operaciones con él. Para esos casos contamos con la función <code>bool()</code></p>
-<p><strong>Sintaxis:</strong></p>
-<div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
-</pre></div>
-<p><strong>Parametros:</strong></p>
-<ul>
-<li><code>object: Cualquier objet, string, lista, numero, etc.</code></li>
-<li><code>return: Regresa un tipo boolean</code></li>
-</ul>
-<p>La función siempre regresa <code>True</code>, a menos que:</p>
-<ul>
-<li>El objetos esté vacío, como <code>[]</code>, <code>()</code>, <code>{}</code></li>
-<li>El objeto es <code>False</code></li>
-<li>El objeto es <code>0</code></li>
-<li>El objeto es <code>None</code></li>
-<li>Cadena vacia <code>""</code></li>
-</ul>
-<p>En todos estos casos, retorna <code>False</code></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">uno</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="5.5.4-Funcion-bool()">
+     5.5.4 Funcion
+     <code>
+      bool()
+     </code>
+     <a class="anchor-link" href="#5.5.4-Funcion-bool()">
+      ¶
+     </a>
+    </h2>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     En muchas ocasiones puedes tener
+     <code>
+      una expresion booleana
+     </code>
+     almacenado en una variable pero no exactamnete es tipo
+     <code>
+      booleano
+     </code>
+     . Entonces, en ese caso necesitamos que sea de tipo
+     <code>
+      boolean
+     </code>
+     para poder realizar operaciones con él. Para esos casos contamos con la función
+     <code>
+      bool()
+     </code>
+    </p>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+</pre>
+    </div>
+    <p>
+     <strong>
+      Parametros:
+     </strong>
+    </p>
+    <ul>
+     <li>
+      <code>
+       object: Cualquier objet, string, lista, numero, etc.
+      </code>
+     </li>
+     <li>
+      <code>
+       return: Regresa un tipo boolean
+      </code>
+     </li>
+    </ul>
+    <p>
+     La función siempre regresa
+     <code>
+      True
+     </code>
+     , a menos que:
+    </p>
+    <ul>
+     <li>
+      El objetos esté vacío, como
+      <code>
+       []
+      </code>
+      ,
+      <code>
+       ()
+      </code>
+      ,
+      <code>
+       {}
+      </code>
+     </li>
+     <li>
+      El objeto es
+      <code>
+       False
+      </code>
+     </li>
+     <li>
+      El objeto es
+      <code>
+       0
+      </code>
+     </li>
+     <li>
+      El objeto es
+      <code>
+       None
+      </code>
+     </li>
+     <li>
+      Cadena vacia
+      <code>
+       ""
+      </code>
+     </li>
+    </ul>
+    <p>
+     En todos estos casos, retorna
+     <code>
+      False
+     </code>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [18]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">uno</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">cero</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">falso</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">verdadero</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">texto</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span>
-<span class="n">texto_vacio</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">texto</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="s2">"hola"</span><span class="p">)</span>
+<span class="n">texto_vacio</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">uno</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cero</span><span class="p">)</span>
@@ -14550,219 +14781,230 @@ Tu edad es: 25
 <span class="nb">print</span><span class="p">(</span><span class="n">verdadero</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">texto_vacio</span><span class="p">)</span>
-</pre></div>
-
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>True
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>True
 False
 False
 True
 True
 False
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Aplicaciones">Aplicaciones<a class="anchor-link" href="#Aplicaciones">&#182;</a></h2><p><strong>1. Pedir dos numeros e imprimir el resultado</strong></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mi super calculador de 2 numeros&quot;</span><span class="p">)</span>
-<span class="n">valor1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar el valor 1: &quot;</span><span class="p">))</span>
-<span class="n">valor2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar el valor 2: &quot;</span><span class="p">))</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Aplicaciones">
+     Aplicaciones
+     <a class="anchor-link" href="#Aplicaciones">
+      ¶
+     </a>
+    </h2>
+    <p>
+     <strong>
+      1. Pedir dos numeros e imprimir el resultado
+     </strong>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [20]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Mi super calculador de 2 numeros"</span><span class="p">)</span>
+<span class="n">valor1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Dar el valor 1: "</span><span class="p">))</span>
+<span class="n">valor2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Dar el valor 2: "</span><span class="p">))</span>
 
 <span class="n">suma</span> <span class="o">=</span> <span class="n">valor1</span> <span class="o">+</span> <span class="n">valor2</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El resultado es: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">suma</span><span class="p">))</span>
-</pre></div>
-
+<span class="nb">print</span><span class="p">(</span><span class="s2">"El resultado es: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">suma</span><span class="p">))</span>
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Mi super calculador de 2 numeros
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Mi super calculador de 2 numeros
 Dar el valor 1: 50
 Dar el valor 2: 265
 El resultado es: 315
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>2. Calculadora de Segunda Ley</strong></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># F = m * a</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calculadora de Segunda Ley - Fuerza&quot;</span><span class="p">)</span>
-<span class="n">masa</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar el valor de la masa (kg):&quot;</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">aceleracion</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Dar el valor de la aceleracion (m/s^2):&quot;</span>  <span class="p">)</span>  <span class="p">)</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      2. Calculadora de Segunda Ley
+     </strong>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [22]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># F = m * a</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Calculadora de Segunda Ley - Fuerza"</span><span class="p">)</span>
+<span class="n">masa</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Dar el valor de la masa (kg):"</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">aceleracion</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Dar el valor de la aceleracion (m/s^2):"</span>  <span class="p">)</span>  <span class="p">)</span>
 
 <span class="n">fuerza</span> <span class="o">=</span>  <span class="n">masa</span> <span class="o">*</span> <span class="n">aceleracion</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;la fuerza es: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fuerza</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot;N&quot;</span><span class="p">)</span>
-</pre></div>
-
+<span class="nb">print</span><span class="p">(</span><span class="s2">"la fuerza es: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fuerza</span><span class="p">)</span><span class="o">+</span> <span class="s2">"N"</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Calculadora de Segunda Ley - Fuerza
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Calculadora de Segunda Ley - Fuerza
 Dar el valor de la masa (kg):10
 Dar el valor de la aceleracion (m/s^2):25
 la fuerza es: 250.0N
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>3. Programa que calcule las resistencias en serie, el usuario debe ingresar 3 resistencias</strong></p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dar tres resistencias para obtener su valor en serie&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dar valores en ohms&quot;</span><span class="p">)</span>
-<span class="n">resistencia1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Valor de resistencia 1: &quot;</span><span class="p">)</span>  <span class="p">)</span>
-<span class="n">resistencia2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Valor de resistencia 2: &quot;</span><span class="p">)</span>  <span class="p">)</span>
-<span class="n">resistencia3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Valor de resistencia 3: &quot;</span><span class="p">)</span>  <span class="p">)</span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      3. Programa que calcule las resistencias en serie, el usuario debe ingresar 3 resistencias
+     </strong>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [24]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Dar tres resistencias para obtener su valor en serie"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Dar valores en ohms"</span><span class="p">)</span>
+<span class="n">resistencia1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Valor de resistencia 1: "</span><span class="p">)</span>  <span class="p">)</span>
+<span class="n">resistencia2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Valor de resistencia 2: "</span><span class="p">)</span>  <span class="p">)</span>
+<span class="n">resistencia3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Valor de resistencia 3: "</span><span class="p">)</span>  <span class="p">)</span>
 
 <span class="n">resitencia_total</span> <span class="o">=</span> <span class="n">resistencia1</span> <span class="o">+</span> <span class="n">resistencia2</span> <span class="o">+</span> <span class="n">resistencia</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor total en serie es &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">resitencia_total</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; ohms&quot;</span><span class="p">)</span>
-</pre></div>
-
+<span class="nb">print</span><span class="p">(</span><span class="s2">"El valor total en serie es "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">resitencia_total</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" ohms"</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Dar tres resistencias para obtener su valor en serie
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Dar tres resistencias para obtener su valor en serie
 Dar valores en ohms
 Valor de resistencia 1: 26
 Valor de resistencia 2: 58
 Valor de resistencia 3: 62
 El valor total en serie es 146.0 ohms
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Ejercicios">Ejercicios<a class="anchor-link" href="#Ejercicios">&#182;</a></h3><ol>
-<li>Hacer un programa que calcule el area y el perimetro del circulo, pidiendo los datos al usuario</li>
-<li>Hacer un programa que calcule 3 resistencias en paralelo, solicitando la informacion al usuario</li>
-</ol>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<p>Realizado por Docente: <a href="https://www.alejandro-leyva.com/">Alejandro Leyva</a></p>
-<p><a href="https://mecatronica85.com/">Mecatrónica 85</a></p>
-<p><a href="https://www.facebook.com/mecatronica85">fb/mecatronica85</a></p>
-
-</div>
-</div>
-</body>
-
-
-
-
-
-
-
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="Ejercicios">
+     Ejercicios
+     <a class="anchor-link" href="#Ejercicios">
+      ¶
+     </a>
+    </h3>
+    <ol>
+     <li>
+      Hacer un programa que calcule el area y el perimetro del circulo, pidiendo los datos al usuario
+     </li>
+     <li>
+      Hacer un programa que calcule 3 resistencias en paralelo, solicitando la informacion al usuario
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
+    <p>
+     Realizado por Docente:
+     <a href="https://www.alejandro-leyva.com/">
+      Alejandro Leyva
+     </a>
+    </p>
+    <p>
+     <a href="https://mecatronica85.com/">
+      Mecatrónica 85
+     </a>
+    </p>
+    <p>
+     <a href="https://www.facebook.com/mecatronica85">
+      fb/mecatronica85
+     </a>
+    </p>
+   </div>
+  </div>
+ </body>
 </html>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-
-
-
-
-<style type="text/css">
-    pre { line-height: 125%; }
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Notebook
+  </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js">
+  </script>
+  <style type="text/css">
+   pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -57,11 +57,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-
-
-
-<style type="text/css">
-/*-----------------------------------------------------------------------------
+  <style type="text/css">
+   /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
@@ -13796,11 +13793,9 @@ body.lm-mod-override-cursor .jp-OutputArea-output.jp-mod-isolated:before {
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
-
-</style>
-
-    <style type="text/css">
-/*-----------------------------------------------------------------------------
+  </style>
+  <style type="text/css">
+   /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
@@ -14188,10 +14183,9 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-icon-contrast-color2: var(--md-pink-600);
   --jp-icon-contrast-color3: var(--md-blue-600);
 }
-</style>
-
-<style type="text/css">
-a.anchor-link {
+  </style>
+  <style type="text/css">
+   a.anchor-link {
    display: none;
 }
 .highlight  {
@@ -14212,15 +14206,13 @@ a.anchor-link {
     margin: 0;
   }
 }
-</style>
-
-
-
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    init_mathjax = function() {
+  </style>
+  <!-- Load mathjax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe">
+  </script>
+  <!-- MathJax configuration -->
+  <script type="text/x-mathjax-config">
+   init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
             MathJax.Hub.Config({
@@ -14253,372 +14245,530 @@ a.anchor-link {
         }
     }
     init_mathjax();
-    </script>
-    <!-- End of mathjax configuration --></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../logo/banner.png" alt="banner"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="2.4-Operadores-aritm&#233;ticos">2.4 Operadores aritm&#233;ticos<a class="anchor-link" href="#2.4-Operadores-aritm&#233;ticos">&#182;</a></h1><p>En Python contamos con varios operadores aritméticos.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<table>
-<thead><tr>
-<th style="text-align:left">Nombre</th>
-<th style="text-align:center">Símbolo</th>
-<th>Ejemplo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Suma</td>
-<td style="text-align:center">+</td>
-<td>4 + 2</td>
-</tr>
-<tr>
-<td style="text-align:left">Resta</td>
-<td style="text-align:center">-</td>
-<td>4 - 5</td>
-</tr>
-<tr>
-<td style="text-align:left">Negación</td>
-<td style="text-align:center">-</td>
-<td>-2</td>
-</tr>
-<tr>
-<td style="text-align:left">Multiplicación</td>
-<td style="text-align:center">*</td>
-<td>6 * 8</td>
-</tr>
-<tr>
-<td style="text-align:left">División</td>
-<td style="text-align:center">/</td>
-<td>1 / 2</td>
-</tr>
-<tr>
-<td style="text-align:left">División entera</td>
-<td style="text-align:center">//</td>
-<td>5 // 3</td>
-</tr>
-<tr>
-<td style="text-align:left">Exponente</td>
-<td style="text-align:center">**</td>
-<td>4**2</td>
-</tr>
-<tr>
-<td style="text-align:left">Módulo</td>
-<td style="text-align:center">%</td>
-<td>5 % 2</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Suma&quot;</span><span class="p">)</span>
+  </script>
+  <!-- End of mathjax configuration -->
+ </head>
+ <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <img alt="banner" src="./img/banner.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h1 id="2.4-Operadores-aritméticos">
+     2.4 Operadores aritméticos
+     <a class="anchor-link" href="#2.4-Operadores-aritméticos">
+      ¶
+     </a>
+    </h1>
+    <p>
+     En Python contamos con varios operadores aritméticos.
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:left">
+        Nombre
+       </th>
+       <th style="text-align:center">
+        Símbolo
+       </th>
+       <th>
+        Ejemplo
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:left">
+        Suma
+       </td>
+       <td style="text-align:center">
+        +
+       </td>
+       <td>
+        4 + 2
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Resta
+       </td>
+       <td style="text-align:center">
+        -
+       </td>
+       <td>
+        4 - 5
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Negación
+       </td>
+       <td style="text-align:center">
+        -
+       </td>
+       <td>
+        -2
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Multiplicación
+       </td>
+       <td style="text-align:center">
+        *
+       </td>
+       <td>
+        6 * 8
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        División
+       </td>
+       <td style="text-align:center">
+        /
+       </td>
+       <td>
+        1 / 2
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        División entera
+       </td>
+       <td style="text-align:center">
+        //
+       </td>
+       <td>
+        5 // 3
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Exponente
+       </td>
+       <td style="text-align:center">
+        **
+       </td>
+       <td>
+        4**2
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Módulo
+       </td>
+       <td style="text-align:center">
+        %
+       </td>
+       <td>
+        5 % 2
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [ ]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Suma"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resta&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Resta"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Negación&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Negación"</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span> <span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="c1"># -1 * a</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplicación&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Multiplicación"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;División&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"División"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;División entera&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"División entera"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="mi">10</span><span class="o">//</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exponente&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Exponente"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="mi">3</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 3^2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Módulo o Residuo&quot;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Módulo o Residuo"</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># 10%3 = 1</span>
-</pre></div>
-
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.4.1-Precedencia-de-operadores">2.4.1 Precedencia de operadores<a class="anchor-link" href="#2.4.1-Precedencia-de-operadores">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>El orden de precedencia de ejecución de los operadores aritméticos es:</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Orden</th>
-<th style="text-align:left">Operador</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li>Agrupación ( )</li>
-<li>Exponente **</li>
-<li>Negación -</li>
-<li>Multiplicación, División, División entera, Módulo *, /, //, %</li>
-<li>Suma, Resta +, -</li>
-</ol>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Ejemplos:">Ejemplos:<a class="anchor-link" href="#Ejemplos:">&#182;</a></h2><p>Convertir la expresion algebraica a una espresion computable</p>
-<ol>
-<li>$\frac{2-3}{20}$</li>
-<li>$3 \times \frac{1}{2} + 8$</li>
-<li>$3^2 + 6^3 - \frac{5}{10}$</li>
-<li>$\frac{5 + 6 \times 9}{6 \times 1} + 3 - \frac{8}{2}$</li>
-<li>$\frac{6+8}{2*3-5}$</li>
-</ol>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">caso_1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">20</span>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.4.1-Precedencia-de-operadores">
+     2.4.1 Precedencia de operadores
+     <a class="anchor-link" href="#2.4.1-Precedencia-de-operadores">
+      ¶
+     </a>
+    </h2>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     El orden de precedencia de ejecución de los operadores aritméticos es:
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:left">
+        Orden
+       </th>
+       <th style="text-align:left">
+        Operador
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:left">
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <ol>
+     <li>
+      Agrupación ( )
+     </li>
+     <li>
+      Exponente **
+     </li>
+     <li>
+      Negación -
+     </li>
+     <li>
+      Multiplicación, División, División entera, Módulo *, /, //, %
+     </li>
+     <li>
+      Suma, Resta +, -
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Ejemplos:">
+     Ejemplos:
+     <a class="anchor-link" href="#Ejemplos:">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Convertir la expresion algebraica a una espresion computable
+    </p>
+    <ol>
+     <li>
+      $\frac{2-3}{20}$
+     </li>
+     <li>
+      $3 \times \frac{1}{2} + 8$
+     </li>
+     <li>
+      $3^2 + 6^3 - \frac{5}{10}$
+     </li>
+     <li>
+      $\frac{5 + 6 \times 9}{6 \times 1} + 3 - \frac{8}{2}$
+     </li>
+     <li>
+      $\frac{6+8}{2*3-5}$
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [ ]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">caso_1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">20</span>
 <span class="n">caso_2</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8</span>
 <span class="n">caso_3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">6</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">caso_4</span> <span class="o">=</span> <span class="p">((</span><span class="mi">5</span><span class="o">+</span><span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="mi">9</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span><span class="o">*</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">-</span> <span class="p">(</span><span class="mi">8</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">caso_5</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="o">+</span><span class="mi">8</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span><span class="o">-</span> <span class="mi">5</span><span class="p">)</span> 
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado caso 1: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">caso_1</span><span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado caso 2: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">caso_2</span><span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado caso 3: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">caso_3</span><span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado caso 4: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">caso_4</span><span class="p">)</span> <span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado caso 5: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">caso_5</span><span class="p">)</span> <span class="p">)</span>
-</pre></div>
-
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Resultado caso 1: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">caso_1</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Resultado caso 2: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">caso_2</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Resultado caso 3: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">caso_3</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Resultado caso 4: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">caso_4</span><span class="p">)</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Resultado caso 5: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">caso_5</span><span class="p">)</span> <span class="p">)</span>
+</pre>
+       </div>
+      </div>
      </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Ejercicios">Ejercicios<a class="anchor-link" href="#Ejercicios">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Guardar en una variable el resultado de la operacion e imprimir por consola el resultado de las siguientes operaciones:</p>
-<ol>
-<li>$\frac{5 + 8}{2}$</li>
-<li>$\frac{5 }{2} + 3$</li>
-<li>$5 + \frac{1}{2} \times 6$</li>
-<li>$5^2$</li>
-<li>$3 + \frac{1}{2} \times \frac{5}{-2}$</li>
-</ol>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="2.4.2-Aplicaciones">2.4.2 Aplicaciones<a class="anchor-link" href="#2.4.2-Aplicaciones">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Vamos resolver unos problemas basicos</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ol>
-<li>Realizar una calculadora que sume 2 números, los valores estan en el programa</li>
-<li>Realizar una calculadora que haga la división de 2 números, los valores estan en el programa</li>
-<li>Realizar el cálculo de voltaje, los valores estan en el programa</li>
-</ol>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Realizar una calculadora que sume 2 números que esten en el programa</span>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Ejercicios">
+     Ejercicios
+     <a class="anchor-link" href="#Ejercicios">
+      ¶
+     </a>
+    </h2>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Guardar en una variable el resultado de la operacion e imprimir por consola el resultado de las siguientes operaciones:
+    </p>
+    <ol>
+     <li>
+      $\frac{5 + 8}{2}$
+     </li>
+     <li>
+      $\frac{5 }{2} + 3$
+     </li>
+     <li>
+      $5 + \frac{1}{2} \times 6$
+     </li>
+     <li>
+      $5^2$
+     </li>
+     <li>
+      $3 + \frac{1}{2} \times \frac{5}{-2}$
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.4.2-Aplicaciones">
+     2.4.2 Aplicaciones
+     <a class="anchor-link" href="#2.4.2-Aplicaciones">
+      ¶
+     </a>
+    </h2>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Vamos resolver unos problemas basicos
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <ol>
+     <li>
+      Realizar una calculadora que sume 2 números, los valores estan en el programa
+     </li>
+     <li>
+      Realizar una calculadora que haga la división de 2 números, los valores estan en el programa
+     </li>
+     <li>
+      Realizar el cálculo de voltaje, los valores estan en el programa
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [2]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># 1. Realizar una calculadora que sume 2 números que esten en el programa</span>
 
 <span class="n">valor_1</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="n">valor_2</span> <span class="o">=</span> <span class="mi">269</span>
 
 <span class="n">suma</span> <span class="o">=</span> <span class="n">valor_1</span> <span class="o">+</span> <span class="n">valor_2</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La suma de &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor_1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; con &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor_2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; es: &quot;</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">"La suma de "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor_1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" con "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor_2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" es: "</span> 
       <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">suma</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>La suma de 15 con 269 es: 284
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 2. Realizar una calculadora que haga la división de 2 números, los valores estan en el programa</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>La suma de 15 con 269 es: 284
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [4]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># 2. Realizar una calculadora que haga la división de 2 números, los valores estan en el programa</span>
 <span class="n">valor_1</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">valor_2</span> <span class="o">=</span> <span class="mi">20</span>
 
 <span class="n">division</span> <span class="o">=</span> <span class="n">valor_1</span> <span class="o">/</span> <span class="n">valor_2</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La division de &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor_1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; entre &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor_2</span><span class="p">)</span> <span class="o">+</span>
-      <span class="s2">&quot; es: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">division</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>La division de 5 entre 20 es: 0.25
+<span class="nb">print</span><span class="p">(</span><span class="s2">"La division de "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor_1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" entre "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor_2</span><span class="p">)</span> <span class="o">+</span>
+      <span class="s2">" es: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">division</span><span class="p">))</span>
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3. Realizar el cálculo de voltaje, los valores estan en el programa</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>La division de 5 entre 20 es: 0.25
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [3]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># 3. Realizar el cálculo de voltaje, los valores estan en el programa</span>
 <span class="n">corriente</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1"># 10mA</span>
 <span class="n">resistencia</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1">#1k</span>
 
 <span class="n">voltaje</span> <span class="o">=</span> <span class="n">corriente</span> <span class="o">*</span> <span class="n">resistencia</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La corriente es &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">corriente</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;A, la resistencia es: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">resistencia</span><span class="p">)</span> 
-      <span class="o">+</span> <span class="s2">&quot; Ohms, el voltaje es: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">voltaje</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;V&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>La corriente es 0.01A, la resistencia es: 1000 Ohms, el voltaje es: 10.0V
+<span class="nb">print</span><span class="p">(</span><span class="s2">"La corriente es "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">corriente</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"A, la resistencia es: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">resistencia</span><span class="p">)</span> 
+      <span class="o">+</span> <span class="s2">" Ohms, el voltaje es: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">voltaje</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"V"</span><span class="p">)</span>
 </pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="2.4.2.1-Ejercicios">2.4.2.1 Ejercicios<a class="anchor-link" href="#2.4.2.1-Ejercicios">&#182;</a></h3><ul>
-<li>Segunda Ley, calcular fuerza con datos guardados. Formula $F = m * a$</li>
-<li>Hacer la operacion de 5 resistencias en serie, dar resistencia total</li>
-<li>Hacer el calculo de 5 resistencias en paralelo, dar resistencia total</li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<p>Realizado por Docente: <a href="https://www.alejandro-leyva.com/">Alejandro Leyva</a></p>
-<p><a href="https://mecatronica85.com/">Mecatrónica 85</a></p>
-<p><a href="https://www.facebook.com/mecatronica85">fb/mecatronica85</a></p>
-
-</div>
-</div>
-</body>
-
-
-
-
-
-
-
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>La corriente es 0.01A, la resistencia es: 1000 Ohms, el voltaje es: 10.0V
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="2.4.2.1-Ejercicios">
+     2.4.2.1 Ejercicios
+     <a class="anchor-link" href="#2.4.2.1-Ejercicios">
+      ¶
+     </a>
+    </h3>
+    <ul>
+     <li>
+      Segunda Ley, calcular fuerza con datos guardados. Formula $F = m * a$
+     </li>
+     <li>
+      Hacer la operacion de 5 resistencias en serie, dar resistencia total
+     </li>
+     <li>
+      Hacer el calculo de 5 resistencias en paralelo, dar resistencia total
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
+    <p>
+     Realizado por Docente:
+     <a href="https://www.alejandro-leyva.com/">
+      Alejandro Leyva
+     </a>
+    </p>
+    <p>
+     <a href="https://mecatronica85.com/">
+      Mecatrónica 85
+     </a>
+    </p>
+    <p>
+     <a href="https://www.facebook.com/mecatronica85">
+      fb/mecatronica85
+     </a>
+    </p>
+   </div>
+  </div>
+ </body>
 </html>

@@ -22,11 +22,12 @@ def convert_nb_html(path_name_file: str, name_file: str):
     # regresa una lista en la posicion 0 viene el html
     result = HTMLExporter(Config=c).from_file(path_name_file)
 
-    with open(f'{path_save}/{name_file.lower()}.html', mode='w', encoding='utf-8') as html:
+    with open(f'{path_save}/{name_file.lower()}.html', mode='w',
+              encoding='utf-8') as html:
         html.write(result[0])
 
 
-def generate_files_html(path_file: [], name_file: [], ignore=[]):
+def generate_files_html(path_file: [], name_file: [], ignore: list =[]):
     """Logic to iterate all notebooks to html"""
     # TODO: agregar que ignore algunos archivos
     for count in range(len(path_file)):
@@ -36,7 +37,7 @@ def generate_files_html(path_file: [], name_file: [], ignore=[]):
 def build_index(html: str):
     """build de file index.html and save in location"""
     if not (type(html) == 'str'):
-        html = str(html)
+        html = html.prettify()
 
     path = "../web/index.html"
     with open(path, mode='w', encoding='utf-8') as index:
@@ -58,13 +59,14 @@ def copy_imgs():
         shutil.copyfile(src, dist)
 
 
-def build_cap(title: str, name_items: [], url_base: str, html: BeautifulSoup) -> BeautifulSoup:
+def build_cap(title: str, name_items: [], url_base: str,
+              html: BeautifulSoup) -> BeautifulSoup:
     """Build all html for each cap with the list"""
     title = build_tag('h1', title)
     list_ul = build_tag('ul', '')
     for item in name_items:
         list_item = build_tag('li', '')
-        subtitle = build_tag('h2', item)
+        subtitle = build_tag('h2', f'{item.replace(".html","").replace("_", " ").lower()} ->')
         link = build_tag('a', f'{subtitle.h2}',
                          href=f"{url_base}/{item}", target="_black")
         list_item.li.append(link.a)
@@ -104,14 +106,16 @@ def search_files_nb():
     return list_path
 
 
-# TODO: Terminate function
 def change_path_img_in_html():
-
-    for file_html in get_list_html().get("full_path"):
-        with open(file_html) as html:
+    for path_file_html in get_list_html().get("full_path"):  # get path from html
+        with open(path_file_html) as html:
             html = BeautifulSoup(html, 'html.parser')
-            print(html.body.find_all('img'))
-        break  # ? remove
+            for img in html.body.find_all('img'):
+                name = img.get('src').split("/")[-1]
+                html.find('img', src=img.get('src'))['src'] = f"./img/{name}"
+
+            with open(path_file_html, mode='w', encoding='utf-8') as file_html_new:
+                file_html_new.write(html.prettify())
 
 
 def get_list_html() -> dict:
@@ -165,8 +169,8 @@ def build_body_html(html: BeautifulSoup) -> BeautifulSoup:
     all_caps = generate_list_cap(list_html)
 
     # crear la logica para crear el cap html html
-    url_base = 'https://www.alejandro-leyva.com/micro-21/web'
-    for i in range(len(all_caps) - 1):
+    url_base = '.'
+    for i in range(len(all_caps)):
         build_cap(f'Capítulo {i}', all_caps.get(i), url_base, html)
     # regresar todo el html
 
@@ -184,17 +188,16 @@ def get_html_template() -> BeautifulSoup:
 
 
 if __name__ == "__main__":
-    # print("Buscando archivos...")
-    # files = search_files_nb() #OK
-    # print("Convirtiendolos a html...")
-    # generate_files_html(files['path_file'], files['name_file']) #OK
-    # print("Generando index.html")
-    # print("Copiando imgs")
-    # copy_imgs()
-    # html = get_html_template()  # OK
-    # html = build_body_html(html)
-    # build_index(html)
-    # print("Arreglando los tag de las imgs")
-    print("Termine... xD")
-
+    print("Buscando archivos...")
+    files = search_files_nb()
+    print("Convirtiendolos a html...")
+    generate_files_html(files['path_file'], files['name_file'])
+    print("Generando index.html")
+    print("Copiando imgs")
+    copy_imgs()
+    html = get_html_template()
+    html = build_body_html(html)
+    build_index(html)
+    print("Arreglando los tag de las imgs")
     change_path_img_in_html()
+    print("Termine... xD")

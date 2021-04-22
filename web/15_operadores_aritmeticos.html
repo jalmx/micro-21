@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-
-
-
-
-<style type="text/css">
-    pre { line-height: 125%; }
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Notebook
+  </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js">
+  </script>
+  <style type="text/css">
+   pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -57,11 +57,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .ss { color: var(--jp-mirror-editor-string-color) } /* Literal.String.Symbol */
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
-
-
-
-<style type="text/css">
-/*-----------------------------------------------------------------------------
+  <style type="text/css">
+   /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
@@ -13796,11 +13793,9 @@ body.lm-mod-override-cursor .jp-OutputArea-output.jp-mod-isolated:before {
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
-
-</style>
-
-    <style type="text/css">
-/*-----------------------------------------------------------------------------
+  </style>
+  <style type="text/css">
+   /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
@@ -14188,10 +14183,9 @@ all of MD as it is not optimized for dense, information rich UIs.
   --jp-icon-contrast-color2: var(--md-pink-600);
   --jp-icon-contrast-color3: var(--md-blue-600);
 }
-</style>
-
-<style type="text/css">
-a.anchor-link {
+  </style>
+  <style type="text/css">
+   a.anchor-link {
    display: none;
 }
 .highlight  {
@@ -14212,15 +14206,13 @@ a.anchor-link {
     margin: 0;
   }
 }
-</style>
-
-
-
-<!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    init_mathjax = function() {
+  </style>
+  <!-- Load mathjax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe">
+  </script>
+  <!-- MathJax configuration -->
+  <script type="text/x-mathjax-config">
+   init_mathjax = function() {
         if (window.MathJax) {
         // MathJax loaded
             MathJax.Hub.Config({
@@ -14253,298 +14245,631 @@ a.anchor-link {
         }
     }
     init_mathjax();
-    </script>
-    <!-- End of mathjax configuration --></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../logo/banner.png" alt="banner"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="1.5-Operadores-aritmeticos">1.5 Operadores aritmeticos<a class="anchor-link" href="#1.5-Operadores-aritmeticos">&#182;</a></h1>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>En esta sección veremos los operadores arítmeticos basicos que podemos encontrar en la mayoria de lenguajes.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<table>
-<thead><tr>
-<th style="text-align:left">Nombre</th>
-<th style="text-align:center">Símbolo</th>
-<th style="text-align:left">Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Suma</td>
-<td style="text-align:center">+</td>
-<td style="text-align:left">Realiza la operación de suma arítmetica</td>
-</tr>
-<tr>
-<td style="text-align:left">Resta</td>
-<td style="text-align:center">-</td>
-<td style="text-align:left">Realiza la operación de resta arítmetica</td>
-</tr>
-<tr>
-<td style="text-align:left">Multiplicación</td>
-<td style="text-align:center">*</td>
-<td style="text-align:left">Realiza la operación de multiplicación arítmetica</td>
-</tr>
-<tr>
-<td style="text-align:left">División</td>
-<td style="text-align:center">/</td>
-<td style="text-align:left">Realiza la operación de razón arítmetica</td>
-</tr>
-<tr>
-<td style="text-align:left">Residuo o Módulo</td>
-<td style="text-align:center">%</td>
-<td style="text-align:left">Realiza la operación de división arítmetica y devuelve el residuo de ésta división</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Cuando somos nuevos en el mundo de la programación queremos aplicar conocimiento que tenemos con relación a Matématicas, aquí existen algunas cuestiones que no se aplican de la misma manera o solo se puede aplicar de cierta forma.</em></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Precauciones que debemos tener en cuenta son:</em></p>
-<ul>
-<li>El unico simbolo que podemos ocupar para la <strong>divisón</strong> es la diagonal o slash (/), no existe otro simbolo ni tampoco se puede ocupar los tradicionales que conocemos.</li>
-<li>El unico simbolo para <strong>multiplicación</strong> es el asterisco (*), no existe algun otro ni ninguno más sirve para multiplicar.</li>
-<li><strong>Los parentesís</strong> "( )" solo agrupan y nada mas. <strong>No sirven para multiplicar</strong>. </li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Ejemplos:">Ejemplos:<a class="anchor-link" href="#Ejemplos:">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>1. Realizar la multiplicación de dos números que ingrese el usuario e imprimir el resultado por pantalla</strong></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Como ya sabemos debemos comenzar con nuestro simbolo de <em>INICIO</em>, posteriormente debemos mandar un mensaje a la pantalla indicandole al usuario lo que debe realizar. El mensaje será <code>"Dar el primer valor a multiplicar"</code></p>
-<p><img src="ejemplo3/e1_p2.png" alt="inicio"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Después de mandar el mensaje, debemos recibir y almacenar ese valor. Por lo tanto, usamo el símbolo de ingreso de datos y lo tenemos que almacenar en una variable. Esta variable la llamaremos <code>numero1</code>.</p>
-<p><img src="ejemplo3/e1_p3.png" alt="paso2"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Una vez que ya tenemos el primer valor almacenado en memoria, vamos a mandar otro mensaje indicandole al usuario qué debe realizar. El mensaje será <code>"Dar el segundo valor a multiplciar"</code></p>
-<p><img src="ejemplo3/e1_p4.png" alt="paso2"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Siguiente paso es almacenar el dato que el usuario ingresará; lo guardaremos en una variable llamada <code>numero2</code>.</p>
-<p><img src="ejemplo3/e1_p5.png" alt="paso2"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ahora que ya tenemos los valores que ingreso el usuario en las variables <code>numero1</code> y <code>numero2</code>, debemos realizar la operación matématica, en el <em>símbolo de proceso u operación</em>, este resultado guardarlo en la variable <code>resultado</code>.</p>
-<p><img src="ejemplo3/e1_p6.png" alt="paso2"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Una vez ya tenemos el resultado de la operación dentro de la variable <code>resultado</code>, solo nos quedo enviarlo a la pantalla y que el usuario conozco el resultado.</p>
-<p><img src="ejemplo3/e1_p7.png" alt="paso2"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Hemos terminado todas las acciones que ibas a realizar, solo nos queda terminar con el símbolo de <em>FIN</em>, con esto indicamos que el diagrama de flujo ha terminado su tarea.</p>
-<p><img src="ejemplo3/e1_p8.png" alt="paso2"></p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.5.1-Precedencia-de-operadores">1.5.1 Precedencia de operadores<a class="anchor-link" href="#1.5.1-Precedencia-de-operadores">&#182;</a></h2>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>La precedencia de operadores funciona practicamente igual que en matématicas.</em> Recordemos que solo existen 5 operaciones aritméticas.</p>
-<table>
-<thead><tr>
-<th style="text-align:center">Órden</th>
-<th style="text-align:left">Operación</th>
-<th style="text-align:center">Símbolo</th>
-<th style="text-align:left">Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:left">Agrupación</td>
-<td style="text-align:center">( )</td>
-<td style="text-align:left">Los parentesis solo realizan la operación de agrupar (no arítmetica), la operación que esta en los parentesis mas profundos son las primeras que se realizan</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:left">Residuo</td>
-<td style="text-align:center">%</td>
-<td style="text-align:left">Obtiene el residuo de una división</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:left">División</td>
-<td style="text-align:center">/</td>
-<td style="text-align:left">Realiza una división arítmetica</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:left">Multiplicación</td>
-<td style="text-align:center">*</td>
-<td style="text-align:left">Realiza una multiplicación arítmetica</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:left">Suma</td>
-<td style="text-align:center">+</td>
-<td style="text-align:left">Realiza una suma arítmetica</td>
-</tr>
-<tr>
-<td style="text-align:center">6</td>
-<td style="text-align:left">Resta</td>
-<td style="text-align:center">-</td>
-<td style="text-align:left">Realiza una resta arítmetica</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Vamos a hacer una comparativa en la forma matématica convencional y como se realiza en diagramas de flujo o programación (esto aplica practicamente a cualquier lenguaje)</p>
-<table>
-<thead><tr>
-<th>Matématicas</th>
-<th style="text-align:center">Programación</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$$4+3$$</td>
-<td style="text-align:center"><strong>4 + 3</strong></td>
-</tr>
-<tr>
-<td>$$10-3$$</td>
-<td style="text-align:center"><strong>10 - 3</strong></td>
-</tr>
-<tr>
-<td>$$5\times 5$$</td>
-<td style="text-align:center"><strong>5 * 5</strong></td>
-</tr>
-<tr>
-<td>$$\frac{3}{2}$$</td>
-<td style="text-align:center"><strong>2 / 3</strong></td>
-</tr>
-<tr>
-<td>$$ \frac{2 + 4}{6} $$</td>
-<td style="text-align:center"><strong>( 2 + 4 ) / 6</strong></td>
-</tr>
-<tr>
-<td>$$ 2 +  \frac{4}{3} $$</td>
-<td style="text-align:center"><strong>2 + ( 4 / 3 )</strong></td>
-</tr>
-<tr>
-<td>$$\frac{x+y+z}{w}$$</td>
-<td style="text-align:center"><strong>( x  + y + z ) / w</strong></td>
-</tr>
-<tr>
-<td>$$x ^2$$</td>
-<td style="text-align:center"><strong>x * x</strong></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Ejercicios">Ejercicios<a class="anchor-link" href="#Ejercicios">&#182;</a></h3><p>Transformar las siguientes expresiones matématicas a una representación de digrama de flujo.</p>
-<table>
-<thead><tr>
-<th>Matématicas</th>
-<th>Programación</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$$x + y $$</td>
-<td></td>
-</tr>
-<tr>
-<td>$$\frac{4 - 2}{5}$$</td>
-<td></td>
-</tr>
-<tr>
-<td>$$3 + \frac{4}{8}$$</td>
-<td></td>
-</tr>
-<tr>
-<td>$$6 + 4 \times \frac{3}{9}$$</td>
-<td></td>
-</tr>
-<tr>
-<td>$$\frac{3}{7} + \frac{8}{3}$$</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Realizado por Docente: <a href="https://www.alejandro-leyva.com/">Alejandro Leyva</a></p>
-<p><a href="https://mecatronica85.com/">Mecatrónica 85</a></p>
-<p><a href="https://www.facebook.com/mecatronica85">fb/mecatronica85</a></p>
-
-</div>
-</div>
-</body>
-
-
-
-
-
-
-
+  </script>
+  <!-- End of mathjax configuration -->
+ </head>
+ <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <img alt="banner" src="./img/banner.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h1 id="1.5-Operadores-aritmeticos">
+     1.5 Operadores aritmeticos
+     <a class="anchor-link" href="#1.5-Operadores-aritmeticos">
+      ¶
+     </a>
+    </h1>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     En esta sección veremos los operadores arítmeticos basicos que podemos encontrar en la mayoria de lenguajes.
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:left">
+        Nombre
+       </th>
+       <th style="text-align:center">
+        Símbolo
+       </th>
+       <th style="text-align:left">
+        Descripción
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:left">
+        Suma
+       </td>
+       <td style="text-align:center">
+        +
+       </td>
+       <td style="text-align:left">
+        Realiza la operación de suma arítmetica
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Resta
+       </td>
+       <td style="text-align:center">
+        -
+       </td>
+       <td style="text-align:left">
+        Realiza la operación de resta arítmetica
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Multiplicación
+       </td>
+       <td style="text-align:center">
+        *
+       </td>
+       <td style="text-align:left">
+        Realiza la operación de multiplicación arítmetica
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        División
+       </td>
+       <td style="text-align:center">
+        /
+       </td>
+       <td style="text-align:left">
+        Realiza la operación de razón arítmetica
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:left">
+        Residuo o Módulo
+       </td>
+       <td style="text-align:center">
+        %
+       </td>
+       <td style="text-align:left">
+        Realiza la operación de división arítmetica y devuelve el residuo de ésta división
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <em>
+      Cuando somos nuevos en el mundo de la programación queremos aplicar conocimiento que tenemos con relación a Matématicas, aquí existen algunas cuestiones que no se aplican de la misma manera o solo se puede aplicar de cierta forma.
+     </em>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <em>
+      Precauciones que debemos tener en cuenta son:
+     </em>
+    </p>
+    <ul>
+     <li>
+      El unico simbolo que podemos ocupar para la
+      <strong>
+       divisón
+      </strong>
+      es la diagonal o slash (/), no existe otro simbolo ni tampoco se puede ocupar los tradicionales que conocemos.
+     </li>
+     <li>
+      El unico simbolo para
+      <strong>
+       multiplicación
+      </strong>
+      es el asterisco (*), no existe algun otro ni ninguno más sirve para multiplicar.
+     </li>
+     <li>
+      <strong>
+       Los parentesís
+      </strong>
+      "( )" solo agrupan y nada mas.
+      <strong>
+       No sirven para multiplicar
+      </strong>
+      .
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Ejemplos:">
+     Ejemplos:
+     <a class="anchor-link" href="#Ejemplos:">
+      ¶
+     </a>
+    </h2>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      1. Realizar la multiplicación de dos números que ingrese el usuario e imprimir el resultado por pantalla
+     </strong>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Como ya sabemos debemos comenzar con nuestro simbolo de
+     <em>
+      INICIO
+     </em>
+     , posteriormente debemos mandar un mensaje a la pantalla indicandole al usuario lo que debe realizar. El mensaje será
+     <code>
+      "Dar el primer valor a multiplicar"
+     </code>
+    </p>
+    <p>
+     <img alt="inicio" src="./img/e1_p2.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Después de mandar el mensaje, debemos recibir y almacenar ese valor. Por lo tanto, usamo el símbolo de ingreso de datos y lo tenemos que almacenar en una variable. Esta variable la llamaremos
+     <code>
+      numero1
+     </code>
+     .
+    </p>
+    <p>
+     <img alt="paso2" src="./img/e1_p3.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Una vez que ya tenemos el primer valor almacenado en memoria, vamos a mandar otro mensaje indicandole al usuario qué debe realizar. El mensaje será
+     <code>
+      "Dar el segundo valor a multiplciar"
+     </code>
+    </p>
+    <p>
+     <img alt="paso2" src="./img/e1_p4.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Siguiente paso es almacenar el dato que el usuario ingresará; lo guardaremos en una variable llamada
+     <code>
+      numero2
+     </code>
+     .
+    </p>
+    <p>
+     <img alt="paso2" src="./img/e1_p5.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Ahora que ya tenemos los valores que ingreso el usuario en las variables
+     <code>
+      numero1
+     </code>
+     y
+     <code>
+      numero2
+     </code>
+     , debemos realizar la operación matématica, en el
+     <em>
+      símbolo de proceso u operación
+     </em>
+     , este resultado guardarlo en la variable
+     <code>
+      resultado
+     </code>
+     .
+    </p>
+    <p>
+     <img alt="paso2" src="./img/e1_p6.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Una vez ya tenemos el resultado de la operación dentro de la variable
+     <code>
+      resultado
+     </code>
+     , solo nos quedo enviarlo a la pantalla y que el usuario conozco el resultado.
+    </p>
+    <p>
+     <img alt="paso2" src="./img/e1_p7.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Hemos terminado todas las acciones que ibas a realizar, solo nos queda terminar con el símbolo de
+     <em>
+      FIN
+     </em>
+     , con esto indicamos que el diagrama de flujo ha terminado su tarea.
+    </p>
+    <p>
+     <img alt="paso2" src="./img/e1_p8.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="1.5.1-Precedencia-de-operadores">
+     1.5.1 Precedencia de operadores
+     <a class="anchor-link" href="#1.5.1-Precedencia-de-operadores">
+      ¶
+     </a>
+    </h2>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <em>
+      La precedencia de operadores funciona practicamente igual que en matématicas.
+     </em>
+     Recordemos que solo existen 5 operaciones aritméticas.
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:center">
+        Órden
+       </th>
+       <th style="text-align:left">
+        Operación
+       </th>
+       <th style="text-align:center">
+        Símbolo
+       </th>
+       <th style="text-align:left">
+        Descripción
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:left">
+        Agrupación
+       </td>
+       <td style="text-align:center">
+        ( )
+       </td>
+       <td style="text-align:left">
+        Los parentesis solo realizan la operación de agrupar (no arítmetica), la operación que esta en los parentesis mas profundos son las primeras que se realizan
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        2
+       </td>
+       <td style="text-align:left">
+        Residuo
+       </td>
+       <td style="text-align:center">
+        %
+       </td>
+       <td style="text-align:left">
+        Obtiene el residuo de una división
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        3
+       </td>
+       <td style="text-align:left">
+        División
+       </td>
+       <td style="text-align:center">
+        /
+       </td>
+       <td style="text-align:left">
+        Realiza una división arítmetica
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        4
+       </td>
+       <td style="text-align:left">
+        Multiplicación
+       </td>
+       <td style="text-align:center">
+        *
+       </td>
+       <td style="text-align:left">
+        Realiza una multiplicación arítmetica
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        5
+       </td>
+       <td style="text-align:left">
+        Suma
+       </td>
+       <td style="text-align:center">
+        +
+       </td>
+       <td style="text-align:left">
+        Realiza una suma arítmetica
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        6
+       </td>
+       <td style="text-align:left">
+        Resta
+       </td>
+       <td style="text-align:center">
+        -
+       </td>
+       <td style="text-align:left">
+        Realiza una resta arítmetica
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Vamos a hacer una comparativa en la forma matématica convencional y como se realiza en diagramas de flujo o programación (esto aplica practicamente a cualquier lenguaje)
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th>
+        Matématicas
+       </th>
+       <th style="text-align:center">
+        Programación
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        $$4+3$$
+       </td>
+       <td style="text-align:center">
+        <strong>
+         4 + 3
+        </strong>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        $$10-3$$
+       </td>
+       <td style="text-align:center">
+        <strong>
+         10 - 3
+        </strong>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        $$5\times 5$$
+       </td>
+       <td style="text-align:center">
+        <strong>
+         5 * 5
+        </strong>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        $$\frac{3}{2}$$
+       </td>
+       <td style="text-align:center">
+        <strong>
+         2 / 3
+        </strong>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        $$ \frac{2 + 4}{6} $$
+       </td>
+       <td style="text-align:center">
+        <strong>
+         ( 2 + 4 ) / 6
+        </strong>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        $$ 2 +  \frac{4}{3} $$
+       </td>
+       <td style="text-align:center">
+        <strong>
+         2 + ( 4 / 3 )
+        </strong>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        $$\frac{x+y+z}{w}$$
+       </td>
+       <td style="text-align:center">
+        <strong>
+         ( x  + y + z ) / w
+        </strong>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        $$x ^2$$
+       </td>
+       <td style="text-align:center">
+        <strong>
+         x * x
+        </strong>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="Ejercicios">
+     Ejercicios
+     <a class="anchor-link" href="#Ejercicios">
+      ¶
+     </a>
+    </h3>
+    <p>
+     Transformar las siguientes expresiones matématicas a una representación de digrama de flujo.
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th>
+        Matématicas
+       </th>
+       <th>
+        Programación
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        $$x + y $$
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        $$\frac{4 - 2}{5}$$
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        $$3 + \frac{4}{8}$$
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        $$6 + 4 \times \frac{3}{9}$$
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td>
+        $$\frac{3}{7} + \frac{8}{3}$$
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Realizado por Docente:
+     <a href="https://www.alejandro-leyva.com/">
+      Alejandro Leyva
+     </a>
+    </p>
+    <p>
+     <a href="https://mecatronica85.com/">
+      Mecatrónica 85
+     </a>
+    </p>
+    <p>
+     <a href="https://www.facebook.com/mecatronica85">
+      fb/mecatronica85
+     </a>
+    </p>
+   </div>
+  </div>
+ </body>
 </html>
