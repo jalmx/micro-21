@@ -14854,7 +14854,11 @@ El valor del contador es: 5
      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
       <div class="CodeMirror cm-s-jupyter">
        <div class="highlight hl-ipython3">
-        <pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>    
+        <pre><span></span><span class="c1"># Realizar una calculadora que sume y reste, mostrando un menu indicando las opciones,</span>
+<span class="c1"># Debe tener la opcion de salir, en caso que ingrese una opcion que no existe,</span>
+<span class="c1"># mandar el mensaje de que la opcion no es valida. El programa termina cuando el usuario</span>
+<span class="c1"># ingresa la opcion de salir, de lo contrario debe seguir mostrando el menu con las opciones</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>    
     <span class="nb">print</span><span class="p">(</span><span class="s2">"-------------------------------------"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Calculadora Suma y Resta"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"1. Suma"</span><span class="p">)</span>
@@ -14865,7 +14869,8 @@ El valor del contador es: 5
     <span class="k">if</span> <span class="n">opcion</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">valor1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Dar el primer valor"</span><span class="p">))</span>
         <span class="n">valor2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Dar el segundo valor"</span><span class="p">))</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"La suma es: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">valor1</span> <span class="o">+</span> <span class="n">valor2</span><span class="p">))</span>
+        <span class="n">suma</span> <span class="o">=</span> <span class="n">valor1</span> <span class="o">+</span> <span class="n">valo2</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"La suma es: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">suma</span><span class="p">))</span>
     <span class="k">elif</span> <span class="n">opcion</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
         <span class="n">valor1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Dar el primer valor"</span><span class="p">))</span>
         <span class="n">valor2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Dar el segundo valor"</span><span class="p">))</span>
