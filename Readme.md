@@ -52,10 +52,7 @@ jupyter notebook ./book # start a notebook
 
 ## Content
 
-- Capítulo 1 Algoritmos y Diagramas de flujo
-  - 1.1 Conceptos basicos y simbologia
-  - 1.2 Estructura
-  - 1.3 Introduccion a creacion de Diagrmas de flujo
+[Go to site](https://www.alejandro-leyva.com/micro-21/web/)
 
 
 ## Softwares

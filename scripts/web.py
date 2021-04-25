@@ -32,14 +32,12 @@ def generate_files_html(path_file: [str], name_file: [str], ignore: [str] =[]):
     """Logic to iterate all notebooks to html"""
     for count in range(len(path_file)):
         if name_file[count] not in ignore:
-            print(name_file[count])
             convert_nb_html(path_file[count], name_file[count])
 
 
-def build_index(html: str):
+def build_index(html: BeautifulSoup):
     """build de file index.html and save in location"""
-    if not (type(html) == 'str'):
-        html = html.prettify()
+    html = html.prettify()
 
     path = "../web/index.html"
     with open(path, mode='w', encoding='utf-8') as index:
@@ -165,7 +163,7 @@ def build_body_html(html: BeautifulSoup) -> BeautifulSoup:
     Returns:
         BeautifulSoup: all new content html
     """
-    # trar el listado de htmls
+    # traer el listado de htmls
     list_html = get_list_html().get("name")
     # separar y generar un array por capitulo
     all_caps = generate_list_cap(list_html)
@@ -173,7 +171,10 @@ def build_body_html(html: BeautifulSoup) -> BeautifulSoup:
     # crear la logica para crear el cap html html
     url_base = '.'
     for i in range(len(all_caps)):
-        build_cap(f'Capítulo {i}', all_caps.get(i), url_base, html)
+        cap = i
+        if i == 0: cap = "Extra"
+
+        build_cap(f'Capítulo {cap}', all_caps.get(i), url_base, html)
     # regresar todo el html
 
     return html
@@ -203,9 +204,9 @@ if __name__ == "__main__":
     files = search_files_nb()
     print("Conveting to html...")
     generate_files_html(files['path_file'], files['name_file'],files_name_ignore)
-    print("Generate index.html")
     print("copying imgs")
     copy_imgs()
+    print("Generate index.html")
     html = get_html_template()
     html = build_body_html(html)
     build_index(html)
