@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 from nbconvert.exporters import HTMLExporter
 from traitlets.config import Config
 
+from change_name import change_name
 
 def convert_nb_html(path_name_file: str, name_file: str):
     """ Convert files notebooks in html"""
@@ -27,11 +28,12 @@ def convert_nb_html(path_name_file: str, name_file: str):
         html.write(result[0])
 
 
-def generate_files_html(path_file: [], name_file: [], ignore: list =[]):
+def generate_files_html(path_file: [str], name_file: [str], ignore: [str] =[]):
     """Logic to iterate all notebooks to html"""
-    # TODO: agregar que ignore algunos archivos
     for count in range(len(path_file)):
-        convert_nb_html(path_file[count], name_file[count])
+        if name_file[count] not in ignore:
+            print(name_file[count])
+            convert_nb_html(path_file[count], name_file[count])
 
 
 def build_index(html: str):
@@ -59,7 +61,7 @@ def copy_imgs():
         shutil.copyfile(src, dist)
 
 
-def build_cap(title: str, name_items: [], url_base: str,
+def build_cap(title: str, name_items: [str], url_base: str,
               html: BeautifulSoup) -> BeautifulSoup:
     """Build all html for each cap with the list"""
     title = build_tag('h1', title)
@@ -186,18 +188,28 @@ def get_html_template() -> BeautifulSoup:
     template_html.close()
     return BeautifulSoup(html_raw, 'html.parser')
 
+def clean_directory_html():
+    path="../web"
+    for file in Path(path).rglob("*.html"):
+        os.remove(os.path.abspath(file))
 
 if __name__ == "__main__":
-    print("Buscando archivos...")
+    files_name_ignore= ["Notas","Template","Test","test","template"]
+    print("Fix names files ipynb")
+    change_name()
+    print("cleaning directory")
+    clean_directory_html()
+    print("Searching files...")
     files = search_files_nb()
-    print("Convirtiendolos a html...")
-    generate_files_html(files['path_file'], files['name_file'])
-    print("Generando index.html")
-    print("Copiando imgs")
+    print("Conveting to html...")
+    generate_files_html(files['path_file'], files['name_file'],files_name_ignore)
+    print("Generate index.html")
+    print("copying imgs")
     copy_imgs()
     html = get_html_template()
     html = build_body_html(html)
     build_index(html)
-    print("Arreglando los tag de las imgs")
+    print("Fix tag img")
     change_path_img_in_html()
-    print("Termine... xD")
+    print("Done... xD")
+
