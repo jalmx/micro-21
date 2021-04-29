@@ -1,30 +1,31 @@
 #Juego de adivina el numero
 import random
 
-number = random.randint(1,10)
+num_random = random.randint(1,10) #genera un numero al azar en ese rango
 
-print("Juego de adivina el numero")
-print("El numero esta entre 1 y 10")
-print("Tienes 5 intentos")
-print("Mucha suerte!!!!")
+print("JUEGO + ADIVINA EL NUMERO")
+print("El numero esta entre 1 al 10")
+print("Tienes solo 5 intentos")
+print("Mucha suerte >:) ")
 
 intentos = 0
 while True:
-    nuevo = int(input("Dame un valor: "))
+    number = int(input("Dar el numero: "))
 
-    if nuevo < number:
-        print("El numero es MAYOR")
+    if number < num_random:
+        print("El numero es mayor")
         intentos +=1
-    elif nuevo > number:
-        print("El numero es MENOR")
+    elif number > num_random:
+        print("El numero es menor")
         intentos +=1
     else:
-        print("Felicidades le has atinado")
+        print("Felicidades le atinaste :D")
         break
 
-    print(f"Llevas {intentos} intentos")
-    
     if intentos == 5:
-        print("Perdiste, lastima margarito  T.T")
+        print(f"Fallaste {intentos} veces")
+        print(f"EL numero era: {num_random}")
+        print(f"Lastima margarito")
         break
+
 

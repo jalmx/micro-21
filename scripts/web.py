@@ -47,7 +47,7 @@ def build_index(html: BeautifulSoup):
 def copy_imgs():
     """copy all imgs from src to folder web/img"""
     img_paths = []
-    img_regex_list = ['png', 'jpeg', 'jpg', 'svg']
+    img_regex_list = ['png', 'jpeg', 'jpg', 'svg',"webpg"]
 
     for regex in img_regex_list:
         for img_path in Path("../book").rglob(f'**/*.{regex}'):
