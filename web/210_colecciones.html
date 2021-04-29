@@ -14262,14 +14262,14 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h1 id="2.10-Estructura-de-datos">
-     2.10 Estructura de datos
-     <a class="anchor-link" href="#2.10-Estructura-de-datos">
+    <h1 id="2.10-Colecciones">
+     2.10 Colecciones
+     <a class="anchor-link" href="#2.10-Colecciones">
       ¶
      </a>
     </h1>
     <p>
-     Dentro de los lenguajes de programación hay tipos datos que son estructuras que pueden contener más de un dato, a comparación de los tipos de datos básicos, estas estructuras pueden contener muchos de esos datos básicos en su interior. Podrías decir que es un base de datos, pero esta solo existe mientras está la aplicación en ejecución, los datos son temporales.
+     Dentro de los lenguajes de programación hay tipos datos que son estructuras que pueden contener más de un dato, a comparación de los tipos de datos básicos, estas estructuras pueden contener muchos de esos datos básicos en su interior. Podrías decir que es una base de datos, pero esta solo existe mientras está la aplicación en ejecución, los datos son temporales.
     </p>
     <p>
      En python son los siguientes:
@@ -14279,11 +14279,13 @@ all of MD as it is not optimized for dense, information rich UIs.
       <code>
        Tuplas
       </code>
+      Tipo de dato Inmutable
      </li>
      <li>
       <code>
-       Listas
+       Listas (arrays)
       </code>
+      Tipo de Mutable
      </li>
      <li>
       <code>
@@ -14319,12 +14321,277 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Es una estructura de datos
+     <strong>
+      inmutables
+     </strong>
+     , una vez declarada no puede cambiar su contenido, ni agregar, ni eliminar, no modificar.
+    </p>
+    <p>
+     Cada posicion de los datos tiene un
+     <strong>
+      indice
+     </strong>
+     (index), el cual me ayuda a acceder a el.
+     <em>
+      La primera posicion siempre es 0
+     </em>
+     .
+    </p>
+    <p>
+     <strong>
+      La convencion de como declarar o nombrar a una lista o tupla es en plural
+     </strong>
+    </p>
+    <p>
+     Parametros a destacar:
+    </p>
+    <ul>
+     <li>
+      index: Indice
+     </li>
+     <li>
+      len: Longitud
+     </li>
+    </ul>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="n">nombre_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="n">dato1</span><span class="p">,</span> <span class="n">dato2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">daton</span><span class="p">)</span>
+</pre>
+    </div>
    </div>
   </div>
-  <div class="jp-Cell-inputWrapper">
-   <div class="jp-InputPrompt jp-InputArea-prompt">
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [18]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Declaracion de una tupla</span>
+
+<span class="n">calificaciones</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">561</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">61</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">965</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">91</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">654</span><span class="p">,</span><span class="mi">9685</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">561</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">156</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">19</span><span class="p">)</span> <span class="c1"># Tiene 3 posiciones, comenzado en el 0. Largo de 3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">calificaciones</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="n">calificaciones</span><span class="p">)</span> <span class="p">)</span> 
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
    </div>
-   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>(8, 7, 9, 51, 561, 651, 65, 165, 1, 61, 65, 165, 1, 651, 965, 48, 91, 8, 41, 654, 9685, 1, 561, 65, 16, 51, 6, 4, 65, 165, 41, 6, 156, 1, 651, 65, 1, 651, 65, 1, 651, 65, 1, 651, 65, 1, 65, 16, 51, 65, 1, 651, 65, 1, 65, 19)
+&lt;class 'tuple'&gt;
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [10]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># vamos a acceder a cada dato</span>
+
+<span class="n">calificacion1</span> <span class="o">=</span> <span class="n">calificaciones</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">calificacion2</span> <span class="o">=</span> <span class="n">calificaciones</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">calificacion3</span> <span class="o">=</span> <span class="n">calificaciones</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">calificacion1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calificacion2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calificacion3</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>8
+7
+9
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [20]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Recorriendo tuplas</span>
+
+<span class="k">for</span> <span class="n">calificacion</span> <span class="ow">in</span> <span class="n">calificaciones</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">calificacion</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">'-------------------------'</span><span class="p">)</span>
+
+<span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">contador</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">calificaciones</span><span class="p">):</span>
+    <span class="n">calificacion</span> <span class="o">=</span> <span class="n">calificaciones</span><span class="p">[</span><span class="n">contador</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">calificacion</span><span class="p">)</span>
+    <span class="n">contador</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>8
+7
+9
+51
+561
+651
+65
+165
+1
+61
+65
+165
+1
+651
+965
+48
+91
+8
+41
+654
+9685
+1
+561
+65
+16
+51
+6
+4
+65
+165
+41
+6
+156
+1
+651
+65
+1
+651
+65
+1
+651
+65
+1
+651
+65
+1
+65
+16
+51
+65
+1
+651
+65
+1
+65
+19
+-------------------------
+8
+7
+9
+51
+561
+651
+65
+165
+1
+61
+65
+165
+1
+651
+965
+48
+91
+8
+41
+654
+9685
+1
+561
+65
+16
+51
+6
+4
+65
+165
+41
+6
+156
+1
+651
+65
+1
+651
+65
+1
+651
+65
+1
+651
+65
+1
+65
+16
+51
+65
+1
+651
+65
+1
+65
+19
+</pre>
+      </div>
+     </div>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">

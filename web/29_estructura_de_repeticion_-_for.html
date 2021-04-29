@@ -14276,17 +14276,23 @@ all of MD as it is not optimized for dense, information rich UIs.
      <code>
       for
      </code>
-     . Esta estructura tiene un comporamiento distinto a
+     . Esta estructura tiene un comportamiento similar a
      <code>
       while
      </code>
      . En esencial hace lo mismo, repite hasta un limite pero este se da distinto.
+     <code>
+      For each
+     </code>
+     .
     </p>
     <p>
-     Sintasix:
+     <strong>
+      Sintasix:
+     </strong>
     </p>
     <div class="highlight">
-     <pre><span></span><span class="k">for</span><span class="p">(</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">rango</span> <span class="p">)</span> <span class="p">:</span> 
+     <pre><span></span><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">iterador</span> <span class="p">:</span> 
     <span class="n">código</span> <span class="n">a</span> <span class="n">ejecutar</span>
     <span class="n">código</span> <span class="n">a</span> <span class="n">ejecutar</span>
     <span class="n">código</span> <span class="n">a</span> <span class="n">ejecutar</span>
@@ -14357,11 +14363,11 @@ all of MD as it is not optimized for dense, information rich UIs.
     </p>
    </div>
   </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
    <div class="jp-Cell-inputWrapper">
     <div class="jp-InputArea jp-Cell-inputArea">
      <div class="jp-InputPrompt jp-InputArea-prompt">
-      In [ ]:
+      In [4]:
      </div>
      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
       <div class="CodeMirror cm-s-jupyter">
@@ -14370,7 +14376,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="c1">#y el valor inicial por default es 0, el incremento es de 1 en 1</span>
 
 <span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'el valor actual es: "</span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s1">"'</span><span class="p">)</span>
     
 </pre>
        </div>
@@ -14378,32 +14384,75 @@ all of MD as it is not optimized for dense, information rich UIs.
      </div>
     </div>
    </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>el valor actual es: "0"
+el valor actual es: "1"
+el valor actual es: "2"
+el valor actual es: "3"
+el valor actual es: "4"
+el valor actual es: "5"
+el valor actual es: "6"
+el valor actual es: "7"
+el valor actual es: "8"
+el valor actual es: "9"
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
   </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
    <div class="jp-Cell-inputWrapper">
     <div class="jp-InputArea jp-Cell-inputArea">
      <div class="jp-InputPrompt jp-InputArea-prompt">
-      In [ ]:
+      In [5]:
      </div>
      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
       <div class="CodeMirror cm-s-jupyter">
        <div class="highlight hl-ipython3">
-        <pre><span></span><span class="c1"># Ahora vamos a imprimir en un rango, entonces se le pasa el inicio y el fin, comenzando en 2 y terminando en 11</span>
+        <pre><span></span><span class="c1"># Ahora vamos a imprimir en un rango, entonces se le pasa el inicio y el fin,</span>
+<span class="c1"># comenzando en 2 y terminando en 11</span>
 
 <span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">12</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'el valor actual es: "</span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s1">"'</span><span class="p">)</span>
 </pre>
        </div>
       </div>
      </div>
     </div>
    </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>el valor actual es: "2"
+el valor actual es: "3"
+el valor actual es: "4"
+el valor actual es: "5"
+el valor actual es: "6"
+el valor actual es: "7"
+el valor actual es: "8"
+el valor actual es: "9"
+el valor actual es: "10"
+el valor actual es: "11"
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
   </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
    <div class="jp-Cell-inputWrapper">
     <div class="jp-InputArea jp-Cell-inputArea">
      <div class="jp-InputPrompt jp-InputArea-prompt">
-      In [ ]:
+      In [6]:
      </div>
      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
       <div class="CodeMirror cm-s-jupyter">
@@ -14411,10 +14460,31 @@ all of MD as it is not optimized for dense, information rich UIs.
         <pre><span></span><span class="c1"># Ahora vamos a imprimir en un rango, entonces se le pasa el inicio y el fin, </span>
 <span class="c1"># comenzando en 1 y terminando en 20, de 2 en 2</span>
 
-<span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
 </pre>
        </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>3
+5
+7
+9
+11
+13
+15
+17
+19
+21
+</pre>
       </div>
      </div>
     </div>
@@ -14448,26 +14518,38 @@ all of MD as it is not optimized for dense, information rich UIs.
     </p>
    </div>
   </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
    <div class="jp-Cell-inputWrapper">
     <div class="jp-InputArea jp-Cell-inputArea">
      <div class="jp-InputPrompt jp-InputArea-prompt">
-      In [ ]:
+      In [7]:
      </div>
      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
       <div class="CodeMirror cm-s-jupyter">
        <div class="highlight hl-ipython3">
-        <pre><span></span><span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+        <pre><span></span><span class="n">suma</span> <span class="o">=</span> <span class="mf">0.0</span>
 
 <span class="k">for</span> <span class="n">calificacion</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">parcial</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Dar el parcial "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">calificacion</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">": "</span><span class="p">))</span>
-    <span class="n">suma</span> <span class="o">+=</span> <span class="n">parcial</span>
-    
-<span class="n">promedio</span> <span class="o">=</span> <span class="n">suma</span> <span class="o">/</span> <span class="mi">3</span>
+    <span class="n">suma</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Dar el parcial </span><span class="si">{</span><span class="n">calificacion</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">: "</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"El promedio es "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">promedio</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"El promedio es </span><span class="si">{</span><span class="n">suma</span> <span class="o">/</span> <span class="mi">3</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre>
        </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Dar el parcial 1: 8
+Dar el parcial 2: 7
+Dar el parcial 3: 10
+El promedio es 8.333333333333334
+</pre>
       </div>
      </div>
     </div>
@@ -14484,11 +14566,11 @@ all of MD as it is not optimized for dense, information rich UIs.
     </p>
    </div>
   </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
    <div class="jp-Cell-inputWrapper">
     <div class="jp-InputArea jp-Cell-inputArea">
      <div class="jp-InputPrompt jp-InputArea-prompt">
-      In [ ]:
+      In [8]:
      </div>
      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
       <div class="CodeMirror cm-s-jupyter">
@@ -14504,6 +14586,181 @@ all of MD as it is not optimized for dense, information rich UIs.
      </div>
     </div>
    </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>7 x 1 = 7
+7 x 2 = 14
+7 x 3 = 21
+7 x 4 = 28
+7 x 5 = 35
+7 x 6 = 42
+7 x 7 = 49
+7 x 8 = 56
+7 x 9 = 63
+7 x 10 = 70
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [11]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>0
+1
+2
+3
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [1]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">mensaje</span> <span class="o">=</span> <span class="s2">"Super mecatronica 1000%"</span>
+
+<span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">mensaje</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>S
+u
+p
+e
+r
+ 
+m
+e
+c
+a
+t
+r
+o
+n
+i
+c
+a
+ 
+1
+0
+0
+0
+%
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [3]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1">#Comparativa entre el for vs while</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Con FOR'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">contador</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">contador</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">'---------------'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Con WHILE'</span><span class="p">)</span>
+
+<span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">contador</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">contador</span><span class="p">)</span>
+    <span class="n">contador</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+---------------
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14511,34 +14768,23 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
     <p>
      <strong>
-      3. Calcular el promedio, solicitando 3 parciales y al final dar el promedio
+      Ejercicio:
      </strong>
     </p>
-   </div>
-  </div>
-  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-   <div class="jp-Cell-inputWrapper">
-    <div class="jp-InputArea jp-Cell-inputArea">
-     <div class="jp-InputPrompt jp-InputArea-prompt">
-      In [ ]:
-     </div>
-     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-      <div class="CodeMirror cm-s-jupyter">
-       <div class="highlight hl-ipython3">
-        <pre><span></span><span class="n">parciales</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">for</span> <span class="n">parcial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">calificacion</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Dar parcial "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">parcial</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">": "</span>  <span class="p">)</span> <span class="p">)</span>
-    <span class="n">parciales</span> <span class="o">+=</span> <span class="n">calificacion</span>
-    
-<span class="n">promedio</span> <span class="o">=</span> <span class="n">parciales</span> <span class="o">/</span> <span class="mi">3</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Tu promedio es: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">promedio</span><span class="p">))</span>
-</pre>
-       </div>
-      </div>
-     </div>
-    </div>
+    <ol>
+     <li>
+      Recorer un rango del 0 al 10 e indicar cuales son par e impar
+     </li>
+     <li>
+      Recorer un rango del 5 al 32 e indicar los que sean multiplos de 5
+     </li>
+     <li>
+      Solicitarle al usuario que tabla desea imprimir, indicando desde donde comienza y donde termina
+     </li>
+     <li>
+      Calcular el promedio de la sumatoria de los numeros pares desde el 2 hasta el 200
+     </li>
+    </ol>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
