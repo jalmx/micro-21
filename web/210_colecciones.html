@@ -14269,7 +14269,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      </a>
     </h1>
     <p>
-     Dentro de los lenguajes de programación hay tipos datos que son estructuras que pueden contener más de un dato, a comparación de los tipos de datos básicos, estas estructuras pueden contener muchos de esos datos básicos en su interior. Podrías decir que es una base de datos, pero esta solo existe mientras está la aplicación en ejecución, los datos son temporales.
+     Dentro de los lenguajes de programación hay tipos datos que son estructuras que pueden contener más de un dato, a comparación de los tipos de datos básicos, estas estructuras pueden contener muchos de esos datos básicos en su interior. Podrías decir que es una base de datos, pero esta solo existe mientras está la aplicación en ejecución, los datos son temporales. Las colecciones pueden contener cualquier tipo de dato, incluso mas colecciones.
     </p>
     <p>
      En python son los siguientes:
@@ -14361,7 +14361,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      </strong>
     </p>
     <div class="highlight">
-     <pre><span></span><span class="n">nombre_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="n">dato1</span><span class="p">,</span> <span class="n">dato2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">daton</span><span class="p">)</span>
+     <pre><span></span><span class="n">nombre_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="n">dato1</span><span class="p">,</span> <span class="n">dato2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">datoN</span><span class="p">)</span>
 </pre>
     </div>
    </div>
@@ -14370,14 +14370,16 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-Cell-inputWrapper">
     <div class="jp-InputArea jp-Cell-inputArea">
      <div class="jp-InputPrompt jp-InputArea-prompt">
-      In [18]:
+      In [11]:
      </div>
      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
       <div class="CodeMirror cm-s-jupyter">
        <div class="highlight hl-ipython3">
         <pre><span></span><span class="c1"># Declaracion de una tupla</span>
 
-<span class="n">calificaciones</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">561</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">61</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">965</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">91</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">654</span><span class="p">,</span><span class="mi">9685</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">561</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">165</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">156</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">651</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">19</span><span class="p">)</span> <span class="c1"># Tiene 3 posiciones, comenzado en el 0. Largo de 3</span>
+<span class="c1"># Tiene 3 posiciones, comenzado en el 0. Largo de 3</span>
+
+<span class="n">calificaciones</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span> 
 
 <span class="nb">print</span><span class="p">(</span><span class="n">calificaciones</span><span class="p">)</span>
 
@@ -14394,7 +14396,7 @@ all of MD as it is not optimized for dense, information rich UIs.
       <div class="jp-OutputPrompt jp-OutputArea-prompt">
       </div>
       <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-       <pre>(8, 7, 9, 51, 561, 651, 65, 165, 1, 61, 65, 165, 1, 651, 965, 48, 91, 8, 41, 654, 9685, 1, 561, 65, 16, 51, 6, 4, 65, 165, 41, 6, 156, 1, 651, 65, 1, 651, 65, 1, 651, 65, 1, 651, 65, 1, 65, 16, 51, 65, 1, 651, 65, 1, 65, 19)
+       <pre>(8, 7, 9)
 &lt;class 'tuple'&gt;
 </pre>
       </div>
@@ -14406,7 +14408,7 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-Cell-inputWrapper">
     <div class="jp-InputArea jp-Cell-inputArea">
      <div class="jp-InputPrompt jp-InputArea-prompt">
-      In [10]:
+      In [12]:
      </div>
      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
       <div class="CodeMirror cm-s-jupyter">
@@ -14445,12 +14447,12 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-Cell-inputWrapper">
     <div class="jp-InputArea jp-Cell-inputArea">
      <div class="jp-InputPrompt jp-InputArea-prompt">
-      In [20]:
+      In [13]:
      </div>
      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
       <div class="CodeMirror cm-s-jupyter">
        <div class="highlight hl-ipython3">
-        <pre><span></span><span class="c1"># Recorriendo tuplas</span>
+        <pre><span></span><span class="c1"># Recorriendo tuplas con for y while</span>
 
 <span class="k">for</span> <span class="n">calificacion</span> <span class="ow">in</span> <span class="n">calificaciones</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">calificacion</span><span class="p">)</span>
@@ -14478,120 +14480,436 @@ all of MD as it is not optimized for dense, information rich UIs.
        <pre>8
 7
 9
-51
-561
-651
-65
-165
-1
-61
-65
-165
-1
-651
-965
-48
-91
-8
-41
-654
-9685
-1
-561
-65
-16
-51
-6
-4
-65
-165
-41
-6
-156
-1
-651
-65
-1
-651
-65
-1
-651
-65
-1
-651
-65
-1
-65
-16
-51
-65
-1
-651
-65
-1
-65
-19
 -------------------------
 8
 7
 9
-51
-561
-651
-65
-165
-1
-61
-65
-165
-1
-651
-965
-48
-91
-8
-41
-654
-9685
-1
-561
-65
-16
-51
-6
-4
-65
-165
-41
-6
-156
-1
-651
-65
-1
-651
-65
-1
-651
-65
-1
-651
-65
-1
-65
-16
-51
-65
-1
-651
-65
-1
-65
-19
 </pre>
       </div>
      </div>
     </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.10.2-Listas">
+     2.10.2 Listas
+     <a class="anchor-link" href="#2.10.2-Listas">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Es una coleccion de elementos ordenados. En otro lenguajes es conocido como un
+     <code>
+      array
+     </code>
+     . A este tipo de coleccion es Mutable, es decir, se le pueden agregar, eliminar, quitar, elementos. Podemos hacer diversas operaciones con ellos.
+    </p>
+    <p>
+     Elementos que debemos tener en cuenta son:
+    </p>
+    <ul>
+     <li>
+      <code>
+       index
+      </code>
+      : El indice o posicion de cada elemento en la lista, recordar que todas comienzan en la posicion 0.
+     </li>
+     <li>
+      <code>
+       length
+      </code>
+      : La longitud o cantidad de elementos que contiene
+     </li>
+    </ul>
+    <p>
+     <strong>
+      Sintaxis
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="n">nombre_lista</span> <span class="o">=</span> <span class="p">[</span><span class="n">elemento1</span><span class="p">,</span> <span class="n">elemento2</span><span class="p">,</span> <span class="n">elemento3</span><span class="p">,</span><span class="o">..</span> <span class="p">,</span> <span class="o">..</span><span class="p">]</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="2.10.2.1-Funciones-de-las-listas">
+     2.10.2.1 Funciones de las listas
+     <a class="anchor-link" href="#2.10.2.1-Funciones-de-las-listas">
+      ¶
+     </a>
+    </h3>
+    <p>
+     Las lista son un objeto, por lo tanto cuenta con diversos metodos los cuales nos ayudan a interactuar con ellos:
+    </p>
+    <ul>
+     <li>
+      <code>
+       append(element)
+      </code>
+      :    Adds an element at the end of the list
+     </li>
+     <li>
+      <code>
+       clear()
+      </code>
+      :    Removes all the elements from the list
+     </li>
+     <li>
+      <code>
+       copy()
+      </code>
+      : Returns a copy of the list
+     </li>
+     <li>
+      <code>
+       count(element)
+      </code>
+      : Returns the number of elements with the specified value
+     </li>
+     <li>
+      <code>
+       extend(list)
+      </code>
+      :   Add the elements of a list (or any iterable), to the end of the current list
+     </li>
+     <li>
+      <code>
+       index(element[,start[,end]])
+      </code>
+      :   Returns the index of the first element with the specified value
+     </li>
+     <li>
+      <code>
+       insert(&lt;position, element)
+      </code>
+      : Adds an element at the specified position
+     </li>
+     <li>
+      <code>
+       pop([index])
+      </code>
+      :   Removes the element at the specified position
+     </li>
+     <li>
+      <code>
+       remove(element)
+      </code>
+      :    Removes the first item with the specified value
+     </li>
+     <li>
+      <code>
+       reverse()
+      </code>
+      :  Reverses the order of the list
+     </li>
+     <li>
+      <code>
+       sort()
+      </code>
+      : Sorts the list
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [3]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Declaro una lista con unas materias</span>
+<span class="n">materias</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'analogicas'</span><span class="p">,</span> <span class="s1">'digitales'</span><span class="p">,</span> <span class="s1">'mediciones'</span><span class="p">]</span> <span class="c1"># lista de str</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">materias</span><span class="p">)</span>
+
+<span class="c1">#agregamos una materia mas a la lista</span>
+<span class="n">materias</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'dibujo 3D'</span><span class="p">)</span>
+
+<span class="c1">#imprimo la lista</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">materias</span><span class="p">)</span>
+
+<span class="c1">#creo otra lista</span>
+<span class="n">materias2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'neumatica'</span><span class="p">,</span> <span class="s1">'mecanismos'</span><span class="p">]</span>
+
+<span class="c1"># Extendemos la primer lista con la segunda</span>
+<span class="n">materias</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">materias2</span><span class="p">)</span>
+
+<span class="c1">#imprimo la lista</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">materias</span><span class="p">)</span>
+
+<span class="c1">#inserto una materia en la posicion 2</span>
+<span class="n">materias</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">'Matematicas'</span><span class="p">)</span>
+
+<span class="c1">#imprimo la lista</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">materias</span><span class="p">)</span>
+
+<span class="c1">#removemos el elemento 'Matematicas'</span>
+<span class="n">materias</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">"Matematicas"</span><span class="p">)</span>
+
+<span class="c1">#imprimo la lista</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">materias</span><span class="p">)</span>
+
+<span class="c1"># Ordenamos las lista</span>
+<span class="n">materias</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="c1">#imprimo la lista</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">materias</span><span class="p">)</span>
+
+<span class="c1"># sacamos un elemento de la lista, si no se especifica saca al ultimo</span>
+<span class="n">ultima_materia</span> <span class="o">=</span> <span class="n">materias</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+<span class="c1">#imprimo la lista</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">materias</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ultima materia:'</span><span class="p">,</span> <span class="n">ultima_materia</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>['analogicas', 'digitales', 'mediciones']
+['analogicas', 'digitales', 'mediciones', 'dibujo 3D']
+['analogicas', 'digitales', 'mediciones', 'dibujo 3D', 'neumatica', 'mecanismos']
+['analogicas', 'digitales', 'Matematicas', 'mediciones', 'dibujo 3D', 'neumatica', 'mecanismos']
+['analogicas', 'digitales', 'mediciones', 'dibujo 3D', 'neumatica', 'mecanismos']
+['analogicas', 'dibujo 3D', 'digitales', 'mecanismos', 'mediciones', 'neumatica']
+['analogicas', 'dibujo 3D', 'digitales', 'mecanismos', 'mediciones']
+ultima materia: neumatica
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="Obteniendo-los-datos-de-una-lista">
+     Obteniendo los datos de una lista
+     <a class="anchor-link" href="#Obteniendo-los-datos-de-una-lista">
+      ¶
+     </a>
+    </h3>
+    <p>
+     <strong>
+      Sintaxis
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="n">nombre_lista</span> <span class="p">[</span> <span class="n">posicion</span> <span class="p">]</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [14]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1">#Acceso a los datos de la lista</span>
+
+<span class="n">materia1</span> <span class="o">=</span> <span class="n">materias</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">materia2</span> <span class="o">=</span> <span class="n">materias</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">materia3</span> <span class="o">=</span> <span class="n">materias</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">materia4</span> <span class="o">=</span> <span class="n">materias</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">materia1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">materia2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">materia3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">materia4</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>analogicas
+dibujo 3D
+digitales
+mecanismos
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [11]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Recorriendo una lista con FOR</span>
+
+<span class="k">for</span> <span class="n">materia</span> <span class="ow">in</span> <span class="n">materias</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'La materia es: '</span><span class="p">,</span> <span class="n">materia</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'*********************'</span><span class="p">)</span>
+<span class="c1"># Recorriendo una lista con WHILE</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">materias</span><span class="p">):</span>
+    <span class="n">materia</span> <span class="o">=</span> <span class="n">materias</span><span class="p">[</span><span class="n">count</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">materia</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>La materia es:  analogicas
+La materia es:  dibujo 3D
+La materia es:  digitales
+La materia es:  mecanismos
+La materia es:  mediciones
+*********************
+analogicas
+dibujo 3D
+digitales
+mecanismos
+mediciones
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [7]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Cosas adicionales que se pueden realizar con listas</span>
+
+<span class="c1">#obtener la suma de los valores contenidos en la lista</span>
+
+<span class="n">valores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+
+<span class="n">suma</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+<span class="n">maximo</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+<span class="n">minimo</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"La suma:"</span><span class="p">,</span> <span class="n">suma</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"El valor maximo:"</span><span class="p">,</span> <span class="n">maximo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"El valor minimo:"</span><span class="p">,</span> <span class="n">minimo</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>La suma: 47
+El valor maximo: 9
+El valor minimo: 1
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="Ejercicios">
+     Ejercicios
+     <a class="anchor-link" href="#Ejercicios">
+      ¶
+     </a>
+    </h3>
+    <ol>
+     <li>
+      <p>
+       Crear una lista de frutas:
+       <em>
+        manzana
+       </em>
+       ,
+       <em>
+        platano
+       </em>
+       y
+       <em>
+        melon
+       </em>
+       . Posteriormete agregar
+       <em>
+        sandia
+       </em>
+       . Despues agregarle una lista mas que contenga
+       <em>
+        papaya
+       </em>
+       ,
+       <em>
+        kiwi
+       </em>
+       y
+       <em>
+        durazno
+       </em>
+       . He imprimir la lista completa. Despues remover la
+       <em>
+        sandia
+       </em>
+       e imprimir el resultado.
+      </p>
+     </li>
+     <li>
+      <p>
+       Crear una lista con sus calificaciones de Neumatica,
+      </p>
+     </li>
+    </ol>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14619,18 +14937,193 @@ all of MD as it is not optimized for dense, information rich UIs.
       ¶
      </a>
     </h2>
+    <p>
+     Cuando queremos eliminar algun elemento de una coleccion se usa la palabra reservada
+     <code>
+      del
+     </code>
+     junto a la posicion del elemento a eliminar.
+    </p>
+    <p>
+     <strong>
+      Sintaxis
+     </strong>
+    </p>
+    <ul>
+     <li>
+      <code>
+       del coleccion[posicion]
+      </code>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [ ]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Eliminar elementos de una coleccion</span>
+
+<span class="n">materias</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'analogica'</span><span class="p">,</span> <span class="s1">'digitales'</span><span class="p">,</span> <span class="s1">'mediciones'</span> <span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">materias</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">materias</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Elimino el elemento que esta en la posicion 1 de la coleccion</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">materias</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Funcion-len">
+     Funcion
+     <code>
+      len
+     </code>
+     <a class="anchor-link" href="#Funcion-len">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Los iteradores por default no te dicen cual es su largo, en muchas ocasiones necesitamos saber el largo para realizar ciertas tareas, para eso Python trae una funcion que nos ayuda.
+    </p>
+    <p>
+     <strong>
+      Sintaxis
+     </strong>
+    </p>
+    <ul>
+     <li>
+      <code>
+       len(coleccion)
+      </code>
+      : Devuelve el numero de los elementos de una coleccion
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [ ]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Ejemplos de aplicacion de la funcion len()</span>
+
+<span class="n">string</span> <span class="o">=</span> <span class="s1">'hola'</span>
+<span class="n">str_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+
+<span class="n">tupla</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">'mensaje'</span><span class="p">)</span>
+<span class="n">tupla_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tupla</span><span class="p">)</span>
+
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">'hola'</span><span class="p">]</span>
+<span class="n">lista_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+
+<span class="n">diccionario</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'key1'</span><span class="p">:</span> <span class="s1">'valor1'</span><span class="p">,</span> <span class="s1">'key2'</span><span class="p">:</span> <span class="s1">'valor2'</span><span class="p">,</span> <span class="s1">'key3'</span><span class="p">:</span> <span class="s1">'valor3'</span> <span class="p">}</span>
+<span class="n">dic_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">diccionario</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'largo de str'</span><span class="p">,</span><span class="n">str_len</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'largo de tupla'</span><span class="p">,</span><span class="n">tupla_len</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'largo de lista'</span><span class="p">,</span><span class="n">lista_len</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'largo de diccionario'</span><span class="p">,</span><span class="n">dic_len</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Funcion-de-ordenamiento-(sorted)">
+     Funcion de ordenamiento (
+     <code>
+      sorted
+     </code>
+     )
+     <a class="anchor-link" href="#Funcion-de-ordenamiento-(sorted)">
+      ¶
+     </a>
+    </h2>
+    <p>
+     TODO
+    </p>
+    <p>
+     <a href="https://developers.google.com/edu/python/sorting">
+      https://developers.google.com/edu/python/sorting
+     </a>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Funcion-tuple">
+     Funcion
+     <code>
+      tuple
+     </code>
+     <a class="anchor-link" href="#Funcion-tuple">
+      ¶
+     </a>
+    </h2>
+    <p>
+     TODO
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Funcion-list">
+     Funcion
+     <code>
+      list
+     </code>
+     <a class="anchor-link" href="#Funcion-list">
+      ¶
+     </a>
+    </h2>
+    <p>
+     TODO
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Funcion-dict">
+     Funcion
+     <code>
+      dict
+     </code>
+     <a class="anchor-link" href="#Funcion-dict">
+      ¶
+     </a>
+    </h2>
+    <p>
+     TODO
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
