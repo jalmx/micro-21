@@ -14901,27 +14901,117 @@ El valor minimo: 1
        <em>
         sandia
        </em>
-       e imprimir el resultado.
+       e imprimir el resultado. Recorrer la lista de frutas imprimiendo cada una.
       </p>
      </li>
      <li>
       <p>
-       Crear una lista con sus calificaciones de Neumatica,
+       Crear una lista con sus calificaciones de Neumatica, y obtener el promedio. Se debe utilizar la funcion
+       <code>
+        sum
+       </code>
+       para el procedimiento. Imprimir cual es la calificacion maxima y minima, usando las funciones
+       <code>
+        max()
+       </code>
+       y
+       <code>
+        min()
+       </code>
       </p>
      </li>
     </ol>
    </div>
   </div>
-  <div class="jp-Cell-inputWrapper">
-   <div class="jp-InputPrompt jp-InputArea-prompt">
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [18]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'manzana'</span><span class="p">,</span> <span class="s1">'platano'</span><span class="p">,</span> <span class="s1">'melon'</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">'sandia'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+<span class="n">fruits2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'papaya'</span><span class="p">,</span> <span class="s1">'kiwi'</span><span class="p">,</span> <span class="s1">'durazno'</span><span class="p">]</span>
+
+<span class="n">fruits</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">fruits2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+
+<span class="n">fruits</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">'sandia'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
    </div>
-   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h2 id="2.10.2-Listas">
-     2.10.2 Listas
-     <a class="anchor-link" href="#2.10.2-Listas">
-      ¶
-     </a>
-    </h2>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>['manzana', 'platano', 'melon']
+['manzana', 'platano', 'melon', 'sandia']
+['manzana', 'platano', 'melon', 'sandia', 'papaya', 'kiwi', 'durazno']
+['manzana', 'platano', 'melon', 'papaya', 'kiwi', 'durazno']
+manzana
+platano
+melon
+papaya
+kiwi
+durazno
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [21]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">neumatica_calificaciones</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="n">suma</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">neumatica_calificaciones</span><span class="p">)</span>
+<span class="n">maximo</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">neumatica_calificaciones</span><span class="p">)</span>
+<span class="n">minimo</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">neumatica_calificaciones</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="s1">'El promedio es: </span><span class="si">{0:0.2f}</span><span class="s1"> '</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">suma</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'La maxima calificacion es </span><span class="si">{</span><span class="n">maximo</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'La minima calificacion es </span><span class="si">{</span><span class="n">minimo</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>El promedio es: 7.67 
+La maxima calificacion es 9
+La minima calificacion es 6
+</pre>
+      </div>
+     </div>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -15124,6 +15214,18 @@ El valor minimo: 1
     <p>
      TODO
     </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="2.10.3-Diccionarios">
+     2.10.3 Diccionarios
+     <a class="anchor-link" href="#2.10.3-Diccionarios">
+      ¶
+     </a>
+    </h2>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
