@@ -150,6 +150,7 @@ def generate_list_cap(list_files: []) -> dict:
 
     for key in list_complet:
         list_complet[key] = sorted(list_complet.get(key))
+        #list_complet.get(key).sort()
 
     return list_complet
 
