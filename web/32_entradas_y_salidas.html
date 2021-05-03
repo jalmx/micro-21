@@ -14262,328 +14262,140 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h1 id="3.1-Introducción-Python-y-el-microcontrolador">
-     3.1 Introducción Python y el microcontrolador
-     <a class="anchor-link" href="#3.1-Introducción-Python-y-el-microcontrolador">
+    <h1 id="3.2-Entradas-y-Salidas-Digitales">
+     3.2 Entradas y Salidas Digitales
+     <a class="anchor-link" href="#3.2-Entradas-y-Salidas-Digitales">
       ¶
      </a>
     </h1>
-    <p>
-     Existen varias formas de programar un microcontrolador o tarjeta electronica basadas en microcontroladores o microporcesadores. Hay microcontroladores que se pueden programar directamente con Python pero realmente es una reimplementacion del lenguaje que no contiene todas la librerias, llamada
-     <a href="https://micropython.org/">
-      MicroPython
-     </a>
-     la cual es un interprete simplificado para microcontroladores.
-    </p>
-    <p>
-     En nuestro caso usaremos directamente el lenguaje Python para el control de un microncontrolador atraves de un protocolo de comunicacion llamando
-     <a href="https://github.com/firmata/protocol">
-      Firmata
-     </a>
-     , por medio de este estandar se establecera comunicacion y control de una placa electronica.
-    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h2 id="3.1.1-El-microcontrolador-y-Microprocesador">
-     3.1.1 El microcontrolador y Microprocesador
-     <a class="anchor-link" href="#3.1.1-El-microcontrolador-y-Microprocesador">
+    <h2 id="3.2.1-Salidas-digitales">
+     3.2.1 Salidas digitales
+     <a class="anchor-link" href="#3.2.1-Salidas-digitales">
       ¶
      </a>
     </h2>
     <p>
-     Un microprocesador es el elemento que realiza el procesamiento de datos, ejecuta instrucciones, realiza operaciones matematicas, en resumen es el cerebro de todo sistema computacional. Es lo unico que hace. Tambien conocido como CPU (Unidad Central de Proceso)
-    </p>
-    <p>
-     El microcontrolador es un circuito integrado compuesto por un procesador, elementos auxiliares y perifericos.
-     <em>
-      En resumen es una computadora
-     </em>
-     . El cual se puede programar para realizar cualquier tipo de tarea. Los elementos minimos que debe contener son:
-    </p>
-    <ul>
-     <li>
-      CPU (Procesador)
-     </li>
-     <li>
-      Memorias:
-      <ul>
-       <li>
-        RAM
-       </li>
-       <li>
-        ROM
-       </li>
-      </ul>
-     </li>
-     <li>
-      Perifericos (GPIO)
-     </li>
-    </ul>
-    <h3 id="Arquitectura-de-Microcomputadoras">
-     Arquitectura de Microcomputadoras
-     <a class="anchor-link" href="#Arquitectura-de-Microcomputadoras">
-      ¶
-     </a>
-    </h3>
-    <p>
-     Existen 2 arquitecturas de computadoras que son:
+     Tenemos que dar las indicaciones para mandar a nivel alto las salidas del microcontrolador; es decir, mandar a un
      <code>
-      Von Neumann
+      nivel lógico 1
      </code>
-     y
+     o
      <code>
-      Harvard
+      alto
      </code>
-     . En este caso los microcontroladores tienen una arquitectura Von Neumann dado que todo viene integrado en un solo CI.
-    </p>
-   </div>
-  </div>
-  <div class="jp-Cell-inputWrapper">
-   <div class="jp-InputPrompt jp-InputArea-prompt">
-   </div>
-   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h2 id="3.2.1-Microcontrolador-ATMEGA328">
-     3.2.1 Microcontrolador ATMEGA328
-     <a class="anchor-link" href="#3.2.1-Microcontrolador-ATMEGA328">
-      ¶
-     </a>
-    </h2>
-    <p>
-     Es un micrcontrolador de 8 bits, del fabricante ATMEL (actualmente propiedad de Microchip). Tiene las siguientes características:
+     , esto lo que hará será que a la salida del pin tenga un nivel de voltaje de
+     <code>
+      5V
+     </code>
+     , en caso de mandarlo a
+     <code>
+      0
+     </code>
+     o
+     <code>
+      bajo
+     </code>
+     , es equivalente a
+     <code>
+      0V
+     </code>
+     .
     </p>
     <table>
      <thead>
       <tr>
-       <th style="text-align:left">
-        Características
+       <th style="text-align:center">
+        Nivel lógico
        </th>
        <th style="text-align:center">
-        Dato
+        Digital
+       </th>
+       <th style="text-align:center">
+        Voltaje
        </th>
       </tr>
      </thead>
      <tbody>
       <tr>
-       <td style="text-align:left">
-        No. of Pins
+       <td style="text-align:center">
+        0
        </td>
        <td style="text-align:center">
-        28
+        Bajo
+       </td>
+       <td style="text-align:center">
+        0V
        </td>
       </tr>
       <tr>
-       <td style="text-align:left">
-        CPU
-       </td>
-       <td style="text-align:center">
-        RISC 8-Bit AVR
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Operating Voltage
-       </td>
-       <td style="text-align:center">
-        1.8 to 5.5 V
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Program Memory
-       </td>
-       <td style="text-align:center">
-        32KB
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Program Memory Type
-       </td>
-       <td style="text-align:center">
-        Flash
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        SRAM
-       </td>
-       <td style="text-align:center">
-        2048 Bytes
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        EEPROM
-       </td>
-       <td style="text-align:center">
-        1024 Bytes
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        ADC
-       </td>
-       <td style="text-align:center">
-        10-Bit
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Number of ADC Channels
-       </td>
-       <td style="text-align:center">
-        8
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        PWM Pins
-       </td>
-       <td style="text-align:center">
-        6
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Comparator
-       </td>
        <td style="text-align:center">
         1
        </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Packages (4)
+       <td style="text-align:center">
+        Alto
        </td>
        <td style="text-align:center">
-        8-pin PDIP32-lead TQFP28-pad QFN/MLF32-pad QFN/MLF
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Oscillator
-       </td>
-       <td style="text-align:center">
-        up to 20 MHz
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Timer (3)
-       </td>
-       <td style="text-align:center">
-        8-Bit x 2 &amp; 16-Bit x 1
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Enhanced Power on Reset
-       </td>
-       <td style="text-align:center">
-        Yes
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Power Up Timer
-       </td>
-       <td style="text-align:center">
-        Yes
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        I/O Pins
-       </td>
-       <td style="text-align:center">
-        23
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Manufacturer
-       </td>
-       <td style="text-align:center">
-        Microchip
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        SPI
-       </td>
-       <td style="text-align:center">
-        Yes
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        I2C
-       </td>
-       <td style="text-align:center">
-        Yes
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Watchdog Timer
-       </td>
-       <td style="text-align:center">
-        Yes
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Brown out detect (BOD)
-       </td>
-       <td style="text-align:center">
-        Yes
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Reset
-       </td>
-       <td style="text-align:center">
-        Yes
-       </td>
-      </tr>
-      <tr>
-       <td style="text-align:left">
-        Minimum Operating Temperature
-       </td>
-       <td style="text-align:center">
-        -40 C to +85 C
+        5V
        </td>
       </tr>
      </tbody>
     </table>
-    <p>
-     Para más detalles el
-     <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf">
-      datasheet del ATME328
-     </a>
-    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h3 id="Pines-del-microcontrolador">
-     Pines del microcontrolador
-     <a class="anchor-link" href="#Pines-del-microcontrolador">
+    <h3 id="3.2.1.1-Retardos-sleep()">
+     3.2.1.1 Retardos
+     <code>
+      sleep()
+     </code>
+     <a class="anchor-link" href="#3.2.1.1-Retardos-sleep()">
       ¶
      </a>
     </h3>
     <p>
-     La siguiente imagen muestra la distribución de pines y que función realiza cada uno.
+     Para indicar en python un tiempo en donde no haga nada y una vez este termine continuar realizando lo indicado se utiliza la función
+     <code>
+      sleep()
+     </code>
+     de la libreria
+     <code>
+      time
+     </code>
+     .
     </p>
     <p>
-     <img alt="pinout" src="./img/pinout.jpg"/>
+     Paso 1. importar la libreria
+     <code>
+      time
+     </code>
+     Paso 2. Indicar el tiempo en segundos
+    </p>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">segundo</span><span class="p">)</span>
+</pre>
+    </div>
+    <p>
+     Documentación
+     <a href="https://docs.python.org/3/library/time.html">
+      time
+     </a>
+     .
     </p>
    </div>
   </div>
@@ -14591,112 +14403,165 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h2 id="3.2.2-Tarjetas-electronicas">
-     3.2.2 Tarjetas electronicas
-     <a class="anchor-link" href="#3.2.2-Tarjetas-electronicas">
+    <h3 id="3.2.1.2-Configuracion-básica-para-conectarnos-a-la-Tarjeta">
+     3.2.1.2 Configuracion básica para conectarnos a la Tarjeta
+     <a class="anchor-link" href="#3.2.1.2-Configuracion-básica-para-conectarnos-a-la-Tarjeta">
+      ¶
+     </a>
+    </h3>
+    <p>
+     Tenemos que mandar las indicaciones al microcontrolador para que active sus salidas digitales.
+    </p>
+    <p>
+     Primero instalar la libreria
+     <a href="https://pypi.org/project/pyFirmata/">
+      pyFirmata
+     </a>
+     , tenemos que abrir la terminal y escribir el siguiente comando:
+    </p>
+    <div class="highlight">
+     <pre><span></span>pip install pyFirmata
+</pre>
+    </div>
+    <p>
+     <strong>
+      En todo script de python debemos realizar lo siguiente cuando queremos utilizar el protocolo.
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="c1">#importamos la libreria que nos permite conectarnos por el protocolo de firmata y Python</span>
+<span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
+
+<span class="c1"># Declaramos una variable llamada "board" donde queda indicado que esta la placa conectada</span>
+<span class="n">port</span> <span class="o">=</span> <span class="s1">'PUERTO'</span> <span class="c1"># declaro una variable donde coloco el puerto donde esta conectado</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="3.2.1.2-Accionando-las-Salidas">
+     3.2.1.2 Accionando las Salidas
+     <a class="anchor-link" href="#3.2.1.2-Accionando-las-Salidas">
+      ¶
+     </a>
+    </h3>
+    <p>
+     Tenemos que mandar las indicaciones al microcontrolador para que active sus salidas digitales.
+    </p>
+    <p>
+     <em>
+      Nota: Nunca utilices los pines 0 e 1, porque son para la comunicación serial UART - USB
+     </em>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">NUMERO_PIN</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="o">|</span><span class="mi">0</span><span class="p">)</span>
+</pre>
+    </div>
+    <p>
+     <strong>
+      Ejemplo: Aquí solo encendemos el pin 3
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">import</span> <span class="nn">pyfirmata</span>    <span class="c1">#importamos la libreria que nos permite conectarnos por el protocolo de firmata</span>
+<span class="kn">import</span> <span class="nn">time</span>         <span class="c1"># importamos la libreria de retardos</span>
+
+<span class="c1"># Indicamos el puerto donde se encuentra conectada la tarjeta electronica</span>
+<span class="n">port</span> <span class="o">=</span> <span class="s1">'PUERTO'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">pyfirmata</span><span class="o">.</span><span class="n">Arduino</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
+
+<span class="c1">#se manda un nivel 1 a la salida del pin 3</span>
+<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo: Vamos a Encender y apagar un pin digital
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>    <span class="c1">#importamos la libreria que nos permite conectarnos por el protocolo de firmata</span>
+<span class="kn">import</span> <span class="nn">time</span>         <span class="c1"># importamos la libreria de retardos</span>
+
+<span class="c1"># Indicamos el puerto donde se encuentra conectada la tarjeta electronica</span>
+<span class="n">port</span> <span class="o">=</span> <span class="s1">'PUERTO'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
+
+<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#se manda un nivel 1 a la salida del pin 3</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>             <span class="c1">#nos esperamos un sengundo</span>
+<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#se manda un nivel 0 a la salida del pin 3</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>             <span class="c1">#nos esperamos un sengundo</span>
+<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#se manda un nivel 1 a la salida del pin 3</span>
+</pre>
+    </div>
+    <p>
+     TODO: descargar fritzing
+    </p>
+    <p>
+     <img alt="circuito" src="./img/circuito_basic_1.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [ ]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span> 
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Prácticas">
+     Prácticas
+     <a class="anchor-link" href="#Prácticas">
       ¶
      </a>
     </h2>
-    <p>
-     Vamos a utilizar una tarjeta electronica basada en el microcontrolador ATMEGA328, la cual es la placa
-     <a href="https://www.arduino.cc/">
-      Arduino
-     </a>
-     UNO. La cual es una placa de desarrollo de prototipos electronicos. En conjunto con un protocolo llamado
-     <a href="https://github.com/firmata/protocol">
-      Firmata
-     </a>
-     . Se carga un firmware al microcontrolador, el cual contiene el protocolo Firmata y con un scrpit de Python mandaremos las instrucciones de control.
-    </p>
-    <p>
-     En la siguiente imagen se muestra la aquitectura general de como sera la comunicacion entre un Script de Python y La tarjeta electrónica Arduino Uno.
-    </p>
-    <p>
-     <img alt="arquitectura" src="./img/arquitectura.png"/>
-    </p>
-   </div>
-  </div>
-  <div class="jp-Cell-inputWrapper">
-   <div class="jp-InputPrompt jp-InputArea-prompt">
-   </div>
-   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h3 id="3.2.2.1-Configurando-el-entorno-de-trabajo">
-     3.2.2.1 Configurando el entorno de trabajo
-     <a class="anchor-link" href="#3.2.2.1-Configurando-el-entorno-de-trabajo">
-      ¶
-     </a>
-    </h3>
     <ol>
      <li>
-      <p>
-       Instalar la libreria
-       <a href="https://pypi.org/project/pyFirmata/">
-        pyFirmata
-       </a>
-       , esta libreria nos ayudara a comunicar Python con cualquier microcontrolador que contenga dicho protocolo.
-       <br/>
-       <code>
-        pip install pyFirmata
-       </code>
-       .
-      </p>
+      Blink
      </li>
      <li>
-      <p>
-       Para simulación usaremos el software
-       <a href="https://www.simulide.com/p/home.html">
-        SimulIDE
-       </a>
-      </p>
+      Secuencia de luces
      </li>
      <li>
-      <p>
-       Crear un puertos virtuales, esto es para poder conectar el simulador con el script. Para Windows se usará
-       <a href="https://www.virtual-serial-port.org/">
-        Virtual Serial Port - Eltima
-       </a>
-       . (Esto solo es para simulación).
-      </p>
-     </li>
-     <li>
-      <p>
-       Instalar
-       <a href="https://www.arduino.cc/en/software">
-        Arduino IDE
-       </a>
-       para cargar el firmware de Firmata a la placa electrónica Arduino UNO.
-      </p>
+      Semaforo sencillo
      </li>
     </ol>
-    <p>
-     <img alt="ports" src="./img/port.webp"/>
-    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h3 id="3.2.2.2-Firmware-Firmata">
-     3.2.2.2 Firmware Firmata
-     <a class="anchor-link" href="#3.2.2.2-Firmware-Firmata">
-      ¶
-     </a>
-    </h3>
-    <p>
-     Para carga el firmware de Firmata viene por default en Arduino IDE en caso que se quiera carga a la placa de manera fisica, para el caso de usar el simular
-     <a href="#">
-      descarga el binario
-     </a>
-     a cargar.
-    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <hr/>
     <p>
      Realizado por Docente:
      <a href="https://www.alejandro-leyva.com/">
