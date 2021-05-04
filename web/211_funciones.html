@@ -14269,7 +14269,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      </a>
     </h1>
     <p>
-     Bloque de codigo reutilizable que puede ser llamado n cantidad de veces, debe ser corto,  hacer una sola cosa y hacerla bien.
+     Bloque de codigo reutilizable que puede ser llamado n cantidad de veces, debe ser corta,  hacer una sola cosa (resuelve un problema) y hacerla bien.
     </p>
     <h2 id="Como-se-nombran-las-funciones-(Buenas-practicas)">
      Como se nombran las funciones (Buenas practicas)
@@ -14291,7 +14291,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      <li>
       No tiene espacios el nombre, por lo tanto, son
       <code>
-       separados por coma
+       separados por guion bajo(_)
       </code>
      </li>
     </ul>
@@ -14328,25 +14328,25 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-Cell-inputWrapper">
     <div class="jp-InputArea jp-Cell-inputArea">
      <div class="jp-InputPrompt jp-InputArea-prompt">
-      In [2]:
+      In [60]:
      </div>
      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
       <div class="CodeMirror cm-s-jupyter">
        <div class="highlight hl-ipython3">
-        <pre><span></span><span class="k">def</span> <span class="nf">dos_al_cuadrado</span><span class="p">():</span>
-    <span class="sd">''' Esta funcion imprime el valor de 2 al cuadrado</span>
-<span class="sd">    '''</span>
-    <span class="n">cuadrado</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span>
+        <pre><span></span><span class="k">def</span> <span class="nf">elevar_cuadrado</span><span class="p">():</span>
+    <span class="sd">'''Esta funcion eleva al cuadrado el numero 2'''</span>
+    <span class="n">cuadrado</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">cuadrado</span><span class="p">)</span>
     
-<span class="k">def</span> <span class="nf">saludo</span><span class="p">():</span>
-    <span class="sd">'''Esta funcion imprime un mensaje de saludo'''</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'Hola!!!! &gt;:)'</span><span class="p">)</span>
 
-<span class="n">saludo</span><span class="p">()</span>
-<span class="n">saludo</span><span class="p">()</span>
-<span class="n">saludo</span><span class="p">()</span>
-<span class="n">dos_al_cuadrado</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">saludar</span><span class="p">():</span>
+    <span class="sd">'''</span>
+<span class="sd">    Esta funcion manda un saludo</span>
+<span class="sd">    '''</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Hola a todos!!! xD'</span><span class="p">)</span>
+
+<span class="n">saludar</span><span class="p">()</span>
+<span class="n">elevar_cuadrado</span><span class="p">()</span>
 </pre>
        </div>
       </div>
@@ -14359,9 +14359,7 @@ all of MD as it is not optimized for dense, information rich UIs.
       <div class="jp-OutputPrompt jp-OutputArea-prompt">
       </div>
       <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-       <pre>Hola!!!! &gt;:)
-Hola!!!! &gt;:)
-Hola!!!! &gt;:)
+       <pre>Hola a todos!!! xD
 4
 </pre>
       </div>
@@ -14374,7 +14372,9 @@ Hola!!!! &gt;:)
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
     <p>
-     Ejercicios:
+     <strong>
+      Ejercicios:
+     </strong>
     </p>
     <ol>
      <li>
@@ -14431,7 +14431,7 @@ Hola!!!! &gt;:)
      </em>
     </p>
     <div class="highlight">
-     <pre><span></span><span class="n">nombre_funcion</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">)</span>
+     <pre><span></span><span class="n">nombre_funcion</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="o">...</span><span class="p">)</span>
 </pre>
     </div>
    </div>
@@ -14440,30 +14440,29 @@ Hola!!!! &gt;:)
    <div class="jp-Cell-inputWrapper">
     <div class="jp-InputArea jp-Cell-inputArea">
      <div class="jp-InputPrompt jp-InputArea-prompt">
-      In [28]:
+      In [67]:
      </div>
      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
       <div class="CodeMirror cm-s-jupyter">
        <div class="highlight hl-ipython3">
-        <pre><span></span><span class="c1"># base ^ potencia =&gt; 2 ^ 3 = 8</span>
+        <pre><span></span><span class="c1"># base ^ potencia   -&gt; 2^3 = 8</span>
 
 <span class="k">def</span> <span class="nf">potencia</span><span class="p">(</span><span class="n">base</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span> <span class="n">potencia</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
-    <span class="sd">'''Esta funcion se le pasa la base y la potencia a la que sera elevada'''</span>
     <span class="n">resultado</span> <span class="o">=</span> <span class="n">base</span> <span class="o">**</span> <span class="n">potencia</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s1"> elveada a </span><span class="si">{</span><span class="n">potencia</span><span class="si">}</span><span class="s1"> es </span><span class="si">{</span><span class="n">resultado</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="s1"> elevado a la </span><span class="si">{</span><span class="n">potencia</span><span class="si">}</span><span class="s1"> es: </span><span class="si">{</span><span class="n">resultado</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">saludo2</span><span class="p">(</span><span class="n">nombre</span> <span class="p">:</span> <span class="nb">str</span> <span class="p">):</span>
-    <span class="sd">'''Esta funcion imprime un mensaje personalizado con el nombre'''</span>
+
+<span class="k">def</span> <span class="nf">saludo2</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+    <span class="sd">'''Funcion que imprime un mensaje personalizado'''</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Hola </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s1">, que chido es conocerte!!!'</span><span class="p">)</span>
     
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Hola!!! :D, </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s1">'</span> <span class="p">)</span>
-
-<span class="n">saludo2</span><span class="p">(</span><span class="s1">'Mexicano'</span><span class="p">)</span>
-<span class="n">saludo2</span><span class="p">(</span><span class="s1">'Max'</span><span class="p">)</span>
-<span class="n">saludo2</span><span class="p">(</span><span class="s1">'Senorita Liderman'</span><span class="p">)</span>
+<span class="n">saludo2</span><span class="p">(</span><span class="s1">'Axel'</span><span class="p">)</span>
+<span class="n">saludo2</span><span class="p">(</span><span class="s1">'Melani'</span><span class="p">)</span>
+<span class="n">saludo2</span><span class="p">(</span><span class="s1">'David'</span><span class="p">)</span>
+<span class="n">saludo2</span><span class="p">(</span><span class="s1">'Raul'</span><span class="p">)</span>
 
 <span class="n">potencia</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="n">saludo2</span><span class="p">(</span><span class="s1">'Leon'</span><span class="p">)</span>
+<span class="n">potencia</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 </pre>
        </div>
       </div>
@@ -14476,11 +14475,12 @@ Hola!!!! &gt;:)
       <div class="jp-OutputPrompt jp-OutputArea-prompt">
       </div>
       <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-       <pre>Hola!!! :D, Mexicano
-Hola!!! :D, Max
-Hola!!! :D, Senorita Liderman
-2 elveada a 3 es 8
-Hola!!! :D, Leon
+       <pre>Hola Axel, que chido es conocerte!!!
+Hola Melani, que chido es conocerte!!!
+Hola David, que chido es conocerte!!!
+Hola Raul, que chido es conocerte!!!
+2 elevado a la 3 es: 8
+3 elevado a la 3 es: 27
 </pre>
       </div>
      </div>
@@ -14492,17 +14492,23 @@ Hola!!! :D, Leon
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
     <p>
-     Ejercicios
+     <strong>
+      Ejercicios:
+     </strong>
     </p>
     <ol>
      <li>
       <p>
-       Realizar una funcion que reciba el nombre y la edad, y que imprima un mensaje con estos datos, ejemplo: "Hola 'alejandro'  que buena onda que tengas '20' anios"
+       Realizar una funcion que realice el calculo del area del circulo, la funcion recibe el radio. Ocupando las funciones de la libreria
+       <code>
+        math
+       </code>
+       .
       </p>
      </li>
      <li>
       <p>
-       Realizar una funcion que realice el calculo del area del circulo, la funcion recibe el radio
+       Realizar una funcion que reciba el nombre y la edad, y que imprima un mensaje con estos datos, ejemplo: "Hola 'alejandro'  que buena onda que tengas '20' anios"
       </p>
      </li>
     </ol>
@@ -14535,7 +14541,7 @@ Hola!!! :D, Leon
      </strong>
     </p>
     <div class="highlight">
-     <pre><span></span><span class="k">def</span> <span class="nf">name_function</span><span class="p">(</span><span class="n">argumeto1</span><span class="o">=</span><span class="n">valor</span><span class="p">,</span> <span class="n">argumentos2</span><span class="o">=</span><span class="n">valor</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argumentosN</span><span class="p">):</span>
+     <pre><span></span><span class="k">def</span> <span class="nf">name_function</span><span class="p">(</span><span class="n">argumeto1</span><span class="o">=</span><span class="n">valor</span><span class="p">,</span> <span class="n">argumentos2</span><span class="o">=</span><span class="n">valor</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argumentosN</span><span class="o">=</span><span class="n">valorN</span><span class="p">):</span>
     <span class="c1">#body function</span>
     <span class="c1">#code block </span>
     <span class="c1">#code block </span>
@@ -14558,32 +14564,35 @@ Hola!!! :D, Leon
    <div class="jp-Cell-inputWrapper">
     <div class="jp-InputArea jp-Cell-inputArea">
      <div class="jp-InputPrompt jp-InputArea-prompt">
-      In [38]:
+      In [8]:
      </div>
      <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
       <div class="CodeMirror cm-s-jupyter">
        <div class="highlight hl-ipython3">
-        <pre><span></span><span class="k">def</span> <span class="nf">saludo3</span><span class="p">(</span><span class="n">nombre</span> <span class="o">=</span> <span class="s1">'Desconocido'</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Hola </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s1">!!!'</span><span class="p">)</span>
+        <pre><span></span><span class="k">def</span> <span class="nf">saludo3</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="s1">'Desconocido'</span><span class="p">):</span>
+    <span class="sd">'''Funcion que imprime un mensaje personalizado'''</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Hola </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s1">, que chido es conocerte!!!'</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">potencia2</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">potencia</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="sd">'''Por default eleva al cuadrado la base'''</span>
+    <span class="n">resultado</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">potencia</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">potencia_n</span><span class="p">(</span><span class="n">base</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">pot</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
-    <span class="sd">'''Es una funcion que eleva a una potencia, por default eleva al cuadrado'''</span>
-    <span class="n">resultado</span> <span class="o">=</span> <span class="n">base</span> <span class="o">**</span> <span class="n">pot</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'La potencia es </span><span class="si">{</span><span class="n">resultado</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-    
-<span class="k">def</span> <span class="nf">imprimir_0_al_100</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">imprir_0_10</span><span class="p">(</span><span class="n">tope</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'--------------------'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tope</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    
-<span class="n">potencia_n</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">potencia_n</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">potencia_n</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">potencia_n</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'--------------------'</span><span class="p">)</span>
 
 <span class="n">saludo3</span><span class="p">()</span>
-<span class="n">saludo3</span><span class="p">(</span><span class="s1">'Max'</span><span class="p">)</span>
+<span class="n">saludo3</span><span class="p">(</span><span class="s1">'Ricardo'</span><span class="p">)</span>
 
-<span class="n">imprimir_0_al_100</span><span class="p">()</span>
+<span class="n">potencia2</span><span class="p">()</span>
+<span class="n">potencia2</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">potencia2</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">potencia2</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">imprir_0_10</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre>
        </div>
       </div>
@@ -14596,113 +14605,16 @@ Hola!!! :D, Leon
       <div class="jp-OutputPrompt jp-OutputArea-prompt">
       </div>
       <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-       <pre>La potencia es 9
-La potencia es 8
-La potencia es 3125
-La potencia es 1
-Hola Desconocido!!!
-Hola Max!!!
+       <pre>Hola Desconocido, que chido es conocerte!!!
+Hola Ricardo, que chido es conocerte!!!
+1
+9
+27
+81
+--------------------
 0
 1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
+--------------------
 </pre>
       </div>
      </div>
@@ -14714,7 +14626,9 @@ Hola Max!!!
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
     <p>
-     Ejercicios:
+     <strong>
+      Ejercicios:
+     </strong>
     </p>
     <ol>
      <li>
@@ -14724,6 +14638,190 @@ Hola Max!!!
       Crear una funcion que calcule el area de cuadrados y rectangulos, la funcion recibe 2 parametros, la base y la altura, pero cuando es cuadrado solo recibe uno, por lo tanto, el segundo parametros es opcional, el segundo parametros por default es 0.
      </li>
     </ol>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Retornado-valores-de-una-funcion">
+     Retornado valores de una funcion
+     <a class="anchor-link" href="#Retornado-valores-de-una-funcion">
+      ¶
+     </a>
+    </h2>
+    <p>
+     En ocasiones necesitamos que la funcion nos devuelva informacion, es decir, que realice la operacion y nos devuelva ese resultado, para ello ocupamos la palabra reservada
+     <code>
+      return
+     </code>
+     . El valor que devuelve normalmente lo debemos guardar.
+    </p>
+    <p>
+     <strong>
+      Como escribo una funcion y como la utilizo
+     </strong>
+    </p>
+    <p>
+     <strong>
+      Sintaxis
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="k">def</span> <span class="nf">name_function</span><span class="p">([</span><span class="n">argumeto1</span><span class="p">,</span> <span class="n">argumentos2</span><span class="o">=</span><span class="n">valor</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">argumentosN</span><span class="p">]):</span>
+    <span class="c1">#body function</span>
+    <span class="c1">#code block </span>
+    <span class="c1">#code block </span>
+    <span class="c1">#code block </span>
+    <span class="c1">#code block </span>
+    <span class="k">return</span> <span class="n">valor</span>
+</pre>
+    </div>
+    <p>
+     <em>
+      Como la llamo a la funcion, coloco su nombre, abro parentesis y coloco los argumentos que necesita y ese resultado lo guardamos en una variable:
+     </em>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="n">resultado</span> <span class="o">=</span> <span class="n">nombre_funcion</span><span class="p">([</span><span class="n">arg1</span><span class="p">,</span> <span class="o">...</span> <span class="n">arg2</span><span class="p">])</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [20]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="k">def</span> <span class="nf">mensaje_perzonalizado</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+    <span class="n">mensaje</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'Que onda </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s1">!!, la estamos pasando chido!!!'</span>
+    
+    <span class="k">return</span> <span class="n">mensaje</span>
+
+<span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span><span class="p">)</span> <span class="o">/</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">area</span>    
+
+<span class="n">mensaje</span> <span class="o">=</span> <span class="n">mensaje_perzonalizado</span><span class="p">(</span><span class="s1">'Pricila'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mensaje</span><span class="p">)</span>
+
+<span class="n">mensaje</span> <span class="o">+=</span> <span class="s1">' vamos por la coca'</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mensaje</span><span class="p">)</span> 
+
+<span class="n">area_t</span> <span class="o">=</span> <span class="n">area_triangulo</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'El area del triangulo es: </span><span class="si">{</span><span class="n">area_t</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Que onda Pricila!!, la estamos pasando chido!!!
+Que onda Pricila!!, la estamos pasando chido!!! vamos por la coca
+El area del triangulo es: 10.5
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [30]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="k">def</span> <span class="nf">operaciones_circulo</span><span class="p">(</span><span class="n">radio</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="s1">'area'</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    Esta funcion realiza la operacion del area o perimetro </span>
+<span class="sd">    en funcion de la variable area</span>
+<span class="sd">    '''</span>
+    <span class="k">if</span> <span class="n">area</span> <span class="o">==</span> <span class="s1">'area'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="nb">pow</span><span class="p">(</span><span class="n">radio</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">radio</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"El area es </span><span class="si">{</span><span class="n">operaciones_circulo</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">'area'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'El perimetro es </span><span class="si">{</span><span class="n">operaciones_circulo</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s2">"perimetro"</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>El area es 78.53981633974483
+El perimetro es 31.41592653589793
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejercicios:
+     </strong>
+    </p>
+    <ol>
+     <li>
+      Crear una funcion que calcule el promedio, pasandole los 3 parciales y te devuelve el resultado. Despues indicar si aprobo o esta en recursa.
+     </li>
+     <li>
+      Crear las funciones de ley de ohm, una que calcule resistencia, corriente y otra voltaje, pasando el parametro necesario: Ejemplo de aplicacion:
+      <ul>
+       <li>
+        r = resistencia(10, 0.5)
+       </li>
+       <li>
+        i = corriente(10, 1000)
+       </li>
+       <li>
+        r = voltaje(10, 5)
+       </li>
+      </ul>
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Funciones-con-parametros-nombrados">
+     Funciones con parametros nombrados
+     <a class="anchor-link" href="#Funciones-con-parametros-nombrados">
+      ¶
+     </a>
+    </h2>
+    <p>
+     TODO
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
