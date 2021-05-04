@@ -14262,24 +14262,276 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h1 id="Archivos">
+     Archivos
+     <a class="anchor-link" href="#Archivos">
+      ¶
+     </a>
+    </h1>
+    <p>
+     El manejo de archivos en Python es algo nativo, es decir, por default te da una utileria para comenzar a trabajar con ellos. Esto significa que podemos abrir y leer el contenido de un archivo plano de una manera muy sencilla y rapida.
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Funcion-open()">
+     Funcion
+     <code>
+      open()
+     </code>
+     <a class="anchor-link" href="#Funcion-open()">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Con solo abrir un archivo de Python podemos llamar a la funcion
+     <code>
+      open
+     </code>
+     la cual le indicamos la ruta del archivo que queremos abrir y cargar su informacion, junto con el modo en que lo vamos a utilizar.
+    </p>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="nb">open</span><span class="p">(</span><span class="n">ruta_archivo</span><span class="p">,</span><span class="n">modo</span><span class="p">,</span><span class="n">encoding</span><span class="p">)</span>
+</pre>
+    </div>
+    <p>
+     <strong>
+      Parametros:
+     </strong>
+    </p>
+    <ul>
+     <li>
+      <code>
+       ruta_archivo
+      </code>
+      : Es la ruta del archivo que se va a carga, la ruta puede ser relativa o absoluta
+     </li>
+     <li>
+      <code>
+       modo
+      </code>
+      : El modo es como se manejara el archivo, los modos son:
+      <ul>
+       <li>
+        <code>
+         r
+        </code>
+        : Read - Valor por default. Abre el archivo para leerlo. Lanza error en caso que no exista.
+       </li>
+       <li>
+        <code>
+         w
+        </code>
+        : Write - Abre el archivo para leerlo, en caso que no exista lo creara.
+       </li>
+       <li>
+        <code>
+         a
+        </code>
+        : Append - Abre el archivo y todo lo que vayamos a escribir se lo agregara.
+       </li>
+       <li>
+        <code>
+         x
+        </code>
+        : Create - Crear el archivo, lanza error en caso que exista.
+       </li>
+       <li>
+        <code>
+         +
+        </code>
+        : Read-Write - Indica que tenemos el modo lectura y que podemos escribir en él.
+       </li>
+       <li>
+        Modos adicionales:
+        <ul>
+         <li>
+          <code>
+           t
+          </code>
+          : text (Valor por default)- Indica que el archivo es un texto plano.
+         </li>
+         <li>
+          <code>
+           b
+          </code>
+          : binario - Indica que es otro tipo de archivo, ejemplo: imagenes, archivos de word, excel, etc.
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <code>
+       encoding
+      </code>
+      : Formato de condificacion de caracteres. Por default no tiene, pero en nuestro caso que hablamos español, es combeniente colocar
+      <code>
+       utf-8
+      </code>
+      , con esto identifica acentos y todo lo relacionado al lenguaje.
+     </li>
+     <li>
+      <strong>
+       return
+      </strong>
+      <code>
+       file
+      </code>
+      : Regresa un Objeto tipo archivo.
+     </li>
+    </ul>
+    <p>
+     <a href="https://docs.python.org/3/library/functions.html#open">
+      Documentacion open()
+     </a>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="Metodos-de-los-arhivos">
+     Metodos de los arhivos
+     <a class="anchor-link" href="#Metodos-de-los-arhivos">
+      ¶
+     </a>
+    </h3>
+    <p>
+     Los archivos tiene diversos metodos para manipular su contenido
+    </p>
+    <ul>
+     <li>
+      <code>
+       read([count])
+      </code>
+      : Lee todo el contenido del archivo y lo carga en memoria. Si indicamos el contador, solo lee esa cantidad de caracteres.
+     </li>
+     <li>
+      <code>
+       readline()
+      </code>
+      : Lee una sola linea del archivo. Por default comienza en la primera.
+     </li>
+     <li>
+      <code>
+       readlines()
+      </code>
+      : Crea una lista con el contenido de cada linea del archivo.
+     </li>
+     <li>
+      <code>
+       write(data)
+      </code>
+      : Escribe lo que le pasamos como argumento.
+     </li>
+     <li>
+      <code>
+       seek(position)
+      </code>
+      : Coloca el cursor en esa posicion dentro del archivo.
+     </li>
+     <li>
+      <code>
+       close()
+      </code>
+      : Cierra el archivo. Esto siempre se debe hacer si se usa el metodo
+      <code>
+       open()
+      </code>
+      solo.
+     </li>
+    </ul>
+    <p>
+     <em>
+      Nota: Contiene mas metodos, ir a la documentacion oficial de
+      <a href="https://docs.python.org/3/library/io.html">
+       IO
+      </a>
+     </em>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [2]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="c1"># Creando un archivo vacio</span>
+
+<span class="n">mi_archivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'arhivo.txt'</span><span class="p">,</span><span class="s1">'w'</span><span class="p">)</span> <span class="c1">#aqui el archivo se crea y esta listo para escribir en él</span>
+
+<span class="n">mi_archivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1"># tenemos que cerrar el archivo</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Bloque-with">
+     Bloque
+     <code>
+      with
+     </code>
+     <a class="anchor-link" href="#Bloque-with">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Tenemos una palabra reservada
+     <code>
+      with
+     </code>
+     la cual nos facilita abrir un archivo y lo cierra en automatico al salir del bloque. Es decir,
+     <code>
+      with
+     </code>
+     toma la gestion de los archivos y nosotros nos enfocamos en utilizar la informacion obtenida de él. Lo mas recomendable es usar la palabra
+     <code>
+      with
+     </code>
+     con los archivos.
+    </p>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="k">with</span> <span class="n">EXPRESSION</span> <span class="k">as</span> <span class="n">TARGET</span><span class="p">:</span>
+        <span class="n">SUITE</span>
+</pre>
+    </div>
+    <div class="highlight">
+     <pre><span></span><span class="c1"># Aplicado a archivos</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'ruta'</span><span class="p">,</span><span class="s1">'modo'</span><span class="p">)</span> <span class="k">as</span> <span class="n">nombre_variable</span><span class="p">:</span>
+        <span class="c1"># codigo para manipular el archivo</span>
+</pre>
+    </div>
+    <p>
+     Documentacion de
+     <a href="https://docs.python.org/3/reference/compound_stmts.html#the-with-statement">
+      The with statement
+     </a>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
