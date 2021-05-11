@@ -54,7 +54,7 @@ def copy_imgs():
             img_paths.append(str(os.path.abspath(img_path)))
 
     for src in img_paths:
-        path = os.path.abspath('../web/img')
+        path = os.path.abspath('../web/imgs')
         dist = f'{path}/{src.split("/")[-1]}'
         shutil.copyfile(src, dist)
 
@@ -112,7 +112,7 @@ def change_path_img_in_html():
             html = BeautifulSoup(html, 'html.parser')
             for img in html.body.find_all('img'):
                 name = img.get('src').split("/")[-1]
-                html.find('img', src=img.get('src'))['src'] = f"./img/{name}"
+                html.find('img', src=img.get('src'))['src'] = f"./imgs/{name}"
 
             with open(path_file_html, mode='w', encoding='utf-8') as file_html_new:
                 file_html_new.write(html.prettify())
@@ -215,3 +215,4 @@ if __name__ == "__main__":
     change_path_img_in_html()
     print("Done... xD")
 
+#create a function than copy assets

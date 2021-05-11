@@ -1,3 +1,12 @@
 #! /bin/bash
 
-socat -d -d PTY,link=/tmp/ttyS1,echo=0 PTY,link=/tmp/ttyS2,echo=0
+PORT1='/tmp/ttyS1'
+PORT2='/tmp/ttyS2'
+
+echo Connecting port $PORT1
+echo Connecting port $PORT2
+
+socat -d -d PTY,link=$PORT1,echo=0 PTY,link=$PORT2,echo=0 &
+
+echo Connected port $PORT1
+echo Connected port $PORT2
