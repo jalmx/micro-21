@@ -14262,14 +14262,14 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h1 id="3.1-Introducción-Python-y-el-microcontrolador">
-     3.1 Introducción Python y el microcontrolador
-     <a class="anchor-link" href="#3.1-Introducción-Python-y-el-microcontrolador">
+    <h1 id="3.1-El-microcontrolador">
+     3.1 El microcontrolador
+     <a class="anchor-link" href="#3.1-El-microcontrolador">
       ¶
      </a>
     </h1>
     <p>
-     Existen varias formas de programar un microcontrolador o tarjeta electronica basadas en microcontroladores o microporcesadores. Hay microcontroladores que se pueden programar directamente con Python pero realmente es una reimplementacion del lenguaje que no contiene todas la librerias, llamada
+     Existen varias formas de programar un microcontrolador o tarjetas electronica basadas en microcontroladores o microprocesadores. Hay microcontroladores que se pueden programar directamente con Python pero realmente es una reimplementacion del lenguaje que no contiene todas la librerias, llamada
      <a href="https://micropython.org/">
       MicroPython
      </a>
@@ -14295,10 +14295,18 @@ all of MD as it is not optimized for dense, information rich UIs.
      </a>
     </h2>
     <p>
-     Un microprocesador es el elemento que realiza el procesamiento de datos, ejecuta instrucciones, realiza operaciones matematicas, en resumen es el cerebro de todo sistema computacional. Es lo unico que hace. Tambien conocido como CPU (Unidad Central de Proceso)
+     Un
+     <strong>
+      microprocesador
+     </strong>
+     es el elemento que realiza el procesamiento de datos, ejecuta instrucciones, realiza operaciones matematicas, en resumen es el cerebro de todo sistema computacional. Es lo unico que hace. Tambien conocido como CPU (Unidad Central de Proceso)
     </p>
     <p>
-     El microcontrolador es un circuito integrado compuesto por un procesador, elementos auxiliares y perifericos.
+     El
+     <strong>
+      microcontrolador
+     </strong>
+     es un circuito integrado compuesto por un microprocesador, elementos auxiliares y perifericos.
      <em>
       En resumen es una computadora
      </em>
@@ -14338,7 +14346,11 @@ all of MD as it is not optimized for dense, information rich UIs.
      <code>
       Harvard
      </code>
-     . En este caso los microcontroladores tienen una arquitectura Von Neumann dado que todo viene integrado en un solo CI.
+     . En este caso los microcontroladores tienen una arquitectura
+     <em>
+      Von Neumann
+     </em>
+     dado que todo viene integrado en un solo chip.
     </p>
    </div>
   </div>
@@ -14346,14 +14358,14 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h2 id="3.2.1-Microcontrolador-ATMEGA328">
-     3.2.1 Microcontrolador ATMEGA328
-     <a class="anchor-link" href="#3.2.1-Microcontrolador-ATMEGA328">
+    <h2 id="3.2.1-Microcontrolador-ATMEGA328A">
+     3.2.1 Microcontrolador ATMEGA328A
+     <a class="anchor-link" href="#3.2.1-Microcontrolador-ATMEGA328A">
       ¶
      </a>
     </h2>
     <p>
-     Es un micrcontrolador de 8 bits, del fabricante ATMEL (actualmente propiedad de Microchip). Tiene las siguientes características:
+     Es un microcontrolador de 8 bits, del fabricante ATMEL (actualmente propiedad de Microchip). Tiene las siguientes características:
     </p>
     <table>
      <thead>
@@ -14564,7 +14576,7 @@ all of MD as it is not optimized for dense, information rich UIs.
     <p>
      Para más detalles el
      <a href="http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf">
-      datasheet del ATME328
+      datasheet del ATMEGA328A
      </a>
     </p>
    </div>
@@ -14606,7 +14618,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      <a href="https://github.com/firmata/protocol">
       Firmata
      </a>
-     . Se carga un firmware al microcontrolador, el cual contiene el protocolo Firmata y con un scrpit de Python mandaremos las instrucciones de control.
+     . Se carga un firmware al microcontrolador, el cual contiene el protocolo Firmata y con un script de Python mandaremos las instrucciones de control.
     </p>
     <p>
      En la siguiente imagen se muestra la aquitectura general de como sera la comunicacion entre un Script de Python y La tarjeta electrónica Arduino Uno.
@@ -14636,7 +14648,7 @@ all of MD as it is not optimized for dense, information rich UIs.
        , esta libreria nos ayudara a comunicar Python con cualquier microcontrolador que contenga dicho protocolo.
        <br/>
        <code>
-        pip install pyFirmata
+        pip install pyFirmata --user
        </code>
        .
       </p>
@@ -14652,10 +14664,14 @@ all of MD as it is not optimized for dense, information rich UIs.
      <li>
       <p>
        Crear un puertos virtuales, esto es para poder conectar el simulador con el script. Para Windows se usará
-       <a href="https://www.virtual-serial-port.org/">
-        Virtual Serial Port - Eltima
+       <a href="https://simulide.blogspot.com/p/seven-segment-display.html">
+        Null-modem emulator
+(com0com)
        </a>
        . (Esto solo es para simulación).
+       <a href="https://sourceforge.net/projects/com0com/">
+        Descargar
+       </a>
       </p>
      </li>
      <li>
@@ -14685,7 +14701,7 @@ all of MD as it is not optimized for dense, information rich UIs.
     </h3>
     <p>
      Para carga el firmware de Firmata viene por default en Arduino IDE en caso que se quiera carga a la placa de manera fisica, para el caso de usar el simular
-     <a href="#">
+     <a href="firmware.hex">
       descarga el binario
      </a>
      a cargar.

@@ -14370,14 +14370,23 @@ all of MD as it is not optimized for dense, information rich UIs.
      <code>
       time
      </code>
-     .
+     . El modulo
+     <code>
+      time
+     </code>
+     es una libreria estandar de python.
     </p>
     <p>
      Paso 1. importar la libreria
      <code>
       time
      </code>
-     Paso 2. Indicar el tiempo en segundos
+    </p>
+    <p>
+     Paso 2. Invocar la funcion
+     <code>
+      sleep()
+     </code>
     </p>
     <p>
      <strong>
@@ -14420,7 +14429,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      , tenemos que abrir la terminal y escribir el siguiente comando:
     </p>
     <div class="highlight">
-     <pre><span></span>pip install pyFirmata
+     <pre><span></span>pip install pyFirmata --user
 </pre>
     </div>
     <p>
@@ -14429,12 +14438,14 @@ all of MD as it is not optimized for dense, information rich UIs.
      </strong>
     </p>
     <div class="highlight">
-     <pre><span></span><span class="c1">#importamos la libreria que nos permite conectarnos por el protocolo de firmata y Python</span>
+     <pre><span></span><span class="c1">#importamos la libreria que nos permite conectarnos por el protocolo de firmata y Python hacia la placa</span>
 <span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
 
+<span class="c1"># declaro una variable donde coloco el puerto donde esta conectado</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span> <span class="c1"># El hash indica el numero del puerto</span>
+
 <span class="c1"># Declaramos una variable llamada "board" donde queda indicado que esta la placa conectada</span>
-<span class="n">port</span> <span class="o">=</span> <span class="s1">'PUERTO'</span> <span class="c1"># declaro una variable donde coloco el puerto donde esta conectado</span>
-<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
 </pre>
     </div>
    </div>
@@ -14454,7 +14465,7 @@ all of MD as it is not optimized for dense, information rich UIs.
     </p>
     <p>
      <em>
-      Nota: Nunca utilices los pines 0 e 1, porque son para la comunicación serial UART - USB
+      Nota: Nunca utilices los pines 0 y 1, porque son para la comunicación serial UART - USB
      </em>
     </p>
     <div class="highlight">
@@ -14471,8 +14482,8 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="kn">import</span> <span class="nn">time</span>         <span class="c1"># importamos la libreria de retardos</span>
 
 <span class="c1"># Indicamos el puerto donde se encuentra conectada la tarjeta electronica</span>
-<span class="n">port</span> <span class="o">=</span> <span class="s1">'PUERTO'</span>
-<span class="n">board</span> <span class="o">=</span> <span class="n">pyfirmata</span><span class="o">.</span><span class="n">Arduino</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'PUERTO #'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">pyfirmata</span><span class="o">.</span><span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span> 
 
 <span class="c1">#se manda un nivel 1 a la salida del pin 3</span>
 <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -14529,13 +14540,102 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
    </div>
   </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [1]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span><span class="o">=</span> <span class="s1">'/tmp/ttyS2'</span> <span class="c1">#en window es COMx</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    
+<span class="c1"># Para detener el proceso presiona Ctrl + C</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+       <pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">~/Downloads/School/micro/antologia/lib/python3.7/site-packages/serial/serialposix.py</span> in <span class="ansi-cyan-fg">open</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    321</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 322</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>fd <span class="ansi-blue-fg">=</span> os<span class="ansi-blue-fg">.</span>open<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>portstr<span class="ansi-blue-fg">,</span> os<span class="ansi-blue-fg">.</span>O_RDWR <span class="ansi-blue-fg">|</span> os<span class="ansi-blue-fg">.</span>O_NOCTTY <span class="ansi-blue-fg">|</span> os<span class="ansi-blue-fg">.</span>O_NONBLOCK<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    323</span>         <span class="ansi-green-fg">except</span> OSError <span class="ansi-green-fg">as</span> msg<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: '/tmp/ttyS2'
+
+During handling of the above exception, another exception occurred:
+
+<span class="ansi-red-fg">SerialException</span>                           Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-1-797f7745310a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> PORT<span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">'/tmp/ttyS2'</span> <span class="ansi-red-fg">#en window es COMx</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> 
+<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>board <span class="ansi-blue-fg">=</span> Arduino<span class="ansi-blue-fg">(</span>PORT<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span> 
+<span class="ansi-green-intense-fg ansi-bold">      8</span> <span class="ansi-green-fg">while</span> <span class="ansi-green-fg">True</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/Downloads/School/micro/antologia/lib/python3.7/site-packages/pyfirmata/__init__.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     17</span>         args <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>args<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     18</span>         args<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span>BOARDS<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">'arduino'</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 19</span><span class="ansi-red-fg">         </span>super<span class="ansi-blue-fg">(</span>Arduino<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>__init__<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     20</span> 
+<span class="ansi-green-intense-fg ansi-bold">     21</span>     <span class="ansi-green-fg">def</span> __str__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/Downloads/School/micro/antologia/lib/python3.7/site-packages/pyfirmata/pyfirmata.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, port, layout, baudrate, name, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">     87</span> 
+<span class="ansi-green-intense-fg ansi-bold">     88</span>     <span class="ansi-green-fg">def</span> __init__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> port<span class="ansi-blue-fg">,</span> layout<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span> baudrate<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">57600</span><span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 89</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>sp <span class="ansi-blue-fg">=</span> serial<span class="ansi-blue-fg">.</span>Serial<span class="ansi-blue-fg">(</span>port<span class="ansi-blue-fg">,</span> baudrate<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">=</span>timeout<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     90</span>         <span class="ansi-red-fg"># Allow 5 secs for Arduino's auto-reset to happen</span>
+<span class="ansi-green-intense-fg ansi-bold">     91</span>         <span class="ansi-red-fg"># Alas, Firmata blinks its version before printing it to serial</span>
+
+<span class="ansi-green-fg">~/Downloads/School/micro/antologia/lib/python3.7/site-packages/serial/serialutil.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, port, baudrate, bytesize, parity, stopbits, timeout, xonxoff, rtscts, write_timeout, dsrdtr, inter_byte_timeout, exclusive, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    242</span> 
+<span class="ansi-green-intense-fg ansi-bold">    243</span>         <span class="ansi-green-fg">if</span> port <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 244</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>open<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    245</span> 
+<span class="ansi-green-intense-fg ansi-bold">    246</span>     <span class="ansi-red-fg">#  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -</span>
+
+<span class="ansi-green-fg">~/Downloads/School/micro/antologia/lib/python3.7/site-packages/serial/serialposix.py</span> in <span class="ansi-cyan-fg">open</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    323</span>         <span class="ansi-green-fg">except</span> OSError <span class="ansi-green-fg">as</span> msg<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    324</span>             self<span class="ansi-blue-fg">.</span>fd <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span>
+<span class="ansi-green-fg">--&gt; 325</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> SerialException<span class="ansi-blue-fg">(</span>msg<span class="ansi-blue-fg">.</span>errno<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">"could not open port {}: {}"</span><span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>_port<span class="ansi-blue-fg">,</span> msg<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    326</span>         <span class="ansi-red-fg">#~ fcntl.fcntl(self.fd, fcntl.F_SETFL, 0)  # set blocking</span>
+<span class="ansi-green-intense-fg ansi-bold">    327</span> 
+
+<span class="ansi-red-fg">SerialException</span>: [Errno 2] could not open port /tmp/ttyS2: [Errno 2] No such file or directory: '/tmp/ttyS2'</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h2 id="Prácticas">
-     Prácticas
-     <a class="anchor-link" href="#Prácticas">
+    <h2 id="Clase">
+     Clase
+     <a class="anchor-link" href="#Clase">
       ¶
      </a>
     </h2>
@@ -14548,6 +14648,26 @@ all of MD as it is not optimized for dense, information rich UIs.
      </li>
      <li>
       Semaforo sencillo
+     </li>
+    </ol>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Tarea">
+     Tarea
+     <a class="anchor-link" href="#Tarea">
+      ¶
+     </a>
+    </h2>
+    <ol>
+     <li>
+      Semaforo un cruce, 2 semaforos sincronizados
+     </li>
+     <li>
+      Secuencia de luces, enciendo uno a uno, quedandose prendidos, despues de 5 segundos apagarse en orden inverso, es decir, el ultimo en apagarse fue el primero en encender
      </li>
     </ol>
    </div>
