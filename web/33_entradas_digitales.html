@@ -14409,7 +14409,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 </pre>
     </div>
     <p>
-     <img alt="input 1" src="./imgs/input_1.png"/>
+     <img alt="input 1" src="./imgs/input.png"/>
     </p>
    </div>
   </div>
@@ -14467,6 +14467,275 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     Fisicamente quedaría las siguientes maneras
+    </p>
+    <p>
+     <img alt="inputs" src="./imgs/inputs.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.3.3-Controlando-LEDs-con-botones">
+     3.3.3 Controlando LEDs con botones
+     <a class="anchor-link" href="#3.3.3-Controlando-LEDs-con-botones">
+      ¶
+     </a>
+    </h2>
+    <p>
+     <strong>
+      Ejemplo 1. Ahora vamos a aprende como encender un LED por medio de un boton, cuando el boton este presionado y mande un 1, se encienda el LED, en caso que no este presionado se estara recibiendo un 0, esto causa que el LED se apague.
+     </strong>
+    </p>
+    <p>
+     <img alt="led con boton" src="./imgs/led_boton.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="c1"># importamos los elementos necesarios</span>
+<span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">INPUT</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span> <span class="c1"># le pasamos la tarjeta al iterador</span>
+<span class="n">it</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1">#arrancamos a el iterador para poder leer entradas</span>
+
+<span class="n">PIN</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1"># configuro el pin como ENTRADA</span>
+<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">PIN</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">INPUT</span>
+<span class="n">LED</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1"># pin donde conecto el LED</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">boton</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">PIN</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">boton</span><span class="p">:</span>  <span class="c1"># es equivalente a board.digital[PIN].read() == True</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'boton presionado'</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c1"># es un tiempo para estabilizar la pulsación en el boton y no saturar la conexión</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'boton NO presionado'</span><span class="p">)</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 2. Secuencia de luces por medio de botones. Se tendran 2 botones, al presionar uno se debe generar una secuencia de luces y al presionar el otro, se debe ver otra secuencia. Mientras no se presionen los botones se debe ver un parpadeo. Con 4 LEDs.
+     </strong>
+    </p>
+    <p>
+     <img alt="secuencias" src="./imgs/secuencias.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">INPUT</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="c1"># importamos los elementos necesarios</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span> <span class="c1"># le pasamos la tarjeta al iterador</span>
+<span class="n">it</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1">#arrancamos a el iterador para poder leer entradas</span>
+
+<span class="n">BOTON1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">BOTON2</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1"># configuro el pin como ENTRADA</span>
+<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">BOTON1</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">INPUT</span>
+<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">BOTON2</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">INPUT</span>
+<span class="n">LED1</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1"># pin donde conecto el LED</span>
+<span class="n">LED2</span> <span class="o">=</span> <span class="mi">9</span> <span class="c1"># pin donde conecto el LED</span>
+<span class="n">LED3</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># pin donde conecto el LED</span>
+<span class="n">LED4</span> <span class="o">=</span> <span class="mi">11</span> <span class="c1"># pin donde conecto el LED</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">secuencia1</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">BOTON1</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">secuencia2</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">BOTON2</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">secuencia1</span><span class="p">:</span>  <span class="c1"># es equivalente a board.digital[PIN].read() == True</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'secuancia 1'</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED4</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED4</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">secuencia2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'secuencia2'</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED4</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED4</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'secuancia default'</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED4</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED4</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 3. Al presionar el boton se debe quedar encendido y al volverlo a presionar debe apagarse.
+     </strong>
+    </p>
+    <p>
+     <img alt="led con boton" src="./imgs/led_boton.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">INPUT</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span> <span class="c1"># le pasamos la tarjeta al iterador</span>
+<span class="n">it</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1">#arrancamos a el iterador para poder leer entradas</span>
+
+<span class="c1"># configuro el pin como ENTRADA</span>
+<span class="n">BOTON</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">BOTON</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">INPUT</span>
+
+<span class="n">LED</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">status</span> <span class="o">=</span> <span class="kc">False</span>                   <span class="c1">#El estado del LED</span>
+<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">status</span><span class="p">)</span> <span class="c1">#El led comienza apagado</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">boton</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">BOTON</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">boton</span><span class="p">:</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">status</span>   <span class="c1">#invierto el estado, si estaba apagado se enciende, y visiversa</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">LED</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>          <span class="c1"># tiempo para evitar rebotes o transitorios</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 3. Se desea crear un contador basico con un display de 7 segmentos, el cambio se hara con un boton. El contador va de 0 al 9. Cada vez que se presione el boton el valor va incrementando, cuando llegue a 9, el contador se reinicia a 0
+     </strong>
+    </p>
+    <p>
+     <img alt="display boton" src="./imgs/btn_display.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">INPUT</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">number_0</span><span class="p">,</span><span class="n">number_1</span><span class="p">,</span><span class="n">number_2</span><span class="p">,</span><span class="n">number_3</span><span class="p">,</span><span class="n">number_4</span><span class="p">,</span><span class="n">number_5</span><span class="p">,</span><span class="n">number_6</span><span class="p">,</span><span class="n">number_7</span><span class="p">,</span><span class="n">number_8</span><span class="p">,</span><span class="n">number_9</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">position</span><span class="p">,</span><span class="n">segments</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
+            <span class="n">segments</span><span class="p">()</span>
+            <span class="k">break</span>
+
+<span class="k">def</span> <span class="nf">number_0</span><span class="p">():</span>
+    <span class="n">set_segment</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">number_1</span><span class="p">():</span>
+    <span class="n">set_segment</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">number_2</span><span class="p">():</span>
+    <span class="n">set_segment</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">number_3</span><span class="p">():</span>
+    <span class="n">set_segment</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">number_4</span><span class="p">():</span>
+    <span class="n">set_segment</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">number_5</span><span class="p">():</span>
+    <span class="n">set_segment</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">number_6</span><span class="p">():</span>
+    <span class="n">set_segment</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">number_7</span><span class="p">():</span>
+    <span class="n">set_segment</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">number_8</span><span class="p">():</span>
+    <span class="n">set_segment</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">number_9</span><span class="p">():</span>
+    <span class="n">set_segment</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">set_segment</span><span class="p">(</span><span class="o">*</span><span class="n">segments</span><span class="p">):</span>
+    <span class="n">display_pins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">pin</span><span class="p">,</span> <span class="n">segment</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">segments</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Pin a encender</span><span class="si">{</span><span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">display_pins</span><span class="p">[</span><span class="n">pin</span><span class="p">]]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">display_pins</span><span class="p">[</span><span class="n">pin</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">segment</span><span class="p">)</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'/tmp/ttyS1'</span>
+<span class="c1"># importamos los elementos necesarios</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span> <span class="c1"># le pasamos la tarjeta al iterador</span>
+<span class="n">it</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1">#arrancamos a el iterador para poder leer entradas</span>
+
+<span class="c1"># configuro el pin como ENTRADA</span>
+<span class="n">BOTON</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">BOTON</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">INPUT</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">display</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">boton</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">BOTON</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">boton</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span> <span class="n">count</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</pre>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14589,6 +14858,26 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="n">pin3</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
 </pre>
     </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Tarea:">
+     Tarea:
+     <a class="anchor-link" href="#Tarea:">
+      ¶
+     </a>
+    </h2>
+    <ol>
+     <li>
+      Realizar 3 secuencias de luces, cada secuencia se activa al presionar su boton correspondiente. Cuando no se esta presionando ningun boton debe encender y apagarse en secuencia los LEDs, es decir, enciende el primero, despues el segundo, hacia hasta encender todos, y se apagan en el mismo orden, del ultimo al primero.
+     </li>
+     <li>
+      Crear un contador con un display de 7 segmentos. Tendra 3 botones, uno de incremento, el segundo de decremento y el ultimo de reset.
+     </li>
+    </ol>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
