@@ -1,32 +1,46 @@
-# from pyfirmata import Arduino, util
-# from time import sleep
-
-# board = Arduino('/tmp/ttyS1')
-# print('Arranca la conexion')
-
-# it = util.Iterator(board) # le pasamos la tarjeta al iterador
-# it.start() #arrancamos a el iterador para poder leer entradas
-
-# # configuro el pin como ENTRADA
-# PIN = 2
-# board.get_pin(f'd:{str(PIN)}:i')
-
-# while True:
-#     print(board.digital[PIN].read())
-#     sleep(0.25)
-
-from pyfirmata import Arduino, util
+from pyfirmata import Arduino, util, INPUT
 from time import sleep
 
-try:
-    PORT = '/tmp/ttyS1'
-    board = Arduino(PORT)
+def display(number):
+    for segmento in segmentos:
 
-    while True:
-        board.digital[13].write(1)
-        sleep(1)
-        board.digital[13].write(0)
-        sleep(1)
-except:
-    print('termino el programa')
-    board.exit() # indicamos que cierre la conexion con la tarjeta
+def number_0():
+    pass
+def number_1():
+    pass
+def number_2():
+    pass
+def number_3():
+    pass
+def number_4():
+    pass
+def number_5():
+    pass
+def number_6():
+    pass
+def number_7():
+    pass
+def number_8():
+    pass
+def number_9():
+    pass
+
+PORT = '/tmp/ttyS1'
+# importamos los elementos necesarios
+board = Arduino(PORT)
+
+it = util.Iterator(board) # le pasamos la tarjeta al iterador
+it.start() #arrancamos a el iterador para poder leer entradas
+
+BOTON1 = 2
+BOTON2 = 4
+# configuro el pin como ENTRADA
+board.digital[BOTON].mode = INPUT
+
+count = 0
+
+while True:
+    boton = board.digital[BOTON1].read()
+
+
+
