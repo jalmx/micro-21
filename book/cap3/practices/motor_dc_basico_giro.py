@@ -11,15 +11,9 @@ board = Arduino(PORT)
 MOTOR1_1 = 2
 MOTOR1_2 = 3
 
-MOTOR2_1 = 4
-MOTOR2_2 = 5
-
 while True:
     giro([MOTOR1_1, MOTOR1_2],[0,1])
     sleep(5)
-    giro([MOTOR1_1, MOTOR1_2],[0,0])
-
-    giro([MOTOR2_1, MOTOR2_2],[1,10])
+    giro([MOTOR1_1, MOTOR1_2],[1,0])
     sleep(5)
-    giro([MOTOR2_1, MOTOR2_2],[0,0])
 
