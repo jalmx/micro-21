@@ -14704,11 +14704,12 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <p>
-     <strong>
-      Ejemplo 8. Control basico de un motor DC. Se debe activar un motor DC en intervalos de 10 segundos, apagarse y por 5 segundos, encender otro motor en sentido contrario y actuando de la misma manera que el primero
-     </strong>
-    </p>
+    <h2 id="Usando-motor-DC">
+     Usando motor DC
+     <a class="anchor-link" href="#Usando-motor-DC">
+      ¶
+     </a>
+    </h2>
     <p>
      Para esto estaremos aplicando el Driver
      <a href="http://users.ece.utexas.edu/~valvano/Datasheets/L293d.pdf">
@@ -14725,11 +14726,100 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
     <p>
      <strong>
-      Ejemplo 9. Control GIRO basico de un motor DC. Se debe activar un motor DC girano hacia una direccion, 10 segundos depues se apaga por 1 segundo y gira en sentido contrario
+      Ejemplo 8. Control basico de un motor DC. Se debe activar un motor DC en intervalos de 10 segundos, apagarse y encender, el otro motor debe funcionar en sentido contrario y actuar de la misma manera que el primero
      </strong>
     </p>
+    <p>
+     <img alt="motor_simul" src="./imgs/motor_sim.png"/>
+    </p>
+    <p>
+     <img alt="motor_tinker" src="./imgs/motor_tinker.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="c1"># Creo una funcion que me facilita el cambio del giro del motor, </span>
+<span class="k">def</span> <span class="nf">giro</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">signal</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># configuracion de puerto </span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+<span class="c1"># configuro los pines de los motores</span>
+<span class="n">MOTOR1_1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">MOTOR1_2</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">MOTOR2_1</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">MOTOR2_2</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">giro</span><span class="p">([</span><span class="n">MOTOR1_1</span><span class="p">,</span> <span class="n">MOTOR1_2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">giro</span><span class="p">([</span><span class="n">MOTOR1_1</span><span class="p">,</span> <span class="n">MOTOR1_2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="n">giro</span><span class="p">([</span><span class="n">MOTOR2_1</span><span class="p">,</span> <span class="n">MOTOR2_2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">giro</span><span class="p">([</span><span class="n">MOTOR2_1</span><span class="p">,</span> <span class="n">MOTOR2_2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 9. Control GIRO basico de un motor DC. Se debe activar un motor DC girano hacia una direccion, 5 segundos depues se apaga por 1 segundo y gira en sentido contrario
+     </strong>
+    </p>
+    <p>
+     <img alt="motor giro" src="./imgs/motor_giro_basic.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">def</span> <span class="nf">giro</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">signal</span><span class="p">):</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># puerto de la tarjet</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="c1"># configuro los pines del motor</span>
+
+<span class="n">MOTOR1_1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">MOTOR1_2</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">TIME</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">giro</span><span class="p">([</span><span class="n">MOTOR1_1</span><span class="p">,</span> <span class="n">MOTOR1_2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">TIME</span><span class="p">)</span>
+    <span class="n">giro</span><span class="p">([</span><span class="n">MOTOR1_1</span><span class="p">,</span> <span class="n">MOTOR1_2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">TIME</span><span class="p">)</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Motor-PAP-Unipolar-y-Bipolar">
+     Motor PAP Unipolar y Bipolar
+     <a class="anchor-link" href="#Motor-PAP-Unipolar-y-Bipolar">
+      ¶
+     </a>
+    </h2>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14741,6 +14831,42 @@ all of MD as it is not optimized for dense, information rich UIs.
       Ejemplo 10. Control de un motor PAP (Paso A Paso). Se necesita manejar un motor PAP para que gire
      </strong>
     </p>
+    <p>
+     <img alt="motor_pap" src="./imgs/motor_pap_1.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">def</span> <span class="nf">pap</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span><span class="n">signal</span><span class="p">):</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">[</span><span class="s1">'A'</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">[</span><span class="s1">'B'</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">[</span><span class="s1">'C'</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">[</span><span class="s1">'D'</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="n">TIME</span> <span class="o">=</span> <span class="mf">0.25</span>
+
+<span class="n">PINS</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s1">'A'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+<span class="s1">'B'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="s1">'C'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+<span class="s1">'D'</span><span class="p">:</span> <span class="mi">5</span>
+<span class="p">}</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">pap</span><span class="p">(</span><span class="n">PINS</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">TIME</span><span class="p">)</span>
+    <span class="n">pap</span><span class="p">(</span><span class="n">PINS</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">TIME</span><span class="p">)</span>
+    <span class="n">pap</span><span class="p">(</span><span class="n">PINS</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">TIME</span><span class="p">)</span>
+    <span class="n">pap</span><span class="p">(</span><span class="n">PINS</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">TIME</span><span class="p">)</span>
+</pre>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
