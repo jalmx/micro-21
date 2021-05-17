@@ -14277,6 +14277,10 @@ all of MD as it is not optimized for dense, information rich UIs.
      <code>
       alto
      </code>
+     o
+     <code>
+      True
+     </code>
      , esto lo que hará será que a la salida del pin tenga un nivel de voltaje de
      <code>
       5V
@@ -14289,6 +14293,10 @@ all of MD as it is not optimized for dense, information rich UIs.
      <code>
       bajo
      </code>
+     o
+     <code>
+      False
+     </code>
      , es equivalente a
      <code>
       0V
@@ -14298,6 +14306,9 @@ all of MD as it is not optimized for dense, information rich UIs.
     <table>
      <thead>
       <tr>
+       <th style="text-align:center">
+        Programacion
+       </th>
        <th style="text-align:center">
         Nivel lógico
        </th>
@@ -14312,10 +14323,13 @@ all of MD as it is not optimized for dense, information rich UIs.
      <tbody>
       <tr>
        <td style="text-align:center">
+        False
+       </td>
+       <td style="text-align:center">
         0
        </td>
        <td style="text-align:center">
-        Bajo
+        Low
        </td>
        <td style="text-align:center">
         0V
@@ -14323,10 +14337,13 @@ all of MD as it is not optimized for dense, information rich UIs.
       </tr>
       <tr>
        <td style="text-align:center">
+        True
+       </td>
+       <td style="text-align:center">
         1
        </td>
        <td style="text-align:center">
-        Alto
+        High
        </td>
        <td style="text-align:center">
         5V
@@ -14350,7 +14367,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      </a>
     </h3>
     <p>
-     Para indicar en python un tiempo en donde no haga nada y una vez este termine continuar realizando lo indicado se utiliza la función
+     Para indicar en python un tiempo en donde no haga nada y una vez este termine continuar realizando lo indicado; se utiliza la función
      <code>
       sleep()
      </code>
@@ -14417,6 +14434,17 @@ all of MD as it is not optimized for dense, information rich UIs.
      , tenemos que abrir la terminal y escribir el siguiente comando:
     </p>
     <div class="highlight">
+     <pre><span></span>pip install pyFirmata <span class="c1"># este comando es a nivel de sistema</span>
+</pre>
+    </div>
+    <p>
+     En caso de fallar, usar el flag
+     <code>
+      --user
+     </code>
+     para instalarlo a nivel de usuario
+    </p>
+    <div class="highlight">
      <pre><span></span>pip install pyFirmata --user
 </pre>
     </div>
@@ -14462,21 +14490,31 @@ all of MD as it is not optimized for dense, information rich UIs.
     </div>
     <p>
      <strong>
-      Ejemplo: Aquí solo encendemos el pin 3
+      Ejemplo: Aquí solo encendemos el pin 3 y despues de 4 segundos se debe apagar
      </strong>
     </p>
     <div class="highlight">
-     <pre><span></span><span class="kn">import</span> <span class="nn">pyfirmata</span>    <span class="c1">#importamos la libreria que nos permite conectarnos por el protocolo de firmata</span>
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>    <span class="c1">#importamos la libreria que nos permite conectarnos por el protocolo de firmata</span>
 <span class="kn">import</span> <span class="nn">time</span>         <span class="c1"># importamos la libreria de retardos</span>
 
 <span class="c1"># Indicamos el puerto donde se encuentra conectada la tarjeta electronica</span>
-<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'PUERTO #'</span>
-<span class="n">board</span> <span class="o">=</span> <span class="n">pyfirmata</span><span class="o">.</span><span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span> 
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'/tmp/ttyS1'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span> <span class="c1">#es la conexion con la placa</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Placa conectada'</span><span class="p">)</span>
+
+<span class="n">PIN</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># defino el pin donde estara el LED</span>
 
 <span class="c1">#se manda un nivel 1 a la salida del pin 3</span>
-<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">PIN</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Enciendo el pin </span><span class="si">{</span><span class="n">PIN</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">PIN</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Apago el pin </span><span class="si">{</span><span class="n">PIN</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre>
     </div>
+    <p>
+     <img alt="ejemplo 1" src="./imgs/ejemplo1.png"/>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14493,8 +14531,8 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="kn">import</span> <span class="nn">time</span>         <span class="c1"># importamos la libreria de retardos</span>
 
 <span class="c1"># Indicamos el puerto donde se encuentra conectada la tarjeta electronica</span>
-<span class="n">port</span> <span class="o">=</span> <span class="s1">'PUERTO'</span>
-<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">port</span><span class="p">)</span> 
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span> 
 
 <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#se manda un nivel 1 a la salida del pin 3</span>
 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>             <span class="c1">#nos esperamos un sengundo</span>
@@ -14522,14 +14560,14 @@ all of MD as it is not optimized for dense, information rich UIs.
      <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
-<span class="n">PORT</span><span class="o">=</span> <span class="s1">'/tmp/ttyS2'</span> <span class="c1">#en window es COMx</span>
+<span class="n">PORT</span><span class="o">=</span> <span class="s1">'COM#'</span> <span class="c1">#en window es COMx</span>
 
 <span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Para detener el proceso presiona Ctrl + C</span>
@@ -14814,12 +14852,498 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h2 id="Motor-PAP-Unipolar-y-Bipolar">
+    <h1 id="Motor-PAP-Unipolar-y-Bipolar">
      Motor PAP Unipolar y Bipolar
      <a class="anchor-link" href="#Motor-PAP-Unipolar-y-Bipolar">
       ¶
      </a>
+    </h1>
+    <h2 id="Motores-Paso-a-Pasa-(PAP)-Unipolar-vs-Bipolar">
+     Motores Paso a Pasa (PAP) Unipolar vs Bipolar
+     <a class="anchor-link" href="#Motores-Paso-a-Pasa-(PAP)-Unipolar-vs-Bipolar">
+      ¶
+     </a>
     </h2>
+    <p>
+     Existen 2 tipos de motores Paso a Paso, los cuales son muy similares, lo que los diferencia es la cantidad de bobinas y derivaciones. Su control es muy parecido, al final lo que se debe realizar es una conmutacion al de las bobinas, con ello se configura su direccion y velocidad, esto consiste en hacer combinacion de polos magneticos en las bobinas del motor.
+    </p>
+    <p>
+     <img alt="motor pap" src="./imgs/bipolar-unipolar.png"/>
+    </p>
+    <h3 id="Secuencia-para-controlar-motores-paso-a-paso-Bipolares">
+     Secuencia para controlar motores paso a paso Bipolares
+     <a class="anchor-link" href="#Secuencia-para-controlar-motores-paso-a-paso-Bipolares">
+      ¶
+     </a>
+    </h3>
+    <p>
+     Un motor paso a paso bipolar necesita invertir la corriente que circula por sus bobinas en una secuencia determinada para provocar el movimiento del eje.
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:center">
+        Paso
+       </th>
+       <th style="text-align:center">
+        Bobina 1A
+       </th>
+       <th style="text-align:center">
+        Bobina 1B
+       </th>
+       <th style="text-align:center">
+        Bobina 2A
+       </th>
+       <th style="text-align:center">
+        Bobina 2B
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:center">
+        Paso 1
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 2
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 3
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 4
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <h3 id="Secuencia-para-controlar-motores-paso-a-paso-Unipolares">
+     Secuencia para controlar motores paso a paso Unipolares
+     <a class="anchor-link" href="#Secuencia-para-controlar-motores-paso-a-paso-Unipolares">
+      ¶
+     </a>
+    </h3>
+    <p>
+     Hay tres secuencias para controlar los motores paso a paso unipolares
+    </p>
+    <p>
+     <strong>
+      Simple o wave drive
+     </strong>
+     : Es una secuencia donde se activa una bobina a la vez. Esto hace que el motor tenga un paso más suave pero por el contrario tenga menos torque y menos retención.
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:center">
+        Paso
+       </th>
+       <th style="text-align:center">
+        Bobina A
+       </th>
+       <th style="text-align:center">
+        Bobina B
+       </th>
+       <th style="text-align:center">
+        Bobina C
+       </th>
+       <th style="text-align:center">
+        Bobina D
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:center">
+        Paso 1
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 2
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 3
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 4
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <p>
+     <strong>
+      Normal
+     </strong>
+     : Es la secuencia más usada y la que recomiendan los fabricantes. Con esta secuencia el motor avanza un paso por vez y siempre hay dos bobinas activadas. Con esto se obtiene un mayor torque y retención.
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:center">
+        Paso
+       </th>
+       <th style="text-align:center">
+        Bobina A
+       </th>
+       <th style="text-align:center">
+        Bobina B
+       </th>
+       <th style="text-align:center">
+        Bobina C
+       </th>
+       <th style="text-align:center">
+        Bobina D
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:center">
+        Paso 1
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 2
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 3
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 4
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <p>
+     <strong>
+      Medio paso
+     </strong>
+     : Se activan primero dos bobinas y después solo una y así sucesivamente. Esto provoca que el motor avance la mitad del paso real.  Esto se traduce en un giro más suave y preciso.
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:center">
+        Paso
+       </th>
+       <th style="text-align:center">
+        Bobina A
+       </th>
+       <th style="text-align:center">
+        Bobina B
+       </th>
+       <th style="text-align:center">
+        Bobina C
+       </th>
+       <th style="text-align:center">
+        Bobina D
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:center">
+        Paso 1
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 2
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 3
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 4
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 5
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 6
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 7
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        Paso 8
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        1
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <p>
+     Documentación recomendada Articulo de Adafruit
+     <a href="https://learn.adafruit.com/all-about-stepper-motors/types-of-steppers">
+      Types of Steppers
+     </a>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14828,7 +15352,25 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
     <p>
      <strong>
-      Ejemplo 10. Control de un motor PAP (Paso A Paso). Se necesita manejar un motor PAP para que gire
+      Ejericio 10. Control de un Motor PAP Bipolar. Haciendolo girar en un sentido y posteriormente invirtiendo el giro
+     </strong>
+    </p>
+    <p>
+     <img alt="motor pap bipolar" src="./imgs/motor_pap_bipolar.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 11. Control de un motor PAP (Paso A Paso) Unipolar. Se necesita manejar un motor PAP para que gire en un momento hacia un sentido y posteriormente se invierta
      </strong>
     </p>
     <p>
