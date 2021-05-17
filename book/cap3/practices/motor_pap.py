@@ -10,7 +10,7 @@ def pap(pin,signal):
 PORT = '/tmp/ttyS1'
 board = Arduino(PORT)
 
-TIME = 0.25
+TIME = 0.5
 
 PINS = {
 'A': 2,
@@ -20,12 +20,25 @@ PINS = {
 }
 
 while True:
-    pap(PINS,[1,0,0,0])
-    sleep(TIME)
-    pap(PINS,[0,1,0,0])
-    sleep(TIME)
-    pap(PINS,[0,0,1,0])
-    sleep(TIME)
-    pap(PINS,[0,0,0,1])
-    sleep(TIME)
+    for i in range(5):
+        print('sentido derecha')
+        pap(PINS,[1,0,1,0])
+        sleep(TIME)
+        pap(PINS,[1,0,0,1])
+        sleep(TIME)
+        pap(PINS,[0,1,0,1])
+        sleep(TIME)
+        pap(PINS,[0,1,1,0])
+        sleep(TIME)
 
+        pap(PINS,[0,0,0,0])
+    for i in range(5):
+        print('sentido izquierda')
+        pap(PINS,[0,1,1,0])
+        sleep(TIME)
+        pap(PINS,[0,1,0,1])
+        sleep(TIME)
+        pap(PINS,[1,0,0,1])
+        sleep(TIME)
+        pap(PINS,[1,0,1,0])
+        sleep(TIME)
