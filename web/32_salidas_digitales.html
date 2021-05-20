@@ -14591,6 +14591,27 @@ all of MD as it is not optimized for dense, information rich UIs.
       Ejemplo 3: Secuencia de luces, 4 luces encienden consecutivamente y se apagan todas juntas, de forma indefinida
      </strong>
     </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span><span class="o">=</span> <span class="s1">'COM#'</span> <span class="c1">#en window es COMx</span>
+
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Conexion creada'</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">PIN_LED</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">PIN_LED</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Enciendo el pin </span><span class="si">{</span><span class="n">PIN_LED</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Apagando todos los LEDs'</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">PIN_LED</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">PIN_LED</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre>
+    </div>
     <p>
      <img alt="secuencia1" src="./imgs/secuencia_1.png"/>
     </p>
@@ -14600,6 +14621,18 @@ all of MD as it is not optimized for dense, information rich UIs.
     <p>
      <img alt="secuencia3" src="./imgs/secuencia_3.png"/>
     </p>
+    <p>
+     Simulacion:
+    </p>
+    <p>
+     <img alt="simulacion secuencia" src="./imgs/simulacion_secuencia.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
     <hr/>
     <p>
      <strong>
@@ -14614,6 +14647,14 @@ all of MD as it is not optimized for dense, information rich UIs.
     </p>
     <p>
      <img alt="semaforo" src="./imgs/semaforo_3.png"/>
+    </p>
+    <p>
+     <strong>
+      Simulacion:
+     </strong>
+    </p>
+    <p>
+     <img alt="simulación semáforo" src="./imgs/simulacion_semaforo.png"/>
     </p>
    </div>
   </div>
@@ -14645,7 +14686,94 @@ all of MD as it is not optimized for dense, information rich UIs.
      <img alt="7 segmentos" src="./imgs/display_5.png"/>
     </p>
     <div class="highlight">
-     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">INPUT</span>
+     <pre><span></span><span class="c1"># opcion basica</span>
+<span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>    <span class="c1">#importamos la libreria que nos permite conectarnos por el protocolo de firmata</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>         <span class="c1"># importamos la libreria de retardos</span>
+
+<span class="c1"># Indicamos el puerto donde se encuentra conectada la tarjeta electronica</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span> <span class="c1">#es la conexion con la placa</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Placa conectada'</span><span class="p">)</span>
+
+<span class="c1">#segmentos del display</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">F</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">G</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1">#digito 0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Pongo el 0 en el display'</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">A</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">B</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">D</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">E</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">F</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">G</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1">#digito 1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Pongo el 1 en el display'</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">A</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">B</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">D</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">E</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">F</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">G</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1">#digito 2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Pongo el 2 en el display'</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">A</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">B</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">D</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">E</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">F</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">G</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1">#digito 3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Pongo el 3 en el display'</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">A</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">B</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">D</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">E</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">F</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">G</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1">#digito 4</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Pongo el 4 en el display'</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">A</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">B</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">D</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">E</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">F</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">G</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c1">#digito F</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Pongo el F en el display'</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">A</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">B</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">D</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">E</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">F</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">G</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre>
+    </div>
+    <p>
+     <img alt="simulacion display basico" src="./imgs/simulacion_display.png"/>
+    </p>
+    <hr/>
+    <div class="highlight">
+     <pre><span></span><span class="c1"># Opcion avanzada</span>
+<span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">INPUT</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
 <span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
@@ -14697,9 +14825,6 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="c1"># importamos los elementos necesarios</span>
 <span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
 
-<span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span> <span class="c1"># le pasamos la tarjeta al iterador</span>
-<span class="n">it</span><span class="o">.</span><span class="n">start</span><span class="p">()</span> <span class="c1">#arrancamos a el iterador para poder leer entradas</span>
-
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">display</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
@@ -14707,6 +14832,53 @@ all of MD as it is not optimized for dense, information rich UIs.
     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># reincio el conteo</span>
+</pre>
+    </div>
+    <hr/>
+    <div class="highlight">
+     <pre><span></span><span class="c1">#otro opcion con una sola funcion</span>
+<span class="c1"># importamos la libreria que nos permite conectarnos por el protocolo de firmata</span>
+<span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>         <span class="c1"># importamos la libreria de retardos</span>
+
+<span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># segmentos del display</span>
+    <span class="n">SEGMENT_A</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">SEGMENT_B</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">SEGMENT_C</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">SEGMENT_D</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">SEGMENT_E</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">SEGMENT_F</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">SEGMENT_G</span> <span class="o">=</span> <span class="mi">8</span>
+
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">SEGMENT_A</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">SEGMENT_B</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">SEGMENT_C</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">SEGMENT_D</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">SEGMENT_E</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">SEGMENT_F</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">SEGMENT_G</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+    <span class="n">sleep</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+
+
+<span class="c1"># Indicamos el puerto donde se encuentra conectada la tarjeta electronica</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>  <span class="c1"># es la conexion con la placa</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Placa conectada'</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># creo el digito 0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'digito 0'</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'digito 1'</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'digito 2'</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'digito 3'</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'digito F'</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre>
     </div>
    </div>
@@ -14721,6 +14893,39 @@ all of MD as it is not optimized for dense, information rich UIs.
       Ejemplo 7: Realizar un barrita de carga, puede contener cualquier forma
      </strong>
     </p>
+    <div class="highlight">
+     <pre><span></span><span class="c1"># importamos la libreria que nos permite conectarnos por el protocolo de firmata</span>
+<span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>         <span class="c1"># importamos la libreria de retardos</span>
+
+<span class="c1"># Indicamos el puerto donde se encuentra conectada la tarjeta electronica</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>  <span class="c1"># es la conexion con la placa</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Placa conectada'</span><span class="p">)</span>
+
+<span class="c1"># segmentos del display</span>
+<span class="n">segements</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'A'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s1">'B'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">'C'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s1">'D'</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="s1">'E'</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s1">'F'</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="s1">'G'</span><span class="p">:</span> <span class="mi">8</span>
+<span class="p">}</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># enciendo segmento por segmento esperandome un segundo entre cada segmento</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">segements</span><span class="p">:</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">segements</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1">#apago todos los segmentos y espero 1 segundo</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">segements</span><span class="p">:</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">segements</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre>
+    </div>
     <p>
      <img alt="loading" src="./imgs/loading_1.png"/>
     </p>
@@ -14735,6 +14940,14 @@ all of MD as it is not optimized for dense, information rich UIs.
     </p>
     <p>
      <img alt="loading" src="./imgs/loading_5.png"/>
+    </p>
+    <p>
+     <strong>
+      Simulacion
+     </strong>
+    </p>
+    <p>
+     <img alt="simulacion del loader" src="./imgs/loader.png"/>
     </p>
    </div>
   </div>
@@ -14767,7 +14980,7 @@ all of MD as it is not optimized for dense, information rich UIs.
     <hr/>
     <p>
      <strong>
-      Ejemplo 8. Control basico de un motor DC. Se debe activar un motor DC en intervalos de 10 segundos, apagarse y encender, el otro motor debe funcionar en sentido contrario y actuar de la misma manera que el primero
+      Ejemplo 8. Control basico de un motor DC. Se debe activar un motor DC en intervalos de 5 segundos, apagarse y encender, el otro motor debe funcionar en sentido contrario y actuar de la misma manera que el primero
      </strong>
     </p>
     <p>
@@ -14776,6 +14989,34 @@ all of MD as it is not optimized for dense, information rich UIs.
     <p>
      <img alt="motor_tinker" src="./imgs/motor_tinker.png"/>
     </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="n">MOTOR1_1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">MOTOR1_2</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">MOTOR2_1</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">MOTOR2_2</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR1_1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR1_2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR1_1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR1_2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR2_1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR2_2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR2_1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR2_2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre>
+    </div>
+    <hr/>
     <div class="highlight">
      <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
@@ -14827,7 +15068,7 @@ all of MD as it is not optimized for dense, information rich UIs.
     <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
-<span class="c1"># puerto de la tarjet</span>
+<span class="c1"># puerto de la tarjeta</span>
 
 <span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
 <span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
@@ -14844,6 +15085,37 @@ all of MD as it is not optimized for dense, information rich UIs.
     <span class="n">sleep</span><span class="p">(</span><span class="n">TIME</span><span class="p">)</span>
     <span class="n">giro</span><span class="p">([</span><span class="n">MOTOR1_1</span><span class="p">,</span> <span class="n">MOTOR1_2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">sleep</span><span class="p">(</span><span class="n">TIME</span><span class="p">)</span>
+</pre>
+    </div>
+    <hr/>
+    <div class="highlight">
+     <pre><span></span><span class="c1"># forma basica</span>
+<span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="n">MOTOR1_1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">MOTOR1_2</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'gira en un sentido'</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR1_1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR1_2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'apago el motor'</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR1_1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR1_2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'gira en el otro sentido'</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR1_1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR1_2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'apago el motor'</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR1_1</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MOTOR1_2</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre>
     </div>
    </div>
@@ -15526,9 +15798,10 @@ all of MD as it is not optimized for dense, information rich UIs.
       <em>
        HOLA-CbtIS-85
       </em>
+      , se repite indefinidamente.
      </li>
      <li>
-      Realizar una secuencia de letras que formen alguna frase, mínimo de 5 letras, no hay límite de letras para formar su frase, los espacios son representados por guion medio
+      Realizar una secuencia de letras que formen alguna frase, mínimo de 5 letras, no hay límite de letras para formar su frase, los espacios son representados por guion medio. La frase es libre.
      </li>
     </ol>
    </div>

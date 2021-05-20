@@ -12,8 +12,26 @@ MOTOR1_1 = 2
 MOTOR1_2 = 3
 
 while True:
-    giro([MOTOR1_1, MOTOR1_2],[0,1])
+    print('gira en un sentido')
+    board.digital[MOTOR1_1].write(1)
+    board.digital[MOTOR1_2].write(0)
     sleep(5)
-    giro([MOTOR1_1, MOTOR1_2],[1,0])
+    print('apago el motor')
+    board.digital[MOTOR1_1].write(0)
+    board.digital[MOTOR1_2].write(0)
+    sleep(1)
+    print('gira en el otro sentido')
+    board.digital[MOTOR1_1].write(0)
+    board.digital[MOTOR1_2].write(1)
     sleep(5)
+    print('apago el motor')
+    board.digital[MOTOR1_1].write(0)
+    board.digital[MOTOR1_2].write(0)
+    sleep(1)
+
+
+    # giro([MOTOR1_1, MOTOR1_2],[0,1])
+    # sleep(5)
+    # giro([MOTOR1_1, MOTOR1_2],[1,0])
+    # sleep(5)
 
