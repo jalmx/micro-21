@@ -15194,6 +15194,154 @@ Te cuento que tambien me gusta mucho leer
       ¶
      </a>
     </h2>
+    <p>
+     Son un tipo de coleccion que su estructura es
+     <code>
+      Llave - Valor
+     </code>
+     . Para obtener el acceso al
+     <em>
+      valor
+     </em>
+     se hace a traves de la
+     <em>
+      llave
+     </em>
+     . La llave es unica y por lo tanto no se puede repetir.
+    </p>
+    <p>
+     <strong>
+      Sintaxis
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="c1"># Creacion de un diccionario    </span>
+    <span class="n">diccionario</span> <span class="o">=</span> <span class="p">{</span> 
+        <span class="s1">'llave1'</span><span class="p">:</span> <span class="s1">'str'</span><span class="p">,</span>
+        <span class="s1">'llave2'</span> <span class="p">:</span> <span class="mi">5</span>
+        <span class="s1">'llave3'</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">'llave4'</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">'a'</span><span class="p">]</span>
+        <span class="o">......</span>        
+    <span class="p">}</span>
+
+<span class="c1"># Leyendo datos del diccionario</span>
+
+<span class="n">variable1</span> <span class="o">=</span> <span class="n">diccionario</span><span class="p">[</span><span class="s1">'llave3'</span><span class="p">]</span> <span class="c1"># True</span>
+<span class="n">variable1</span> <span class="o">=</span> <span class="n">diccionario</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'llave3'</span><span class="p">)</span> <span class="c1"># True, en caso que no exista devuelve None</span>
+
+<span class="c1"># Modificando valores existentes en el diccionario</span>
+
+<span class="n">diccionario</span><span class="p">[</span><span class="s1">'llave4'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># Agregando valores nuevos al diccionario</span>
+
+<span class="n">diccionario</span><span class="p">[</span><span class="s1">'llave5'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'un valor'</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [5]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">calificaciones_neumatica</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'gamas'</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="s1">'angelo'</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="s1">'dania'</span> <span class="p">:</span> <span class="mi">10</span>    
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">calificaciones_neumatica</span><span class="p">[</span><span class="s1">'gamas'</span><span class="p">]</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calificaciones_neumatica</span><span class="p">[</span><span class="s1">'angelo'</span><span class="p">]</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calificaciones_neumatica</span><span class="p">[</span><span class="s1">'dania'</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="n">calificaciones_neumatica</span><span class="p">[</span><span class="s1">'leon'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># agregando un valor al diccionario</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">calificaciones_neumatica</span><span class="p">[</span><span class="s1">'leon'</span><span class="p">])</span>
+
+<span class="n">calificaciones_neumatica</span><span class="p">[</span><span class="s1">'angelo'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># actualizo el valor de esa llave</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">calificaciones_neumatica</span><span class="p">[</span><span class="s1">'angelo'</span><span class="p">])</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>9
+8
+10
+10
+7
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [10]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">calificaciones_neumatica</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'con la llave: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">, el valor es: </span><span class="si">{</span><span class="n">calificaciones_neumatica</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'======================='</span><span class="p">)</span>
+
+<span class="c1"># Extraigo todas las llaves</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">calificaciones_neumatica</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'======================='</span><span class="p">)</span>
+    
+<span class="c1"># Extraigo los valores</span>
+<span class="k">for</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">calificaciones_neumatica</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>con la llave: gamas, el valor es: 9
+con la llave: angelo, el valor es: 7
+con la llave: dania, el valor es: 10
+con la llave: leon, el valor es: 10
+=======================
+gamas
+angelo
+dania
+leon
+=======================
+9
+7
+10
+10
+</pre>
+      </div>
+     </div>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -15224,60 +15372,242 @@ Te cuento que tambien me gusta mucho leer
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h2 id="Funcion-tuple">
+    <h2 id="Funcion-tuple()">
      Funcion
      <code>
-      tuple
+      tuple()
      </code>
-     <a class="anchor-link" href="#Funcion-tuple">
+     <a class="anchor-link" href="#Funcion-tuple()">
       ¶
      </a>
     </h2>
     <p>
-     TODO
+     La funcion tuple crea una instancia de una tupla vacia si no le pasamos ningun argumento. El argumento que puede recibir una coleccion.
     </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [25]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">mi_tupla</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span> <span class="c1"># crea una tupla vacia</span>
+
+<span class="n">calificaciones</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+
+<span class="n">tupla_calificaciones</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">calificaciones</span><span class="p">)</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">calificaciones</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tupla_calificaciones</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>[8, 6, 9, 6, 8]
+(8, 6, 9, 6, 8)
+</pre>
+      </div>
+     </div>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h2 id="Funcion-list">
+    <h2 id="Funcion-list()">
      Funcion
      <code>
-      list
+      list()
      </code>
-     <a class="anchor-link" href="#Funcion-list">
+     <a class="anchor-link" href="#Funcion-list()">
       ¶
      </a>
     </h2>
     <p>
-     TODO
+     La funcion list crea una instancia de una lista vacia si no le pasamos ningun argumento. El argumento que puede recibir una coleccion.
     </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [27]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">lista_vacia</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_vacia</span><span class="p">)</span>
+
+<span class="n">tupla_calificaciones</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">lista_calificaciones</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tupla_calificaciones</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tupla_calificaciones</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_calificaciones</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>[]
+(8, 6, 9, 6, 8)
+[8, 6, 9, 6, 8]
+</pre>
+      </div>
+     </div>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-    <h2 id="Funcion-dict">
+    <h2 id="Funcion-dict()">
      Funcion
      <code>
-      dict
+      dict()
      </code>
-     <a class="anchor-link" href="#Funcion-dict">
+     <a class="anchor-link" href="#Funcion-dict()">
       ¶
      </a>
     </h2>
     <p>
-     TODO
+     La funcion dict crea una instancia de un diccionario vacio si no le pasamos ningun argumento. El argumento que puede recibir una coleccion.
     </p>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [33]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">mi_diccionario</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mi_diccionario</span><span class="p">)</span>
+
+<span class="n">mi_diccionario</span><span class="p">[</span><span class="s1">'hola'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mi_diccionario</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>{}
+{'hola': 4}
+</pre>
+      </div>
+     </div>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Funcion-enumerate()">
+     Funcion
+     <code>
+      enumerate()
+     </code>
+     <a class="anchor-link" href="#Funcion-enumerate()">
+      ¶
+     </a>
+    </h2>
+    <p>
+     A esta funcion se le pasa un iterable y me devuelve 2 valores, en la primera posicion me pasa el indice y en la segunda posicion me pasa el valor que tiene en ese momento el iterador.
+    </p>
+    <p>
+     <strong>
+      Sintaxis:
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">iterador</span><span class="p">)</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [37]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="n">pokemons</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'pikachu'</span><span class="p">,</span> <span class="s1">'bolbasor'</span><span class="p">,</span> <span class="s1">'charizard'</span> <span class="p">]</span>
+
+<span class="c1"># Forma fea y horrible</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">pokemon</span> <span class="ow">in</span> <span class="n">pokemons</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'La posicion de </span><span class="si">{</span><span class="n">pokemon</span><span class="si">}</span><span class="s1"> es </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'==================================='</span><span class="p">)</span>
+
+<span class="c1"># La forma chida</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pokemons</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'La posicion de </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1"> es </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>La posicion de pikachu es 0
+La posicion de bolbasor es 1
+La posicion de charizard es 2
+===================================
+La posicion de pikachu es 0
+La posicion de bolbasor es 1
+La posicion de charizard es 2
+</pre>
+      </div>
+     </div>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">

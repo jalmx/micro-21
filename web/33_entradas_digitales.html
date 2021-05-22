@@ -14310,6 +14310,9 @@ all of MD as it is not optimized for dense, information rich UIs.
      <thead>
       <tr>
        <th style="text-align:center">
+        Programacion
+       </th>
+       <th style="text-align:center">
         Nivel lógico
        </th>
        <th style="text-align:center">
@@ -14323,6 +14326,9 @@ all of MD as it is not optimized for dense, information rich UIs.
      <tbody>
       <tr>
        <td style="text-align:center">
+        False
+       </td>
+       <td style="text-align:center">
         0
        </td>
        <td style="text-align:center">
@@ -14333,6 +14339,9 @@ all of MD as it is not optimized for dense, information rich UIs.
        </td>
       </tr>
       <tr>
+       <td style="text-align:center">
+        True
+       </td>
        <td style="text-align:center">
         1
        </td>
@@ -14371,7 +14380,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      <pre><span></span><span class="c1"># importamos los elementos necesarios</span>
 <span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">INPUT</span>
 
-<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM'</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
 <span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
 
 <span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span> <span class="c1"># le pasamos la tarjeta al iterador</span>
@@ -14392,7 +14401,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">INPUT</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
-<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM'</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
 <span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
 
 <span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span> <span class="c1"># le pasamos la tarjeta al iterador</span>
@@ -14429,7 +14438,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
-<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
 <span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
 
 <span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span> <span class="c1"># le pasamos la tarjeta al iterador</span>

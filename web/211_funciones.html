@@ -14820,6 +14820,99 @@ El perimetro es 31.41592653589793
      </a>
     </h2>
     <p>
+     Normalmente pasamos argumentos a las funciones con un orden orden establecido, y el orden que le coloco el programador, pero hay una forma de poder los argumentos en un orden cual sea, pero se debe especificar que argumento es.
+    </p>
+    <p>
+     <em>
+      Nota: Los parametros nombrados y tambien con valores por default van al final se colocan al final
+     </em>
+    </p>
+    <p>
+     Como escribo una funcion y como la utilizo.
+    </p>
+    <p>
+     <strong>
+      Sintaxis
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="k">def</span> <span class="nf">name_function</span><span class="p">(</span><span class="n">variable1</span><span class="p">,</span> <span class="n">variable2</span> <span class="o">=</span> <span class="s1">'str'</span><span class="p">):</span>
+    <span class="c1">#body function</span>
+    <span class="c1">#code block </span>
+    <span class="c1">#code block </span>
+    <span class="c1">#code block </span>
+    <span class="c1">#code block </span>
+    <span class="k">return</span> <span class="n">valor</span>
+</pre>
+    </div>
+    <p>
+     Como la llamo a la funcion, coloco su nombre, abro parentesis y coloco los argumentos que necesita indicando su nombre con su valor, sin importar el orden:
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="n">name_function</span><span class="p">(</span><span class="n">variable2</span><span class="o">=</span><span class="s1">'pokemon'</span><span class="p">,</span> <span class="n">variable1</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+   <div class="jp-Cell-inputWrapper">
+    <div class="jp-InputArea jp-Cell-inputArea">
+     <div class="jp-InputPrompt jp-InputArea-prompt">
+      In [5]:
+     </div>
+     <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+      <div class="CodeMirror cm-s-jupyter">
+       <div class="highlight hl-ipython3">
+        <pre><span></span><span class="k">def</span> <span class="nf">create_pokemon</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'unknown'</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">pokemon</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'Mi pokemo se llama </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> con un poder de </span><span class="si">{</span><span class="n">power</span><span class="si">}</span><span class="s1">'</span>
+    <span class="k">return</span> <span class="n">pokemon</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">create_pokemon</span><span class="p">(</span><span class="n">power</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'pikachu'</span><span class="p">))</span>
+</pre>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="jp-Cell-outputWrapper">
+    <div class="jp-OutputArea jp-Cell-outputArea">
+     <div class="jp-OutputArea-child">
+      <div class="jp-OutputPrompt jp-OutputArea-prompt">
+      </div>
+      <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+       <pre>Mi pokemo se llama pikachu con un poder de 25
+</pre>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Devolviendo-varios-valores">
+     Devolviendo varios valores
+     <a class="anchor-link" href="#Devolviendo-varios-valores">
+      ¶
+     </a>
+    </h2>
+    <p>
+     TODO
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Recibiendo-infinitos-argumentos-(*args,-**kwargs)">
+     Recibiendo infinitos argumentos (*args, **kwargs)
+     <a class="anchor-link" href="#Recibiendo-infinitos-argumentos-(*args,-**kwargs)">
+      ¶
+     </a>
+    </h2>
+    <p>
      TODO
     </p>
    </div>
