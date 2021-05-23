@@ -14262,36 +14262,511 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h1 id="3.4-Sensores">
+     3.4 Sensores
+     <a class="anchor-link" href="#3.4-Sensores">
+      ¶
+     </a>
+    </h1>
+    <p>
+     Un sensor en es un sistema el cual capta una variable física y reacciona para la activiacion de un actuador. Las partes generales de un sensor son:
+    </p>
+    <ul>
+     <li>
+      Transductor
+     </li>
+     <li>
+      Acoplamiento de señal del transductor
+     </li>
+     <li>
+      Salida (Pasa la señal o acciona un actuador)
+     </li>
+    </ul>
+    <p>
+     <img alt="diagrama de bloques" src="./imgs/TODO.png"/>
+    </p>
+    <p>
+     <em>
+      Un sensor es todo aquello que tiene una propiedad sensible a una magnitud del medio, y al variar esta magnitud también varía con cierta intensidad la propiedad, es decir, manifiesta la presencia de dicha magnitud, y también su medida...
+      <a href="https://es.wikipedia.org/wiki/Sensor">
+       Definción wikipedia
+      </a>
+     </em>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.4.1-Variable-física">
+     3.4.1 Variable física
+     <a class="anchor-link" href="#3.4.1-Variable-física">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Existen 6 variables fundamentales que podemos captar que son:
+    </p>
+    <ul>
+     <li>
+      Temparatura (Calor, frio)
+     </li>
+     <li>
+      Caudal (Flujo)
+     </li>
+     <li>
+      Presión (Masa)
+     </li>
+     <li>
+      Radiación (Luz,...)
+     </li>
+     <li>
+      Velocidad (velocidad, aceleración)
+     </li>
+     <li>
+      Nivel
+     </li>
+    </ul>
+    <p>
+     Existen muchas más pero solo hago mencion de las mas basicas en instrumentacion.
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.4.2-Transductor">
+     3.4.2 Transductor
+     <a class="anchor-link" href="#3.4.2-Transductor">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Un tranductor es un elemento que es capaz de captar una variable física (temperatura, presión, flujo, etc..) convirtiendola en una señal electrica (corriente o voltaje). Sin embargo, normalmente la señal generada es muy pequeña, por ende, se debe mandar a una etapa de amplificación. La señal electrica o su variación siempre se da por algun efecto quimico en su interior por su constitución fisica.
+    </p>
+    <p>
+     <em>
+      Ejemplos:
+     </em>
+    </p>
+    <ul>
+     <li>
+      <strong>
+       LDR (Resistencia dependiente de luz)
+      </strong>
+      : En funcion de la luz que incide por su ventana es el valor ohmico que representa al pasar la corriente
+     </li>
+    </ul>
+    <p>
+     <img alt="ldr" src="./imgs/ldr.jpeg"/>
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Termocupla o termopar
+      </strong>
+      : Es la union de dos conductores de diferente composicion química.
+     </li>
+    </ul>
+    <p>
+     <img alt="termocupla" src="./imgs/termocupla.png"/>
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Pizoelectrico
+      </strong>
+      : Es una lamina o material que al deformarse genera un nivel de voltaje.
+     </li>
+    </ul>
+    <p>
+     <img alt="pizoelectrico" src="./imgs/pizoelectrico.jpeg"/>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.4.3-Tranductor-Pasivo-vs-Activo">
+     3.4.3 Tranductor Pasivo vs Activo
+     <a class="anchor-link" href="#3.4.3-Tranductor-Pasivo-vs-Activo">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Existen dos tipos de transductores los cuales pueden ser
+     <em>
+      pasivos
+     </em>
+     o
+     <em>
+      activos
+     </em>
+     esto significa la forma en cómo vamos a leer su señal o abquirirla, en funcion de ello vamos a acomplar, qué tipo es y amplificación.
+    </p>
+    <h3 id="3.4.3.1-Pasivos">
+     3.4.3.1 Pasivos
+     <a class="anchor-link" href="#3.4.3.1-Pasivos">
+      ¶
+     </a>
+    </h3>
+    <p>
+     Los
+     <code>
+      tranductores pasivos
+     </code>
+     son aquellos los caules para poder leer o conocer la variable fisica, se le debe aplicar un voltaje o corriente constante, para que en funcion de la variación de este voltaje o corriente que aplicamos podamos calcular su equivalencia o proporcion a dicha variable. Es decir, este tipo de transductor no es capaz de generar un voltaje o corriente la cual nos indique el valor de la magnitud fisica.
+    </p>
+    <p>
+     El ejemplo más común es una LDR, la cual se debe aplicar en un divisor de tensión, y en funcion de la variación del luz hará variar el voltaje de la salida del voltaje.
+    </p>
+    <p>
+     <img alt="sensor de luz" src="./imgs/sensor_luz.jpeg"/>
+    </p>
+    <p>
+     Como se puede observar en el circuito tenemos un divisor de tension dinamico que oscila el voltaje en función de la entrada de luz, esta salida normalmente va a otra etapa de amplificación.
+    </p>
+    <h3 id="3.4.3.2-Activos">
+     3.4.3.2 Activos
+     <a class="anchor-link" href="#3.4.3.2-Activos">
+      ¶
+     </a>
+    </h3>
+    <p>
+     Los
+     <code>
+      transductores activos
+     </code>
+     generan energia de forma natural, generando un voltaje o corriente al ser expuesto al contexto. Sin embargo, esta señal es demasiado pequeña para poder ser leido o un elemento digital o cualquier otro elemento.
+    </p>
+    <p>
+     El ejemplo más comun es un termopar o termocupla, la cual esta constituida por 2 alambres de diferentes elementos químicos. Al se expuesto a altas temperatura genera un mili voltaje.
+    </p>
+    <p>
+     <img alt="termocupla" src="./imgs/termocupla_2.png"/>
+    </p>
+    <p>
+     Como podemos observar al unir dos alambres de elementos distintos, al calentarse estos generan una diferencia de potencial.
+    </p>
+    <p>
+     Aquí tenemos un circuito de ejemplo de acoplamiento de una termocupla con su etapa de amplificación.
+    </p>
+    <p>
+     <img alt="circuito_termocupla" src="./imgs/termocupla_circuit.jpg"/>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.4.4-Sensores-Digitales-vs-Analógicos">
+     3.4.4 Sensores Digitales vs Analógicos
+     <a class="anchor-link" href="#3.4.4-Sensores-Digitales-vs-Analógicos">
+      ¶
+     </a>
+    </h2>
+    <p>
+     En general todos los transductores son analogicos, pero generan una señal muy pequeña, se necesita acoplar una o dos etapas de amplificación para tener un voltaje mayor equivalente. Pero justamente aquí al final de esa etapa la señal se puede enfocar para generar solo
+     <code>
+      señales digitales
+     </code>
+     , es decir,
+     <code>
+      un nivel alto o bajo
+     </code>
+     , o en su defecto generar un
+     <code>
+      rango de voltaje
+     </code>
+     , estos serían los
+     <code>
+      analogicos
+     </code>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.4.4.1-Sensores-Digitales">
+     3.4.4.1 Sensores Digitales
+     <a class="anchor-link" href="#3.4.4.1-Sensores-Digitales">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Los sensores analogicos solo pueden generar 2 tipos de señal, sea un
+     <code>
+      1
+     </code>
+     o un
+     <code>
+      0
+     </code>
+     . Existen rangos de voltajes que si estan en un rango se consideran
+     <code>
+      1 lógico
+     </code>
+     o
+     <code>
+      0 lógico
+     </code>
+     . A un rango se le conoce como voltajes TTL.
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:center">
+        Nivel lógico
+       </th>
+       <th style="text-align:center">
+        Voltaje
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:center">
+        1
+       </td>
+       <td style="text-align:center">
+        3V a 5V
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0V a 0.8V
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <p>
+     Debemos conocer que tipo de sistema digital estamos empleando y verificar nuestro sensor para asegurar que se puede acoplar directamente o tendremos que acoplar esta señal al nivel que deseamos.
+    </p>
+    <p>
+     <img alt="digital" src="./imgs/signal_digital.png"/>
+    </p>
+    <h3 id="3.4.4.1-Sensores-digitales-básicos-vs-protocolos">
+     3.4.4.1 Sensores digitales básicos vs protocolos
+     <a class="anchor-link" href="#3.4.4.1-Sensores-digitales-básicos-vs-protocolos">
+      ¶
+     </a>
+    </h3>
+    <p>
+     Los sensores digitales básicos solo nos da una señal lógica, esto significa que tiene 2 estados, indicando si existe o no existe la variable o la magnitud fisica, si más.
+    </p>
+    <p>
+     <strong>
+      Sensores básicos
+     </strong>
+    </p>
+    <p>
+     <em>
+      Ejemplo:
+     </em>
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Sensor PIR
+      </strong>
+      : Indica si existe presencia o no.
+     </li>
+    </ul>
+    <p>
+     <img alt="sensor pir" src="./imgs/sensor_pir.jpeg"/>
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Sensor de Flama
+      </strong>
+      : Indica si existe flama o no. Este por su naturaleza da un rango de voltaje, entonces se debe calibrar en que punto se dispara indicando si sobrepasa este punto o no.
+     </li>
+    </ul>
+    <p>
+     <img alt="sensor flama" src="./imgs/sensor_flama.png"/>
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Sensor de luz
+      </strong>
+      : Indica si existe luz o no. Este por su naturaleza da un rango de voltaje, entonces se debe calibrar en que punto se dispara indicando si sobrepasa este punto o no.
+     </li>
+    </ul>
+    <p>
+     <img alt="sensor luz" src="./imgs/sensor_luz.png"/>
+    </p>
+    <h4 id="Los-sensores-digitales-con-comunicación-por-protocolo">
+     Los sensores digitales con comunicación por protocolo
+     <a class="anchor-link" href="#Los-sensores-digitales-con-comunicación-por-protocolo">
+      ¶
+     </a>
+    </h4>
+    <p>
+     Son sensores que internamente son mas complejos, estos ademas de contener su etapa del transductor, amplificación, acoplamiento, tienen un etapa de comunicación por medio de algun protocolo de comunicación:
+    </p>
+    <p>
+     <strong>
+      Sensores con protocolo de comunicación:
+     </strong>
+    </p>
+    <ul>
+     <li>
+      <strong>
+       DS18B20
+      </strong>
+      : Sensor de temperatura con protocolo 1 Wire
+     </li>
+    </ul>
+    <p>
+     <img alt="DS18B20" src="./imgs/DS18B20.jpg"/>
+    </p>
+    <ul>
+     <li>
+      <strong>
+       BME280:
+      </strong>
+      : Sensor de presión, humedad y temperatura con protocolo I2C.
+     </li>
+    </ul>
+    <p>
+     <img alt="BME280" src="./imgs/BME280.jpg"/>
+    </p>
+    <ul>
+     <li>
+      <strong>
+       MAX31855K
+      </strong>
+      : Sensor de temperatura con protocolo SPI
+     </li>
+    </ul>
+    <p>
+     <img alt="MAX31855K" src="./imgs/MAX31855K.jpg"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.4.4.2-Sensores-Analógicos">
+     3.4.4.2 Sensores Analógicos
+     <a class="anchor-link" href="#3.4.4.2-Sensores-Analógicos">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Los sensores analogicos nos proveen un rango de voltaje en el que operan, este voltaje es proporcional la variable o magnitud fisica que esta sensando. Los sensores que son empleados a sistemas digitales trabajan habitualmente en un rango de
+     <code>
+      0V a 5V
+     </code>
+     o
+     <code>
+      0V a 3.3V
+     </code>
+     , estos rangos son comunes pero no los unicos. En ocasiones tenemos que amplificar este rango para que se pueda aprovechar de mejor manera.
+    </p>
+    <p>
+     <img alt="signal" src="./imgs/digital_analogico.jpg"/>
+    </p>
+    <p>
+     Pero este rango de voltaje no se puede mandar directamente al sistema digital antes debe pasar por otro elemento que haga la conversion a un sistema digital, estos elementos se llaman
+     <strong>
+      <a href="https://es.wikipedia.org/wiki/Conversor_de_se%C3%B1al_anal%C3%B3gica_a_digital">
+       ADC
+      </a>
+     </strong>
+     , este elemento hace posible que el microcontrolador pueda entender la señal análogica.
+    </p>
+    <p>
+     <img alt="adc" src="./imgs/adc.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.4.5-Actuadores-electricos-o-electronicos">
+     3.4.5 Actuadores electricos o electronicos
+     <a class="anchor-link" href="#3.4.5-Actuadores-electricos-o-electronicos">
+      ¶
+     </a>
+    </h2>
+    <p>
+     El actuador es el elemento que actua o realiza una acción a la salida de un sensor, no siempre viene el actuador incorporado al sensor.
+    </p>
+    <p>
+     Los actuadores más comunes son:
+    </p>
+    <ul>
+     <li>
+      Relay
+     </li>
+     <li>
+      Solenoide
+     </li>
+     <li>
+      Bocina
+     </li>
+     <li>
+      LED
+     </li>
+     <li>
+      Buzzer
+     </li>
+    </ul>
+    <p>
+     Aquí se pueden ver varios circuitos de sensores:
+    </p>
+    <p>
+     <strong>
+      Sensor crepuscular
+     </strong>
+    </p>
+    <p>
+     <img alt="sensor crepuscular" src="./imgs/sensor_crepuscular.jpg"/>
+    </p>
+    <p>
+     <strong>
+      Sensor de temperatura
+     </strong>
+    </p>
+    <p>
+     <img alt="sensor de temperatura" src="./imgs/sensor_temp.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="Lista-de-sensores-comúnes">
+     Lista de sensores comúnes
+     <a class="anchor-link" href="#Lista-de-sensores-comúnes">
+      ¶
+     </a>
+    </h2>
+    <p>
+     <img alt="sensores_kit" src="./imgs/sensores.jpg"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
     <p>
      Realizado por Docente:
      <a href="https://www.alejandro-leyva.com/">
