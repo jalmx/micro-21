@@ -14310,7 +14310,23 @@ all of MD as it is not optimized for dense, information rich UIs.
      </strong>
     </p>
     <p>
-     Tenemos un sensor PIR, que cuando exista presencia mande a activiar un parpadeo de led de forma rápida (medio segundo), mientras no exista presencia los LEDs deben parpadear de manera lenta (2seg)
+     Tenemos un sensor PIR, que cuando exista presencia mande a activiar un parpadeo de LEDs de forma rápida (medio segundo), mientras no exista presencia los LEDs deben parpadear de manera lenta (2seg)
+    </p>
+    <ul>
+     <li>
+      Circuito
+     </li>
+    </ul>
+    <p>
+     <img alt="circuito" src="./imgs/circuito_pir.png"/>
+    </p>
+    <ul>
+     <li>
+      Simulación
+     </li>
+    </ul>
+    <p>
+     <img alt="simulacion" src="./imgs/circuito_pir_simulacion.png"/>
     </p>
    </div>
   </div>
@@ -14325,6 +14341,9 @@ all of MD as it is not optimized for dense, information rich UIs.
     </p>
     <p>
      Ahora tenemos un sesnsor de presencia junto a un switch en una habitación. Lo que queremos es que si existe presencia y el switch se presiona se encienda la luz del cuarto, pero si la persona deja la habitación pero no apago la luz se debe apagar el foco. Al volver a entrar se debe presionar el switch y la luz volvera a enceder porque existe presencia.
+    </p>
+    <p>
+     <img alt="pir 2" src="./imgs/pir2_simul.png"/>
     </p>
    </div>
   </div>
@@ -14405,6 +14424,12 @@ all of MD as it is not optimized for dense, information rich UIs.
     <p>
      Tenemos un sensor de flama que cuando detecte fuego este debe mandar una señal auditiva.
     </p>
+    <p>
+     <img alt="flame circuit" src="./imgs/flame_circuit.png"/>
+    </p>
+    <p>
+     <img alt="flama simu" src="./imgs/flama1_simul.png"/>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14418,6 +14443,9 @@ all of MD as it is not optimized for dense, information rich UIs.
     </p>
     <p>
      Tenemos un sensor PIR, un sensor de flama, estos sensores están en la cocina. Si el sensor de flama dectecta fuego y no existe presencia, este sensor se coloca en dirección de las hornillas; debe mandar a cerrar una valvula solenoide (representada con un LED apagado) colocada en el tanque de gas y activara un extractor de aire (representado por un motor DC ). Pero si existe presencia y existe flama o no, la solenoide debe esta activa y el extractor apagado.
+    </p>
+    <p>
+     <img alt="flama_2" src="./imgs/flama2_simu.png"/>
     </p>
    </div>
   </div>
@@ -14461,7 +14489,12 @@ all of MD as it is not optimized for dense, information rich UIs.
      </strong>
     </p>
     <p>
-     Tenemos un sensor de magnético a una ventana.
+     Tenemos un sensor de magnético a una ventana. Cuando se abra la ventana mande un correo con el mensaje de que la ventana ha sido abierta.
+    </p>
+    <p>
+     <a href="https://www.askpython.com/python/examples/sending-emails-using-python">
+      https://www.askpython.com/python/examples/sending-emails-using-python
+     </a>
     </p>
    </div>
   </div>
