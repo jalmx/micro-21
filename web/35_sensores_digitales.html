@@ -14340,11 +14340,65 @@ all of MD as it is not optimized for dense, information rich UIs.
      </strong>
     </p>
     <p>
-     Ahora tenemos un sesnsor de presencia junto a un switch en una habitación. Lo que queremos es que si existe presencia y el switch se presiona se encienda la luz del cuarto, pero si la persona deja la habitación pero no apago la luz se debe apagar el foco. Al volver a entrar se debe presionar el switch y la luz volvera a enceder porque existe presencia.
+     Ahora tenemos un sensor de presencia junto a un switch en una habitación. Lo que queremos es que si existe presencia y el switch se presiona se encienda la luz del cuarto, pero si la persona deja la habitación pero no apago la luz se debe apagar el foco en un tiempo definido. Al salir del cuarto se presiona el switch se debe apagar el foco.
     </p>
     <p>
      <img alt="pir 2" src="./imgs/pir2_simul.png"/>
     </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">def</span> <span class="nf">control_led</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">pin</span><span class="p">,</span><span class="n">value</span><span class="p">):</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="c1"># importamos los elementos necesarios</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>  <span class="c1"># le pasamos la tarjeta al iterador</span>
+<span class="n">it</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>  <span class="c1"># arrancamos a el iterador para poder leer entradas</span>
+
+<span class="c1"># configuro el pin como ENTRADA</span>
+<span class="n">PIR_INPUT</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">SWICTH_INPUT</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">PIR_INPUT</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+<span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SWICTH_INPUT</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+
+<span class="c1"># declaro mi lista de la posicion de los leds</span>
+<span class="n">FOCO</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="n">status_foco</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># contador del temporizador</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="n">pir</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">PIR_INPUT</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">switch</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">SWICTH_INPUT</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">pir</span> <span class="ow">and</span> <span class="n">switch</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">status_foco</span> <span class="p">:</span>
+        <span class="n">control_led</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">FOCO</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">status_foco</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span> <span class="c1"># estabilizamos el presionar el boton</span>
+    <span class="k">elif</span> <span class="n">switch</span> <span class="ow">and</span> <span class="n">status_foco</span><span class="p">:</span>
+        <span class="n">control_led</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">FOCO</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">status_foco</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># temporizador para apagar el foco en caso de que no exista presencia</span>
+    <span class="k">if</span> <span class="n">status_foco</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">pir</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">control_led</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">FOCO</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">status_foco</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</pre>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14442,11 +14496,65 @@ all of MD as it is not optimized for dense, information rich UIs.
      </strong>
     </p>
     <p>
-     Tenemos un sensor PIR, un sensor de flama, estos sensores están en la cocina. Si el sensor de flama dectecta fuego y no existe presencia, este sensor se coloca en dirección de las hornillas; debe mandar a cerrar una valvula solenoide (representada con un LED apagado) colocada en el tanque de gas y activara un extractor de aire (representado por un motor DC ). Pero si existe presencia y existe flama o no, la solenoide debe esta activa y el extractor apagado.
+     Tenemos un sensor PIR, un sensor de flama, estos sensores están en la cocina. Si el sensor de flama dectecta fuego y no existe presencia, este sensor se coloca en dirección de las hornillas; debe mandar abrir la valvula solenoide (representada con un LED apagado) colocada en el tanque de gas y activara un extractor de aire (representado por un motor DC ). Pero si existe presencia y existe flama o no, la solenoide debe estar activa y el extractor apagado. Si esta encendido el extractor y no vuelve la persona a la cocina, se debe apagar despues de un cierto tiempo.
     </p>
     <p>
      <img alt="flama_2" src="./imgs/flama2_simu.png"/>
     </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="c1"># importamos los elementos necesarios</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">control_output</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">pin</span><span class="p">,</span><span class="n">value</span><span class="p">):</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>  <span class="c1"># le pasamos la tarjeta al iterador</span>
+<span class="n">it</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>  <span class="c1"># arrancamos a el iterador para poder leer entradas</span>
+
+<span class="c1"># configuro el pin como ENTRADA</span>
+<span class="n">FLAME_INPUT</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">PIR_INPUT</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">FLAME_INPUT</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+<span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">PIR_INPUT</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+
+<span class="c1"># declaro mis salidas</span>
+<span class="n">SOLENOIDE</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">EXTRACTOR</span> <span class="o">=</span> <span class="mi">9</span>
+
+<span class="n">status_extractor</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">count_time_extractor</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="n">flame</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">FLAME_INPUT</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">pir</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">PIR_INPUT</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">flame</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">pir</span><span class="p">:</span>
+        <span class="n">control_output</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">SOLENOIDE</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">control_output</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">EXTRACTOR</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">status_extractor</span> <span class="o">=</span><span class="kc">True</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">pir</span><span class="p">:</span>
+        <span class="n">control_output</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">SOLENOIDE</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">control_output</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">EXTRACTOR</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">status_extractor</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">status_extractor</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">count_time_extractor</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">control_output</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">EXTRACTOR</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">status_extractor</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">count_time_extractor</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">count_time_extractor</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14489,13 +14597,46 @@ all of MD as it is not optimized for dense, information rich UIs.
      </strong>
     </p>
     <p>
-     Tenemos un sensor de magnético a una ventana. Cuando se abra la ventana mande un correo con el mensaje de que la ventana ha sido abierta.
+     Tenemos un sensor de magnético en una ventana. Cuando la ventana sea abra parpadee un LED, mientras esta cerrada la ventana que el LED este apagado.
     </p>
     <p>
-     <a href="https://www.askpython.com/python/examples/sending-emails-using-python">
-      https://www.askpython.com/python/examples/sending-emails-using-python
-     </a>
+     <img alt="sensor magnetico simulacion" src="./imgs/magentico_simul.png"/>
     </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">def</span> <span class="nf">secuencia</span><span class="p">(</span><span class="n">board</span><span class="p">,</span><span class="n">leds</span><span class="o">=</span><span class="p">[],</span><span class="n">time</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">led</span> <span class="ow">in</span> <span class="n">leds</span><span class="p">:</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">led</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">led</span> <span class="ow">in</span> <span class="n">leds</span><span class="p">:</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">led</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="c1"># importamos los elementos necesarios</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>  <span class="c1"># le pasamos la tarjeta al iterador</span>
+<span class="n">it</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>  <span class="c1"># arrancamos a el iterador para poder leer entradas</span>
+
+<span class="c1"># configuro el pin como ENTRADA</span>
+<span class="n">MAGENTICO_INPUT</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">MAGENTICO_INPUT</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+
+<span class="c1"># declaro en donde esta mi alarma</span>
+<span class="n">ALARM</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="n">magnetico</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">MAGENTICO_INPUT</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">magnetico</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'ventana abierta'</span><span class="p">)</span>
+        <span class="n">secuencia</span><span class="p">(</span><span class="n">board</span><span class="o">=</span><span class="n">board</span><span class="p">,</span><span class="n">leds</span><span class="o">=</span><span class="n">ALARM</span><span class="p">,</span><span class="n">time</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14544,6 +14685,9 @@ all of MD as it is not optimized for dense, information rich UIs.
     <p>
      Este sensor
     </p>
+    <p>
+     <img alt="sensor luz" src="./imgs/sensor_luz.png"/>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14563,7 +14707,11 @@ all of MD as it is not optimized for dense, information rich UIs.
      </a>
     </h2>
     <p>
-     Este sensor tiene muchas aplicaciones y esto depende de la forma que se coloque y la interpretación que queramos o necesitemos. Todos los que se muestran funcionan igual, lo que cambia es la posición del emisor y receptor.
+     Este sensor tiene muchas aplicaciones y esto depende de la forma en como se coloque y la interpretación que queramos o necesitemos.
+     <em>
+      Todos los que se muestran funcionan igual
+     </em>
+     , lo que cambia es la posición del emisor y receptor.
     </p>
     <p>
      <img alt="infrarrojo1" src="./imgs/proximidad.jpg"/>
