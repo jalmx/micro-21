@@ -14262,26 +14262,160 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h1 id="3.6-Entradas-Analogicas">
+     3.6 Entradas Analogicas
+     <a class="anchor-link" href="#3.6-Entradas-Analogicas">
+      ¶
+     </a>
+    </h1>
+    <p>
+     Un sistema digital por default no puede leer señales analogicas, rangos u oscilaciones de voltajes. Entoces cómo se hace la medición?. Se utiliza un componente llamado ADC (Convertidor Analogo-Digital), el cual hace la conversión de la señal analogica a un codigo binario, entonces en lugar de percibir un nivel de voltaje, estaremos viendo un código binario equivalente.
+    </p>
+    <p>
+     El ADC que trae incorporado el ATMEGA328P es de 10 bits, es decir, tiene 4096 codigos binarios que son equivalentes son:
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:center">
+        Voltaje
+       </th>
+       <th style="text-align:center">
+        Binario
+       </th>
+       <th style="text-align:center">
+        Decimal
+       </th>
+       <th style="text-align:center">
+        pyFirmata
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:center">
+        0V
+       </td>
+       <td style="text-align:center">
+        0b
+       </td>
+       <td style="text-align:center">
+        0
+       </td>
+       <td style="text-align:center">
+        0.0
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        5V
+       </td>
+       <td style="text-align:center">
+        11 1111 1111
+       </td>
+       <td style="text-align:center">
+        4096
+       </td>
+       <td style="text-align:center">
+        1.0
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <p>
+     <mark>
+      En la libreria de pyFirmata da un valor de 0.0 a 1.0
+     </mark>
+    </p>
+    <p>
+     En la tarjeta Arduino UNO la sección que podemos utilizar como entradas analogicas es la que se muestra en la imagen,
+    </p>
+    <p>
+     <img alt="adc_board" src="./imgs/adc_board.png"/>
+    </p>
+    <p>
+     <em>
+      Como podemo notar tenemos son 6 entradas analogicas, comenzando en A0 y terminando en A5. Esto significa que podemos leer 6 sensores analogicos al mismo tiempo.
+     </em>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.6.1-Configuración-del-ADC">
+     3.6.1 Configuración del ADC
+     <a class="anchor-link" href="#3.6.1-Configuración-del-ADC">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Para poder leer el ADC debemos configurar y activiar esa opción, hay varias formas de configurar una entrada:
+    </p>
+    <p>
+     <strong>
+      Forma 1
+     </strong>
+    </p>
     <div class="highlight">
      <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span><span class="n">util</span>
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="s1">'COM4'</span><span class="p">)</span> <span class="c1"># Change to your port</span>
+<span class="c1"># Configuracion del puerto y la placa</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="c1"># activamos el iterador para poder leer datos de entrada de la tarjeta</span>
 <span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
 <span class="n">it</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="n">board</span><span class="o">.</span><span class="n">analog</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">enable_reporting</span><span class="p">()</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">"Read Start"</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">board</span><span class="o">.</span><span class="n">analog</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
+<span class="c1"># Activo el ADC 0 para que pueda leer su dato de entrada</span>
+<span class="n">board</span><span class="o">.</span><span class="n">analog</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">enable_reporting</span><span class="p">()</span>
+
+<span class="c1"># damos un tiempo de estabilización al dato</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+
+<span class="c1"># Leo el dato que exista en ese momento en el ADC</span>
+<span class="n">valor_adc</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">analog</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># imprimo el dato del ADC</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">valor_adc</span><span class="p">)</span>
+
+<span class="c1"># desactivo el ADC</span>
+<span class="n">board</span><span class="o">.</span><span class="n">analog</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">disable_reporting</span><span class="p">()</span>
+</pre>
+    </div>
+    <p>
+     <strong>
+      Forma 2
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span><span class="n">util</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># Configuracion del puerto y la placa</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="c1"># activamos el iterador para poder leer datos de entrada de la tarjeta</span>
+<span class="n">it</span> <span class="o">=</span> <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+<span class="n">it</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># Activo el ADC 0 para que pueda leer su dato de entrada</span>
+<span class="n">analog_0</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="s1">'a:0:i'</span><span class="p">)</span>
+
+<span class="c1"># damos un tiempo de estabilización de la configuracion</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+
+<span class="c1"># Leo el dato que exista en ese momento en el ADC</span>
+<span class="n">valor_adc</span> <span class="o">=</span> <span class="n">analog_0</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># imprimo el dato del ADC</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">valor_adc</span><span class="p">)</span>
+
+<span class="c1"># desactivo el ADC</span>
 <span class="n">board</span><span class="o">.</span><span class="n">analog</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">disable_reporting</span><span class="p">()</span>
 </pre>
     </div>
@@ -14291,18 +14425,159 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.6.2-Leyendo-Entradas-Analogicas">
+     3.6.2 Leyendo Entradas Analogicas
+     <a class="anchor-link" href="#3.6.2-Leyendo-Entradas-Analogicas">
+      ¶
+     </a>
+    </h2>
+    <p>
+     <strong>
+      Ejemplo 1: Vamos a leer un potenciomentro e imprimir por terminal el valor que se esta leyendo
+     </strong>
+    </p>
+    <p>
+     <img alt="ejemplo adc 1" src="./imgs/ejemplo1_adc.png"/>
+    </p>
+    <p>
+     <img alt="adc simulacion" src="./imgs/adc1_simul.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span><span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="c1"># Configuracion del puerto y la placa</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'/tmp/ttyS1'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="c1"># activamos el iterador para poder leer datos de entrada de la tarjeta</span>
+<span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># Activo el ADC 0 para que pueda leer su dato de entrada</span>
+<span class="n">board</span><span class="o">.</span><span class="n">analog</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">enable_reporting</span><span class="p">()</span>
+
+<span class="c1"># damos un tiempo de estabilización al dato</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Leo el dato que exista en ese momento en el ADC</span>
+    <span class="n">valor_adc</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">analog</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="c1"># imprimo el dato del ADC</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">valor_adc</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 2: Ahora vamos a hacer un indicador de nivel con un potenciometro, con un rango de 5 leds, entre mas alto el valor mas encenderan los leds.
+     </strong>
+    </p>
+    <p>
+     <img alt="adc leds" src="./imgs/ejemplo2_adc.png"/>
+    </p>
+    <p>
+     <img alt="adc led simulacion" src="./imgs/adc_bar_simul.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span><span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">leds</span><span class="o">=</span><span class="p">[],</span> <span class="n">value</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="k">for</span> <span class="n">position</span><span class="p">,</span><span class="n">led</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">leds</span><span class="p">):</span>
+        <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">led</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">position</span><span class="p">])</span>
+
+<span class="c1"># Configuracion del puerto y la placa</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'/tmp/ttyS1'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="c1"># activamos el iterador para poder leer datos de entrada de la tarjeta</span>
+<span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># Activo el ADC 0 para que pueda leer su dato de entrada</span>
+<span class="n">board</span><span class="o">.</span><span class="n">analog</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">enable_reporting</span><span class="p">()</span>
+
+<span class="c1"># damos un tiempo de estabilización al dato</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">LEDs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Leo el dato que exista en ese momento en el ADC</span>
+    <span class="n">valor_adc</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">analog</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="c1"># checamos primero que exista un numero, en caso que aun no tenga un valor disponible se lo brica</span>
+    <span class="k">if</span> <span class="n">valor_adc</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="c1">#hago las comparaciones para encender la barra de leds</span>
+    <span class="k">if</span> <span class="n">valor_adc</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">:</span>
+        <span class="n">bar</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">LEDs</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">valor_adc</span> <span class="o">&lt;</span> <span class="mf">.25</span><span class="p">:</span>
+        <span class="n">bar</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">LEDs</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">valor_adc</span> <span class="o">&gt;</span> <span class="mf">.25</span> <span class="ow">and</span> <span class="n">valor_adc</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">:</span>
+        <span class="n">bar</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">LEDs</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">valor_adc</span> <span class="o">&gt;</span> <span class="mf">.5</span> <span class="ow">and</span> <span class="n">valor_adc</span> <span class="o">&lt;</span> <span class="mf">0.75</span><span class="p">:</span>
+        <span class="n">bar</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">LEDs</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="n">valor_adc</span> <span class="o">&gt;</span> <span class="mf">.75</span><span class="p">:</span>
+        <span class="n">bar</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">LEDs</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+</pre>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 3: Valos a simular un voltimetro, en funcion del valor que ingresa, sera el valor de voltaje que se debe mostrar en la terminal
+     </strong>
+    </p>
+    <p>
+     <img alt="ejemplo adc 1" src="./imgs/ejemplo1_adc.png"/>
+    </p>
+    <p>
+     <img alt="adc simulacion" src="./imgs/adc1_simul.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span><span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="c1"># Configuracion del puerto y la placa</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'/tmp/ttyS1'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="c1"># activamos el iterador para poder leer datos de entrada de la tarjeta</span>
+<span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># Activo el ADC 0 para que pueda leer su dato de entrada</span>
+<span class="n">board</span><span class="o">.</span><span class="n">analog</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">enable_reporting</span><span class="p">()</span>
+
+<span class="c1"># damos un tiempo de estabilización al dato</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Leo el dato que exista en ese momento en el ADC</span>
+    <span class="n">valor_adc</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">analog</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">valor_adc</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="n">voltaje</span> <span class="o">=</span>  <span class="n">valor_adc</span> <span class="o">*</span> <span class="mi">5</span>
+    <span class="c1"># imprimo el dato del ADC</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Valor de entrada: </span><span class="si">{</span><span class="n">valor_adc</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Voltaje: </span><span class="si">{</span><span class="n">voltaje</span><span class="si">}</span><span class="s1">V'</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">

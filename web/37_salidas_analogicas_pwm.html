@@ -14262,28 +14262,108 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.7-Salidas-analogicas-(PWM)">
+     3.7 Salidas analogicas (PWM)
+     <a class="anchor-link" href="#3.7-Salidas-analogicas-(PWM)">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Los pines PWM son utilizados como un reemplazo a un DAC, es decir, se toma como una salida analogica. Los pines que se pueden utilizar como salida analogica (PWM) son las que tienen el simbolo
+     <code>
+      ~
+     </code>
+     , en la placa.
+    </p>
+    <p>
+     <img alt="board_pwm" src="./imgs/board_pwm.png"/>
+    </p>
+    <p>
+     Los cuales son los pines:
+    </p>
+    <table>
+     <thead>
+      <tr>
+       <th style="text-align:center">
+        Pines
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td style="text-align:center">
+        3
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        5
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        6
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        9
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        10
+       </td>
+       <td>
+       </td>
+      </tr>
+      <tr>
+       <td style="text-align:center">
+        11
+       </td>
+       <td>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <p>
+     Esto significa que podemos tener 6 salidas analogicas para poder controlar cualquier elemento que soporte este control.
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.7.1-Configuracion-de-salidas-PWM">
+     3.7.1 Configuracion de salidas PWM
+     <a class="anchor-link" href="#3.7.1-Configuracion-de-salidas-PWM">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Vamos a realizar la configuracion basica del PWM
+    </p>
     <div class="highlight">
      <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
-<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="s1">'COM4'</span><span class="p">)</span> <span class="c1"># Change to your port</span>
-<span class="n">lenPin</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="s1">'d:6:p'</span><span class="p">)</span> <span class="c1"># PWM Pin</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Starting to output PWM signal"</span><span class="p">)</span>
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
-        <span class="n">lenPin</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
-        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
-    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">):</span>
-        <span class="n">lenPin</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
-        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
-    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="c1"># Configuramos el pin que sera utilizado como PWM</span>
+<span class="n">pin_analog</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="s1">'d:6:p'</span><span class="p">)</span>
+
+<span class="c1"># Mando el valor que necesito al pin 6 con un ciclo de trabajo del 60%</span>
+<span class="n">pin_analog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre>
     </div>
    </div>
@@ -14292,18 +14372,31 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-   </div>
-  </div>
-  <div class="jp-Cell-inputWrapper">
-   <div class="jp-InputPrompt jp-InputArea-prompt">
-   </div>
-   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-   </div>
-  </div>
-  <div class="jp-Cell-inputWrapper">
-   <div class="jp-InputPrompt jp-InputArea-prompt">
-   </div>
-   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 1: Vamos a controlar la intensidad de un LED con una salida PWM
+     </strong>
+    </p>
+    <p>
+     <img alt="pwm basico" src="./imgs/pwm_1.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="c1"># Configuramos el pin que sera utilizado como PWM</span>
+<span class="n">pin_analog</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="s1">'d:3:p'</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">pin_analog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</pre>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14311,6 +14404,135 @@ all of MD as it is not optimized for dense, information rich UIs.
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
     <hr/>
+    <p>
+     <strong>
+      Ejemplo 2: Vamos a controlar el intensidad de un LED con un 2 botones, uno que incremente y con otro que decremente la intesidad
+     </strong>
+    </p>
+    <p>
+     <img alt="pwm btn" src="./imgs/pwm_btn.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
+    <p>
+     <strong>
+      Ejemplo 3: Vamos a controlar el intensidad de un LED con potenciometro la variar su intensidad.
+     </strong>
+    </p>
+    <p>
+     <img alt="" src="./imgs/pwm_adc_1.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.7.2-Servomotor">
+     3.7.2 Servomotor
+     <a class="anchor-link" href="#3.7.2-Servomotor">
+      ¶
+     </a>
+    </h2>
+    <p>
+     El servomotor se mueve con base a una señal PWM, pero la libreria nos ahorra el trabajo para generar el desplazamiento.
+    </p>
+    <p>
+     El servomotor que utilizaremos el SG-90, es un servomotor basico.
+    </p>
+    <p>
+     <img alt="servo sg90" src="./imgs/sg90.jpg"/>
+    </p>
+    <p>
+     Este motor necesita la siguiente señal para poder generar su desplazamiento:
+    </p>
+    <p>
+     <img alt="signal servo" src="./imgs/pwm_servo_data.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="3.7.2.1-Configurando-Servo">
+     3.7.2.1 Configurando Servo
+     <a class="anchor-link" href="#3.7.2.1-Configurando-Servo">
+      ¶
+     </a>
+    </h3>
+    <p>
+     Los pines que se pueden usar para el control de servo son los que le pertenecen al PWM.
+    </p>
+    <p>
+     Tenemos dos formas de controlar el Servo, una es haciendolo de manera manual y la otra usando la libreria directamente.
+    </p>
+    <p>
+     <strong>
+      Forma 1: manual
+     </strong>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="c1"># Configuramos el pin que sera utilizado como PWM</span>
+<span class="n">servo</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="s1">'d:3:p'</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mf">0.002</span><span class="p">,</span> <span class="mf">0.210</span><span class="p">,</span><span class="mf">0.002</span><span class="p">):</span>
+        <span class="n">servo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre>
+    </div>
+    <p>
+     <strong>
+      Forma 2. Con la libreria
+     </strong>
+    </p>
+    <p>
+     <code>
+      python
+     </code>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
     <p>
      Realizado por Docente:
      <a href="https://www.alejandro-leyva.com/">
