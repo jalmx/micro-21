@@ -14362,7 +14362,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="c1"># Configuramos el pin que sera utilizado como PWM</span>
 <span class="n">pin_analog</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="s1">'d:6:p'</span><span class="p">)</span>
 
-<span class="c1"># Mando el valor que necesito al pin 6 con un ciclo de trabajo del 60%</span>
+<span class="c1"># Mando el valor que necesito al pin 6 con un ciclo de trabajo del 50%</span>
 <span class="n">pin_analog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre>
     </div>
@@ -14381,19 +14381,21 @@ all of MD as it is not optimized for dense, information rich UIs.
      <img alt="pwm basico" src="./imgs/pwm_1.png"/>
     </p>
     <div class="highlight">
-     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
 <span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
 <span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
 
 <span class="c1"># Configuramos el pin que sera utilizado como PWM</span>
-<span class="n">pin_analog</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="s1">'d:3:p'</span><span class="p">)</span>
+<span class="n">pwm</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="s1">'d:3:p'</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
-        <span class="n">pin_analog</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">i</span><span class="o">/</span><span class="mi">100</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">pwm</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
         <span class="n">sleep</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
 </pre>
     </div>
@@ -14467,14 +14469,45 @@ all of MD as it is not optimized for dense, information rich UIs.
      </a>
     </h3>
     <p>
-     Los pines que se pueden usar para el control de servo son los que le pertenecen al PWM.
-    </p>
-    <p>
-     Tenemos dos formas de controlar el Servo, una es haciendolo de manera manual y la otra usando la libreria directamente.
+     Los pines que se pueden usar para el control de servo son los correspondientes al
+     <code>
+      PWM
+     </code>
+     .
     </p>
     <p>
      <strong>
-      Forma 1: manual
+      Un servomotor se puede dezplar desde 0° hasta 180°. Por default siempre esta en 90°. Pero por default se considera 0°, dado que gira hasta 90° y -90°.
+     </strong>
+    </p>
+    <p>
+     Para el control del Servomotor la libreria de pyfirmata contiene su configuracion.
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="c1"># Configuramos el pin que sera utilizado como PWM</span>
+<span class="n">servo</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="s1">'d:3:s'</span><span class="p">)</span> <span class="c1"># el tercer parametro define que tipo sera la salida</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">angulo</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">servo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">angulo</span><span class="p">)</span> <span class="c1"># el servo se movera al angulo indicado</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 1: Controlar un Servomotor, se debe colocar en diversos angulos y repetir de manera indfinida. Los angulos son 0°,30°,60°,90°,120°,160°,180°
      </strong>
     </p>
     <div class="highlight">
@@ -14485,30 +14518,36 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
 
 <span class="c1"># Configuramos el pin que sera utilizado como PWM</span>
-<span class="n">servo</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="s1">'d:3:p'</span><span class="p">)</span>
+<span class="n">servo</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="s1">'d:3:s'</span><span class="p">)</span> <span class="c1"># el tercer parametro define que tipo sera la salida</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mf">0.002</span><span class="p">,</span> <span class="mf">0.210</span><span class="p">,</span><span class="mf">0.002</span><span class="p">):</span>
-        <span class="n">servo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">angulo</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">servo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">angulo</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">angulo</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">servo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">angulo</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">angulo</span> <span class="o">=</span> <span class="mi">60</span>
+    <span class="n">servo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">angulo</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">angulo</span> <span class="o">=</span> <span class="mi">90</span>
+    <span class="n">servo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">angulo</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">angulo</span> <span class="o">=</span> <span class="mi">120</span>
+    <span class="n">servo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">angulo</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">angulo</span> <span class="o">=</span> <span class="mi">160</span>
+    <span class="n">servo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">angulo</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">angulo</span> <span class="o">=</span> <span class="mi">180</span>
+    <span class="n">servo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">angulo</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre>
     </div>
     <p>
-     <strong>
-      Forma 2. Con la libreria
-     </strong>
+     <img alt="simul_servo" src="./imgs/servo1.png"/>
     </p>
-    <p>
-     <code>
-      python
-     </code>
-    </p>
-   </div>
-  </div>
-  <div class="jp-Cell-inputWrapper">
-   <div class="jp-InputPrompt jp-InputArea-prompt">
-   </div>
-   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">

@@ -21,6 +21,7 @@ while True:
     if valor_adc == None:
         continue
 
+    # ecuacion que convierte el valor del ADC a Voltaje
     voltaje =  valor_adc * 5
     # imprimo el dato del ADC
     print(f'Valor de entrada: {valor_adc}')

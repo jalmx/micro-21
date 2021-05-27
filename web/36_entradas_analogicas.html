@@ -14269,10 +14269,14 @@ all of MD as it is not optimized for dense, information rich UIs.
      </a>
     </h1>
     <p>
-     Un sistema digital por default no puede leer señales analogicas, rangos u oscilaciones de voltajes. Entoces cómo se hace la medición?. Se utiliza un componente llamado ADC (Convertidor Analogo-Digital), el cual hace la conversión de la señal analogica a un codigo binario, entonces en lugar de percibir un nivel de voltaje, estaremos viendo un código binario equivalente.
+     Un sistema digital por default no puede leer señales analogicas, rangos u oscilaciones de voltajes. Entoces cómo se hace la medición?. Se utiliza un componente llamado
+     <strong>
+      ADC (Convertidor Analogo-Digital)
+     </strong>
+     , el cual hace la conversión de la señal analogica a un codigo binario, entonces en lugar de percibir un nivel de voltaje, estaremos viendo un código binario equivalente.
     </p>
     <p>
-     El ADC que trae incorporado el ATMEGA328P es de 10 bits, es decir, tiene 4096 codigos binarios que son equivalentes son:
+     El ADC que trae incorporado el ATMEGA328P es de 10 bits, es decir, tiene 1024 codigos binarios que son equivalentes son:
     </p>
     <table>
      <thead>
@@ -14311,10 +14315,10 @@ all of MD as it is not optimized for dense, information rich UIs.
         5V
        </td>
        <td style="text-align:center">
-        11 1111 1111
+        0b11 1111 1111
        </td>
        <td style="text-align:center">
-        4096
+        1024
        </td>
        <td style="text-align:center">
         1.0
@@ -14447,7 +14451,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
 <span class="c1"># Configuracion del puerto y la placa</span>
-<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'/tmp/ttyS1'</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
 <span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
 
 <span class="c1"># activamos el iterador para poder leer datos de entrada de la tarjeta</span>
@@ -14494,7 +14498,7 @@ all of MD as it is not optimized for dense, information rich UIs.
         <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">led</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="n">position</span><span class="p">])</span>
 
 <span class="c1"># Configuracion del puerto y la placa</span>
-<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'/tmp/ttyS1'</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
 <span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
 
 <span class="c1"># activamos el iterador para poder leer datos de entrada de la tarjeta</span>
@@ -14506,6 +14510,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="c1"># damos un tiempo de estabilización al dato</span>
 <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
+<span class="c1"># Defino los pines donde estan conectados los LEDs</span>
 <span class="n">LEDs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -14552,7 +14557,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
 <span class="c1"># Configuracion del puerto y la placa</span>
-<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'/tmp/ttyS1'</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
 <span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
 
 <span class="c1"># activamos el iterador para poder leer datos de entrada de la tarjeta</span>
