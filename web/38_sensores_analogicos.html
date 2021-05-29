@@ -14262,6 +14262,99 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h1 id="3.8-Sensores-analogicos">
+     3.8 Sensores analogicos
+     <a class="anchor-link" href="#3.8-Sensores-analogicos">
+      ¶
+     </a>
+    </h1>
+    <p>
+     Vamos a simular sensores analogicos usando un potenciomentro, el cual su variacion hara que realicemos una accion determinada.
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.8.1-Sensor-de-distancia-infrarrojo">
+     3.8.1 Sensor de distancia infrarrojo
+     <a class="anchor-link" href="#3.8.1-Sensor-de-distancia-infrarrojo">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Un sensor infrarrojo la señal que nos entrega es la relacion de que tanta luz incide en el fototransistor, la cual es emitida por un led infrarrojo. Es decir, si la luz que emite el led llega al fototransistor debemos realizar o no una accion.
+    </p>
+    <p>
+     <img alt="irda" src="./imgs/infrarrojo_analogico.jpg"/>
+    </p>
+    <p>
+     Ejemplo de un circuito de sensor infrarro simple:
+    </p>
+    <p>
+     <img alt="circuito irda" src="./imgs/irda_circuito.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="3.8.1-Aplicacion-de-sensores-infrarrojos">
+     3.8.1 Aplicacion de sensores infrarrojos
+     <a class="anchor-link" href="#3.8.1-Aplicacion-de-sensores-infrarrojos">
+      ¶
+     </a>
+    </h3>
+    <p>
+     <strong>
+      Ejemplo 1.
+     </strong>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.8.2-Sensor-de-corriente">
+     3.8.2 Sensor de corriente
+     <a class="anchor-link" href="#3.8.2-Sensor-de-corriente">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Tenemos vario sensores de corrientes, aqui muestro el sensor de efecto Hall y una bobina.
+Como tal el sensor hall detecta campos magneticos, no corriente, pero como un efecto del paso de la corriente genera un campo magnetico por ello se utiliza. 
+Al pasar una corriente se genera un campo magnetico y si se le acerca una bobina se genera el efecto de induccion, lo que causa que en dicha bobina se genere una corriente equivalente a la corriente que pasa en el primer conductor.
+    </p>
+    <p>
+     En ambos casos podemos determinar la cantidad de corriente que esta pasando en dicho conductor gracias a su campo magnetico.
+    </p>
+    <p>
+     <img alt="hall" src="./imgs/hall_analogico.jpeg"/>
+    </p>
+    <p>
+     <img alt="bobina" src="./imgs/corriente_sensor.jpg"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h3 id="3.8.2.1-Aplicacion-de-sensores-de-corriente">
+     3.8.2.1 Aplicacion de sensores de corriente
+     <a class="anchor-link" href="#3.8.2.1-Aplicacion-de-sensores-de-corriente">
+      ¶
+     </a>
+    </h3>
+    <p>
+     <strong>
+      Ejemplo X.
+     </strong>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14286,6 +14379,36 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
+    <h2 id="Practicas---sensores-Analogicos">
+     Practicas - sensores Analogicos
+     <a class="anchor-link" href="#Practicas---sensores-Analogicos">
+      ¶
+     </a>
+    </h2>
+    <ol>
+     <li>
+      Simular un sensor de distancia ultrasonico, que cuando identifique que el objeto esta a una distancia menor a 10cm haga parpadear una barra de leds.
+     </li>
+     <li>
+      Simular un sensor de luz junto con un sensor de presencia (digital). Dicho sensores trabajan a la par, si hay poca luz y existe presencia en el cuarto se debe encender un foco. En caso que no exista presencia sin importar la intensidad de la luz, el foco no enciende.
+     </li>
+     <li>
+      Simular un sensor infrarrojo para accionar el movimiento de un servo motor, entre mas luz incida debe incrementar el angulo del servomotor.
+     </li>
+    </ol>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">

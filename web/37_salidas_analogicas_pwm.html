@@ -14636,7 +14636,7 @@ all of MD as it is not optimized for dense, information rich UIs.
     <hr/>
     <p>
      <strong>
-      Ejemplo 2: Hacer girar un servomotor en funcion de la posicion de un potenciometro
+      Ejemplo 2: Hacer girar un servomotor en funcion de la posicion de un potenciometro. Es decir, si esta en 0 el potenciomentro, sera 0°; en 0.5 sera 90° y al 100% seran 180°.
      </strong>
     </p>
    </div>
@@ -14664,15 +14664,27 @@ all of MD as it is not optimized for dense, information rich UIs.
       ¶
      </a>
     </h2>
-    <p>
-     1.
-    </p>
+    <ol>
+     <li>
+      Control de velocidad de un motor DC, se controlara la velocidad del motor atraves de un potenciometro. Si el potenciometro esta en 0 el motor debe estar apagado, si esta al 50% el motor girara a la mitad de su velocidad, cuando llegue a 100% el motor debe girar a su maxima velocidad.
+     </li>
+     <li>
+      Control de la intesidad de varias luces, se tendran 3 leds cada uno controlado con su respectivo potenciometro para hacer variar la intensidad de la luz de cada uno. Todos de manera independiente.
+     </li>
+     <li>
+      Control de la intesidad de varias luces, se tendran 3 luces. 2 leds cada uno controlado con su respectivo potenciometro para hacer variar la intensidad de la luz de cada uno, un tercero controlado con botones, uno para incrementar y otro para decrementar la intensidad. Todos de manera independiente.
+     </li>
+     <li>
+      Utilizando un servomotor que se utilizara para controlar la pluma de la entrada de estacionamiento. Se simula un sensor infrarrojo para detectar el auto y se levante la pluma (180°), cuando no detecte el auto, bajara la pluma (0°)
+     </li>
+    </ol>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
     <p>
      Realizado por Docente:
      <a href="https://www.alejandro-leyva.com/">

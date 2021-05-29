@@ -14731,7 +14731,10 @@ all of MD as it is not optimized for dense, information rich UIs.
     </h2>
     <ol>
      <li>
-      Simula un sensor de luz el cual haga encender
+      Simula un sensor de luz el cual haga encender un foco cuando incida poca luz (por debajo del 45%). En caso que supere esa cantidad de luz el foco se debe mantener apagado.
+     </li>
+     <li>
+      Simula un sensor de distancia (infrarrojo). Carrito seguido de luz. Se tendran 2 sensores infrarrojos, el derecho e izquierdo, cuando el sensor derecho detecte luz debe arrancar una llanta (motor DC izquierdo), cuando el sensor izquierdo reciba luz debe encender la llanta derecha (motor DC derecho). Cuando no reciba luz ningun sensor debe apagar ambos motores, si ambos reciben luz deben encender ambos motores.
      </li>
     </ol>
    </div>
