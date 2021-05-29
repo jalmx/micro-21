@@ -24,7 +24,7 @@ def convert_nb_html(path_name_file: str, name_file: str):
     result = HTMLExporter(Config=c).from_file(path_name_file)
 
     with open(f'{path_save}/{name_file.lower()}.html', mode='w',
-              encoding='utf-8') as html:
+            encoding='utf-8') as html:
         html.write(result[0])
 
 
@@ -60,7 +60,7 @@ def copy_imgs():
 
 
 def build_cap(title: str, name_items: [str], url_base: str,
-              html: BeautifulSoup) -> BeautifulSoup:
+            html: BeautifulSoup) -> BeautifulSoup:
     """Build all html for each cap with the list"""
     title = build_tag('h1', title)
     list_ul = build_tag('ul', '')
@@ -68,7 +68,7 @@ def build_cap(title: str, name_items: [str], url_base: str,
         list_item = build_tag('li', '')
         subtitle = build_tag('h2', f'{item.replace(".html","").replace("_", " ").lower()} ->')
         link = build_tag('a', f'{subtitle.h2}',
-                         href=f"{url_base}/{item}", target="_black")
+                        href=f"{url_base}/{item}", target="_black")
         list_item.li.append(link.a)
         list_ul.ul.append(list_item.li)
 

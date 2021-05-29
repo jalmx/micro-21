@@ -14343,6 +14343,7 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
     <h2 id="3.7.1-Configuracion-de-salidas-PWM">
      3.7.1 Configuracion de salidas PWM
      <a class="anchor-link" href="#3.7.1-Configuracion-de-salidas-PWM">
@@ -14408,11 +14409,53 @@ all of MD as it is not optimized for dense, information rich UIs.
     <hr/>
     <p>
      <strong>
-      Ejemplo 2: Vamos a controlar el intensidad de un LED con un 2 botones, uno que incremente y con otro que decremente la intesidad
+      Ejemplo 2: Vamos a controlar el intensidad de un LED con 2 botones, uno que incremente y con otro que decremente la intesidad
      </strong>
     </p>
     <p>
      <img alt="pwm btn" src="./imgs/pwm_btn.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># pines en donde estan los botones</span>
+<span class="n">DOWN</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">UP</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">up</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+<span class="n">down</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+
+<span class="c1"># Configuramos el pin que sera utilizado como PWM</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="s1">'d:3:p'</span><span class="p">)</span>
+
+<span class="c1"># variable me indica el valor del pwm</span>
+<span class="n">intensidad</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">up</span><span class="o">.</span><span class="n">read</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">intensidad</span> <span class="o">&gt;=</span> <span class="mi">99</span><span class="p">):</span>
+            <span class="n">intensidad</span> <span class="o">+=</span> <span class="mi">3</span>
+            <span class="n">led</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">intensidad</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">intensidad</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+            <span class="n">sleep</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">down</span><span class="o">.</span><span class="n">read</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">intensidad</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="n">intensidad</span> <span class="o">-=</span> <span class="mi">3</span>
+            <span class="n">led</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">intensidad</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">intensidad</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>
+            <span class="n">sleep</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+</pre>
+    </div>
+    <p>
+     <img alt="pwm led btns" src="./imgs/pwm_led_btn.png"/>
     </p>
    </div>
   </div>
@@ -14428,6 +14471,41 @@ all of MD as it is not optimized for dense, information rich UIs.
     </p>
     <p>
      <img alt="" src="./imgs/pwm_adc_1.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+
+<span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># pines en donde estan los botones</span>
+<span class="n">POT</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># configuro la entrada del potenciometro</span>
+<span class="n">pot</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'a:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">POT</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+
+<span class="c1"># Configuramos el pin que sera utilizado como PWM</span>
+<span class="n">LED</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">LED</span><span class="p">)</span><span class="si">}</span><span class="s1">:p'</span><span class="p">)</span>
+
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#se estabiliza la configuracion</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="n">intensidad</span> <span class="o">=</span> <span class="n">pot</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">intensidad</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="n">led</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">intensidad</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">intensidad</span><span class="p">)</span>
+</pre>
+    </div>
+    <p>
+     <img alt="pot led" src="./imgs/pwm_pot_led.png"/>
     </p>
    </div>
   </div>
@@ -14505,6 +14583,7 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
     <p>
      <strong>
       Ejemplo 1: Controlar un Servomotor, se debe colocar en diversos angulos y repetir de manera indfinida. Los angulos son 0°,30°,60°,90°,120°,160°,180°
@@ -14554,18 +14633,40 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
+    <p>
+     <strong>
+      Ejemplo 2: Hacer girar un servomotor en funcion de la posicion de un potenciometro
+     </strong>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
+    <p>
+     <strong>
+      Ejemplo 3: Cambiar el angulo de un servomotor con botones, es decir, con uno incrementa su posicion y con el segundo la decrementa
+     </strong>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
+    <h2 id="Tarea---Salidas-Analogicas">
+     Tarea - Salidas Analogicas
+     <a class="anchor-link" href="#Tarea---Salidas-Analogicas">
+      ¶
+     </a>
+    </h2>
+    <p>
+     1.
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">

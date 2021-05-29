@@ -24,6 +24,8 @@ while True:
     # ecuacion que convierte el valor del ADC a Voltaje
     voltaje =  valor_adc * 5
     # imprimo el dato del ADC
+    print('===================================')
     print(f'Valor de entrada: {valor_adc}')
     print(f'Voltaje: {voltaje}V')
+    print('===================================')
     sleep(0.5)

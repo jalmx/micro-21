@@ -14276,7 +14276,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      , el cual hace la conversión de la señal analogica a un codigo binario, entonces en lugar de percibir un nivel de voltaje, estaremos viendo un código binario equivalente.
     </p>
     <p>
-     El ADC que trae incorporado el ATMEGA328P es de 10 bits, es decir, tiene 1024 codigos binarios que son equivalentes son:
+     El ADC que trae incorporado el ATMEGA328P tiene una resolucion de 10 bits, es decir, tiene 1024 codigos binarios que son equivalentes son:
     </p>
     <table>
      <thead>
@@ -14543,7 +14543,7 @@ all of MD as it is not optimized for dense, information rich UIs.
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
     <p>
      <strong>
-      Ejemplo 3: Valos a simular un voltimetro, en funcion del valor que ingresa, sera el valor de voltaje que se debe mostrar en la terminal
+      Ejemplo 3: Vamos a simular un voltimetro, en funcion del valor que ingresa, sera el valor de voltaje que se debe mostrar en la terminal
      </strong>
     </p>
     <p>
@@ -14583,6 +14583,27 @@ all of MD as it is not optimized for dense, information rich UIs.
     <span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre>
     </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
+    <h2 id="Tarea---Entradas-analogicas">
+     Tarea - Entradas analogicas
+     <a class="anchor-link" href="#Tarea---Entradas-analogicas">
+      ¶
+     </a>
+    </h2>
+    <ol>
+     <li>
+      Leer 2 potenciometros, cada uno controla una barra de leds, en el rango del 0 al 100% los leds iran encendiendo.
+     </li>
+     <li>
+      Leer un potenciometro e indicar por terminal el porcentaje equivalente, es decir, si se recibe 0.0 es equivalente al 0%, si recibes el 0.5 se imprime 50%, hasta llegar al 100%.
+     </li>
+    </ol>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
