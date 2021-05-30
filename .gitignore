@@ -10,3 +10,5 @@ test.py
 .directory
 input.ipynb
 output.ipynb
+
+.mypy_cache

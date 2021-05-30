@@ -14352,8 +14352,148 @@ Al pasar una corriente se genera un campo magnetico y si se le acerca una bobina
     </h3>
     <p>
      <strong>
-      Ejemplo X.
+      Ejemplo 1. Necesitamos realizar un amperimetro, el sensor da un rango entre 0A hasta 1000mA. Se mandará el valor de corriente a la terminal
      </strong>
+    </p>
+    <p>
+     <img alt="corriente simual" src="./imgs/sensor_corriente_simul.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="c1"># configuracion de la tarjeta</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Conexion lista'</span><span class="p">)</span>
+
+<span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># configuracion SENSOR</span>
+<span class="n">SENSOR_CURRENT_PIN</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">current_sensor</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'a:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SENSOR_CURRENT_PIN</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="n">current_sensor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="n">current_value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="mf">1000.0</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Value: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'La corriente es </span><span class="si">{</span><span class="n">current_value</span><span class="si">}</span><span class="s1">mA'</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 2: Fusible electronico. Se necesita construir un fusible electronico ocupando un sensor de corriente, accionado un relay para proteger el aparato electronico que este conectado.
+     </strong>
+    </p>
+    <p>
+     <img alt="fusible simul" src="./imgs/fusible_simul.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span><span class="p">,</span> <span class="n">time</span>
+
+<span class="k">def</span> <span class="nf">blink</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">pin</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+    <span class="sd">'''</span>
+<span class="sd">    genera el blink en un led para indicar su estado</span>
+<span class="sd">    '''</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+
+<span class="c1"># configuracion de la tarjeta</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'/tmp/ttyS1'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Conexion lista'</span><span class="p">)</span>
+
+<span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># configurando salidas</span>
+<span class="n">LED_PIN</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">RELAY_PIN</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">)</span><span class="si">}</span><span class="s1">:o'</span><span class="p">)</span>
+<span class="n">relay</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">RELAY_PIN</span><span class="p">)</span><span class="si">}</span><span class="s1">:o'</span><span class="p">)</span>
+
+<span class="c1"># configuracion SENSOR</span>
+<span class="n">SENSOR_CURRENT_PIN</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">current_sensor</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'a:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SENSOR_CURRENT_PIN</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># defino varibles auxiliares</span>
+<span class="n">ON</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">OFF</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="c1"># vamos a simular 3 niveles del sensor</span>
+<span class="c1"># apagado &lt; 0.2</span>
+<span class="c1"># normal 0.2 &gt;= hasta 0.8</span>
+<span class="c1"># overload (sobrecarga) &gt;0.8</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="n">current_sensor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="mf">0.8</span><span class="p">:</span>
+        <span class="n">relay</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">OFF</span><span class="p">)</span>
+        <span class="n">blink</span><span class="p">(</span><span class="n">board</span><span class="o">=</span><span class="n">board</span><span class="p">,</span><span class="n">pin</span><span class="o">=</span><span class="n">LED_PIN</span><span class="p">,</span><span class="n">time</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mf">0.8</span> <span class="ow">and</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="mf">0.2</span><span class="p">:</span>
+        <span class="n">relay</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ON</span><span class="p">)</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ON</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">relay</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ON</span><span class="p">)</span>
+        <span class="n">blink</span><span class="p">(</span><span class="n">board</span><span class="o">=</span><span class="n">board</span><span class="p">,</span><span class="n">pin</span><span class="o">=</span><span class="n">LED_PIN</span><span class="p">,</span><span class="n">time</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre>
+    </div>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.8.3-Sensor-de-temperatura">
+     3.8.3 Sensor de temperatura
+     <a class="anchor-link" href="#3.8.3-Sensor-de-temperatura">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Existe una enorme variedad de sensores de temperatura, estaremos viendo el
+     <strong>
+      <a href="https://www.ti.com/lit/ds/symlink/lm35.pdf">
+       LM35
+      </a>
+     </strong>
+     , sensor de temperatura lineal.
+    </p>
+    <p>
+     <strong>
+      Nos da una respuesta de 10mV/ºC
+     </strong>
+    </p>
+    <p>
+     <img alt="lm35" src="./imgs/lm35.png"/>
     </p>
    </div>
   </div>
@@ -14361,24 +14501,163 @@ Al pasar una corriente se genera un campo magnetico y si se le acerca una bobina
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <hr/>
+    <p>
+     <strong>
+      Ejemplo 1: Vamos a realizar un termometro con el LM35. La temperatura se mandará a la terminal. Debe mandar la temperatura en grados Celcius y grador Farenheits
+     </strong>
+    </p>
+    <p>
+     <img alt="termometro" src="./imgs/termometro.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="c1"># configuracion de la tarjeta</span>
+
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Conexion lista'</span><span class="p">)</span>
+
+<span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># configuracion SENSOR</span>
+<span class="n">SENSOR_CURRENT_PIN</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">current_sensor</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'a:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SENSOR_CURRENT_PIN</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="n">current_sensor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="n">celsius</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="mi">500</span>
+
+    <span class="n">farenheint</span> <span class="o">=</span> <span class="p">(</span><span class="n">celsius</span> <span class="o">*</span> <span class="mf">1.8</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Value: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'La temperatura Celsius </span><span class="si">{</span><span class="n">celsius</span><span class="si">}</span><span class="s1">ºC'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'La temperatura Farenheit </span><span class="si">{</span><span class="n">farenheint</span><span class="si">}</span><span class="s1">ºF'</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 2. Vamos a variar la velocidad de un ventialdor (motor DC) en funcion de la temperatura, simulando que debemos enfriar un tanque contenedor de un liquido. Cuando la temperatura sea menor a 20ºC, ventilador debe estar apagado, entre 20ºC y 50ºC debe trabajar a 1/3 de la potencia, cuando la temperatura este entre 50º y 90º, debe trabajar al 60% el ventilador, cuando supere la temperatura de 90ºC debe trabaja a su maxima potencia el ventilador. Cuando este en la temperatura este por encima de 90ºC debe parpadear rapido un led , cuando este por debajo solo queda encendido y cuando este apagado el ventilador el led parpadea lento.
+     </strong>
+    </p>
+    <p>
+     <img alt="" src="./imgs/temp_ventilador.png"/>
+    </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">def</span> <span class="nf">blink</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">pin</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+    <span class="n">board</span><span class="o">.</span><span class="n">digital</span><span class="p">[</span><span class="n">pin</span><span class="p">]</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+
+<span class="c1"># configuracion de la tarjeta</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'/tmp/ttyS1'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Conexion lista'</span><span class="p">)</span>
+
+<span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># configuro la salida del PWM para el ventilador</span>
+<span class="n">MOTOR_PIN</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">motor</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">MOTOR_PIN</span><span class="p">)</span><span class="si">}</span><span class="s1">:p'</span><span class="p">)</span>
+
+<span class="c1"># configuro salida del LED</span>
+<span class="n">LED_PIN</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">led</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">)</span><span class="si">}</span><span class="s1">:o'</span><span class="p">)</span>
+
+<span class="c1"># configuracion SENSOR</span>
+<span class="n">SENSOR_CURRENT_PIN</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">current_sensor</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'a:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SENSOR_CURRENT_PIN</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="n">value</span> <span class="o">=</span> <span class="n">current_sensor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="n">celsius</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="mi">500</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span> <span class="c1"># hacemos un redondeo para evitar problemas en las comparaciones</span>
+
+    <span class="k">if</span> <span class="n">celsius</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="n">blink</span><span class="p">(</span><span class="n">board</span><span class="o">=</span><span class="n">board</span><span class="p">,</span> <span class="n">pin</span><span class="o">=</span><span class="n">LED_PIN</span><span class="p">,</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">motor</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mf">0.00</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">celsius</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="ow">and</span> <span class="n">celsius</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">motor</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mf">0.33</span><span class="p">)</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">celsius</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="ow">and</span> <span class="n">celsius</span> <span class="o">&lt;=</span> <span class="mi">150</span><span class="p">:</span>
+        <span class="n">motor</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+        <span class="n">led</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">celsius</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">:</span>
+        <span class="n">motor</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mf">0.999</span><span class="p">)</span>
+        <span class="n">blink</span><span class="p">(</span><span class="n">board</span><span class="o">=</span><span class="n">board</span><span class="p">,</span><span class="n">pin</span><span class="o">=</span><span class="n">LED_PIN</span><span class="p">,</span><span class="n">time</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'temperatura </span><span class="si">{</span><span class="n">celsius</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <h2 id="3.8.4-Sensor-de-luz-(LDR)">
+     3.8.4 Sensor de luz (LDR)
+     <a class="anchor-link" href="#3.8.4-Sensor-de-luz-(LDR)">
+      ¶
+     </a>
+    </h2>
+    <p>
+     Para el sensor de luz ultilizaremos el divisor de tension con una LDR.
+    </p>
+    <p>
+     <img alt="ldr div" src="./imgs/circuitos_ldr.png"/>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
    <div class="jp-InputPrompt jp-InputArea-prompt">
    </div>
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 1: En funcion de la luz que incide en el sensor se manda a la terminal el porcentaje de luz que incide en él. Simulando que se encuentra en una habitación.
+     </strong>
+    </p>
+    <p>
+     <img alt="ldr led" src="./imgs/ldr_led.png"/>
+    </p>
+   </div>
+  </div>
+  <div class="jp-Cell-inputWrapper">
+   <div class="jp-InputPrompt jp-InputArea-prompt">
+   </div>
+   <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+    <p>
+     <strong>
+      Ejemplo 2: En funcion de la luz que incide en el sensor, vamos a mover un servomotor que estaria abriendo las cortinas de la ventana con algun mecanismo.
+     </strong>
+    </p>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
