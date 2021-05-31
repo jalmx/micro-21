@@ -12,9 +12,6 @@ UP = 9
 
 down = board.get_pin(f'd:{str(DOWN)}:i')
 up = board.get_pin(f'd:{str(UP)}:i')
-# configuro la entrada del potenciometro
-POT = 3
-pot = board.get_pin(f'a:{str(POT)}:i')
 
 # config Servo
 SERVO = 3

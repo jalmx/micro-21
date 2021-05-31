@@ -1,5 +1,6 @@
 from pyfirmata import Arduino, util
 from time import sleep
+from math import ceil
 
 PORT = '/tmp/ttyS1'
 board = Arduino(PORT)
@@ -20,10 +21,13 @@ sleep(1) # time to wait
 while True:
 
     value = pot.read()
-    sleep(0.25)
 
     if value == None:
         continue
 
     ang = value * 180
+    ang = ceil(ang) # redondeo para no generar falla
     servo.write(ang)
+    print(f'angulo {ang}')
+
+    sleep(0.25)

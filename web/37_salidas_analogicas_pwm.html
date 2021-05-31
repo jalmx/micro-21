@@ -14590,7 +14590,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      </strong>
     </p>
     <div class="highlight">
-     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
 <span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
@@ -14665,13 +14665,13 @@ all of MD as it is not optimized for dense, information rich UIs.
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 
     <span class="n">value</span> <span class="o">=</span> <span class="n">pot</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">continue</span>
 
     <span class="n">ang</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="mi">180</span>
     <span class="n">servo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ang</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
 </pre>
     </div>
    </div>
@@ -14683,7 +14683,7 @@ all of MD as it is not optimized for dense, information rich UIs.
     <hr/>
     <p>
      <strong>
-      Ejemplo 3: Cambiar el angulo de un servomotor con botones, es decir, con uno incrementa su posicion y con el segundo la decrementa
+      Ejemplo 3: Cambiar el angulo de un servomotor con botones, es decir, con uno incrementa su angulo y con el segundo la decrementa
      </strong>
     </p>
     <p>
@@ -14693,7 +14693,7 @@ all of MD as it is not optimized for dense, information rich UIs.
      <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
 
-<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'/tmp/ttyS1'</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'COM#'</span>
 <span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
 
 <span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
@@ -14704,9 +14704,6 @@ all of MD as it is not optimized for dense, information rich UIs.
 
 <span class="n">down</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
 <span class="n">up</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'d:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
-<span class="c1"># configuro la entrada del potenciometro</span>
-<span class="n">POT</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">pot</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'a:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">POT</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
 
 <span class="c1"># config Servo</span>
 <span class="n">SERVO</span> <span class="o">=</span> <span class="mi">3</span>
