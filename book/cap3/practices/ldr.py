@@ -21,7 +21,7 @@ LEDS_PIN = [2,3,4,5,6,7,8,9]
 while True:
 
     lux = ligth_sensor.read()
-
+    print(f'Sensor: {lux}')
     if lux == None:
         continue
 
@@ -47,3 +47,7 @@ while True:
                 board.digital[pin].write(1)
             else:
                 board.digital[pin].write(0)
+
+    lux = ((lux * 999)/0.83) - 87
+    print(f'Valor: {lux}')
+    sleep(2)
