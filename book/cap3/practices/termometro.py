@@ -23,8 +23,8 @@ while True:
 
     celsius = value * 500
 
-    farenheint = (celsius * 1.8) + 32
+    fahrenheint = (celsius * (9/5)) + 32
     print(f'Value: {value}')
     print(f'La temperatura Celsius {celsius}ºC')
-    print(f'La temperatura Farenheit {farenheint}ºF')
+    print(f'La temperatura Farenheit {fahrenheint}ºF')
     sleep(1)
