@@ -14552,7 +14552,7 @@ Al pasar una corriente se genera un campo magnetico y si se le acerca una bobina
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 <span class="c1"># vamos a simular 3 niveles del sensor</span>
-<span class="c1"># apagado &lt; 0.2</span>
+<span class="c1"># No hay carga conectada &lt; 0.2</span>
 <span class="c1"># normal 0.2 &gt;= hasta 0.8</span>
 <span class="c1"># overload (sobrecarga) &gt;0.8</span>
 
@@ -14751,7 +14751,7 @@ Al pasar una corriente se genera un campo magnetico y si se le acerca una bobina
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
     <p>
      <strong>
-      Ejemplo 1: En funcion de la luz que incide en el sensor se manda a la terminal el porcentaje de luz que incide en él. Simulando que se encuentra en una habitación.
+      Ejemplo 1. Leer el valor del sensor y mandarlo a la terminal.
      </strong>
     </p>
     <p>
@@ -14760,6 +14760,32 @@ Al pasar una corriente se genera un campo magnetico y si se le acerca una bobina
     <p>
      <img alt="" src="./imgs/sensor_luz_simul.png"/>
     </p>
+    <div class="highlight">
+     <pre><span></span><span class="kn">from</span> <span class="nn">pyfirmata</span> <span class="kn">import</span> <span class="n">Arduino</span><span class="p">,</span> <span class="n">util</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="c1"># configuracion de la tarjeta</span>
+<span class="n">PORT</span> <span class="o">=</span> <span class="s1">'/tmp/ttyS1'</span>
+<span class="n">board</span> <span class="o">=</span> <span class="n">Arduino</span><span class="p">(</span><span class="n">PORT</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Conexion lista'</span><span class="p">)</span>
+
+<span class="n">util</span><span class="o">.</span><span class="n">Iterator</span><span class="p">(</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1"># configuracion SENSOR</span>
+<span class="n">SENSOR_LIGTH_PIN</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ligth_sensor</span> <span class="o">=</span> <span class="n">board</span><span class="o">.</span><span class="n">get_pin</span><span class="p">(</span><span class="sa">f</span><span class="s1">'a:</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SENSOR_LIGTH_PIN</span><span class="p">)</span><span class="si">}</span><span class="s1">:i'</span><span class="p">)</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+    <span class="n">sensor_light</span> <span class="o">=</span> <span class="n">ligth_sensor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">sensor_light</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Sensor: </span><span class="si">{</span><span class="n">sensor_light</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre>
+    </div>
    </div>
   </div>
   <div class="jp-Cell-inputWrapper">
@@ -14768,7 +14794,7 @@ Al pasar una corriente se genera un campo magnetico y si se le acerca una bobina
    <div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
     <p>
      <strong>
-      Ejemplo 2: Bara de leds dependiendo la cantidad de luz. Entre mas luz menos leds encienden y entre menos luz mas leds encienden
+      Ejemplo 2: Bara de leds dependiendo la cantidad de luz. Entre mas cerca este el objeto mas leds encendemos, entre mas lejos este menos leds encendemos.
      </strong>
     </p>
     <p>
@@ -14797,6 +14823,7 @@ Al pasar una corriente se genera un campo magnetico y si se le acerca una bobina
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 
+    <span class="c1"># Nota, esta trababajando al reves</span>
     <span class="n">lux</span> <span class="o">=</span> <span class="n">ligth_sensor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="n">lux</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
@@ -14866,6 +14893,8 @@ Al pasar una corriente se genera un campo magnetico y si se le acerca una bobina
 
 <span class="c1"># menos luz abre cortina (angulo mayor)</span>
 <span class="c1"># mas luz cierra cortina (angulo menor)</span>
+
+<span class="c1"># Nota esta trabajando al reves</span>
 
     <span class="n">lux</span> <span class="o">=</span> <span class="n">ligth_sensor</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 

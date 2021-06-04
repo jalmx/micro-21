@@ -27,4 +27,4 @@ while True:
     print(f'Value: {value}')
     print(f'La temperatura Celsius {celsius}ºC')
     print(f'La temperatura Farenheit {fahrenheint}ºF')
-    sleep(1)
+    sleep(2)

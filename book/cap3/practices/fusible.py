@@ -36,9 +36,9 @@ OFF = 0
 
 while True:
 # vamos a simular 3 niveles del sensor
-# apagado < 0.2
-# normal 0.2 >= hasta 0.8
-# overload (sobrecarga) >0.8
+# no hay carga < 0.2A
+# normal 0.2A >= hasta 0.8A
+# overload (sobrecarga) > 0.8A
 
     value = current_sensor.read()
 
